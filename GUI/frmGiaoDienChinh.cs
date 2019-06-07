@@ -41,5 +41,10 @@ namespace GUI
             frmThemXe f = new frmThemXe();
             f.ShowDialog();
         }
+
+        private void DataXe_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

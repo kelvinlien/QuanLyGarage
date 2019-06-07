@@ -39,9 +39,10 @@
             // 
             // buttonThemXe
             // 
-            this.buttonThemXe.Location = new System.Drawing.Point(52, 83);
+            this.buttonThemXe.Location = new System.Drawing.Point(69, 102);
+            this.buttonThemXe.Margin = new System.Windows.Forms.Padding(4);
             this.buttonThemXe.Name = "buttonThemXe";
-            this.buttonThemXe.Size = new System.Drawing.Size(136, 23);
+            this.buttonThemXe.Size = new System.Drawing.Size(181, 28);
             this.buttonThemXe.TabIndex = 2;
             this.buttonThemXe.Text = "Thêm Xe";
             this.buttonThemXe.UseVisualStyleBackColor = true;
@@ -49,18 +50,20 @@
             // 
             // buttonHoaDon
             // 
-            this.buttonHoaDon.Location = new System.Drawing.Point(52, 144);
+            this.buttonHoaDon.Location = new System.Drawing.Point(69, 177);
+            this.buttonHoaDon.Margin = new System.Windows.Forms.Padding(4);
             this.buttonHoaDon.Name = "buttonHoaDon";
-            this.buttonHoaDon.Size = new System.Drawing.Size(136, 23);
+            this.buttonHoaDon.Size = new System.Drawing.Size(181, 28);
             this.buttonHoaDon.TabIndex = 3;
             this.buttonHoaDon.Text = "In Hóa Đơn";
             this.buttonHoaDon.UseVisualStyleBackColor = true;
             // 
             // buttonKho
             // 
-            this.buttonKho.Location = new System.Drawing.Point(52, 208);
+            this.buttonKho.Location = new System.Drawing.Point(69, 256);
+            this.buttonKho.Margin = new System.Windows.Forms.Padding(4);
             this.buttonKho.Name = "buttonKho";
-            this.buttonKho.Size = new System.Drawing.Size(136, 23);
+            this.buttonKho.Size = new System.Drawing.Size(181, 28);
             this.buttonKho.TabIndex = 4;
             this.buttonKho.Text = "Kho";
             this.buttonKho.UseVisualStyleBackColor = true;
@@ -70,18 +73,22 @@
             this.dataXe.AllowUserToAddRows = false;
             this.dataXe.AllowUserToDeleteRows = false;
             this.dataXe.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataXe.Location = new System.Drawing.Point(224, 24);
+            this.dataXe.Location = new System.Drawing.Point(299, 30);
+            this.dataXe.Margin = new System.Windows.Forms.Padding(4);
             this.dataXe.Name = "dataXe";
             this.dataXe.ReadOnly = true;
-            this.dataXe.Size = new System.Drawing.Size(543, 207);
+            this.dataXe.RowHeadersWidth = 51;
+            this.dataXe.Size = new System.Drawing.Size(724, 255);
             this.dataXe.TabIndex = 4;
             this.dataXe.TabStop = false;
+            this.dataXe.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataXe_CellContentClick);
             // 
             // buttonDuyetXe
             // 
-            this.buttonDuyetXe.Location = new System.Drawing.Point(52, 24);
+            this.buttonDuyetXe.Location = new System.Drawing.Point(69, 30);
+            this.buttonDuyetXe.Margin = new System.Windows.Forms.Padding(4);
             this.buttonDuyetXe.Name = "buttonDuyetXe";
-            this.buttonDuyetXe.Size = new System.Drawing.Size(136, 23);
+            this.buttonDuyetXe.Size = new System.Drawing.Size(181, 28);
             this.buttonDuyetXe.TabIndex = 0;
             this.buttonDuyetXe.Text = "Duyệt Xe";
             this.buttonDuyetXe.UseVisualStyleBackColor = true;
@@ -89,9 +96,10 @@
             // 
             // buttonThoat
             // 
-            this.buttonThoat.Location = new System.Drawing.Point(644, 268);
+            this.buttonThoat.Location = new System.Drawing.Point(859, 330);
+            this.buttonThoat.Margin = new System.Windows.Forms.Padding(4);
             this.buttonThoat.Name = "buttonThoat";
-            this.buttonThoat.Size = new System.Drawing.Size(123, 23);
+            this.buttonThoat.Size = new System.Drawing.Size(164, 28);
             this.buttonThoat.TabIndex = 5;
             this.buttonThoat.Text = "Thoát";
             this.buttonThoat.UseVisualStyleBackColor = true;
@@ -99,18 +107,19 @@
             // 
             // frmGiaoDienChinh
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(822, 303);
+            this.ClientSize = new System.Drawing.Size(1324, 503);
             this.Controls.Add(this.buttonThoat);
             this.Controls.Add(this.buttonDuyetXe);
             this.Controls.Add(this.dataXe);
             this.Controls.Add(this.buttonKho);
             this.Controls.Add(this.buttonHoaDon);
             this.Controls.Add(this.buttonThemXe);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.Name = "frmGiaoDienChinh";
-            this.Text = "Gara";
+            this.Text = "Phần mềm quản lý garage";
             this.Load += new System.EventHandler(this.frmGiaoDienChinh_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataXe)).EndInit();
             this.ResumeLayout(false);

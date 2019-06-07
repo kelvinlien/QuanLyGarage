@@ -50,8 +50,10 @@ namespace GUI
                 {
                     MessageBox.Show("Đăng nhập thành công!", "Thông Báo");
                     frmGiaoDienChinh f = new frmGiaoDienChinh();
+                    this.Hide();
                     f.ShowDialog();
-                    labelThongBao.Visible = false;                 
+                    labelThongBao.Visible = false;
+                    this.Show();
                 }
                 else
                 {
@@ -69,6 +71,12 @@ namespace GUI
         private void frmDangNhap_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void FrmDangNhap_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (MessageBox.Show("Đóng ứng dụng?", "Thông báo", MessageBoxButtons.OKCancel) != DialogResult.OK)
+                e.Cancel = true;
         }
     }
 }
