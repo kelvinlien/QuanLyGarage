@@ -19,8 +19,10 @@ namespace GUI
 
         private void ThôngTinTàiKhoảnToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            frmThongTinTaiKhoan tttk = new frmThongTinTaiKhoan();
+            tttk.ShowDialog();
         }
+
 
         private void ĐăngXuấtToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -33,5 +35,19 @@ namespace GUI
 
         }
 
+        private void FrmMain_Load(object sender, EventArgs e)
+        {
+            this.dateTimePickerChonThoiDiem.CustomFormat = "MM/yyyy";
+            this.dateTimePickerChonThoiDiem.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimePickerChonThoiDiem.ShowUpDown = true;
+            this.dateTimePicker1.CustomFormat = "MM/yyyy";
+            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimePicker1.ShowUpDown = true;
+        }
+
+        private void MenuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
     }
 }

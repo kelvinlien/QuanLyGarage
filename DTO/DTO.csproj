@@ -33,6 +33,8 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -48,6 +50,17 @@
     <Compile Include="DTO_PhieuSuaChua.cs" />
     <Compile Include="DTO_Xe.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ThayDoiMatKhau.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ThayDoiMatKhau.Designer.cs">
+      <DependentUpon>ThayDoiMatKhau.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ThayDoiMatKhau.resx">
+      <DependentUpon>ThayDoiMatKhau.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
