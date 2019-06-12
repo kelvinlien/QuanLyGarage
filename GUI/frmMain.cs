@@ -49,5 +49,10 @@ namespace GUI
         {
 
         }
+
+        private void BtnInPhieuSuaChua_Click(object sender, EventArgs e)
+        {
+            printDialog1.ShowDialog();
+        }
     }
 }
