@@ -43,6 +43,7 @@ namespace GUI
             this.dateTimePicker1.CustomFormat = "MM/yyyy";
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateTimePicker1.ShowUpDown = true;
+            this.txtBoxNgaySuaChua.Text = DateTime.Now.ToString("dd/MM/yyyy");
         }
 
         private void MenuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
@@ -54,5 +55,21 @@ namespace GUI
         {
             printDialog1.ShowDialog();
         }
+
+        private void BtnInKetQuaTraCuu_Click(object sender, EventArgs e)
+        {
+            printDialog2.ShowDialog();
+        }
+
+        private void BtnDatLaiTraCuu_Click(object sender, EventArgs e)
+        {
+            txtBoxTenChuXeTraCuu.Text = "";
+            txtBoxDienThoaiTraCuu.Text = "";
+            txtBoxDiaChiTraCuu.Text = "";
+            txtBoxBienSoTraCuu.Text = "";
+            comboBoxHieuXeTraCuu.Text = "";
+            dateTimePickerTraCuu.Value = DateTime.Now;
+        }
+
     }
 }
