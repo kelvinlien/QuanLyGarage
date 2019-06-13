@@ -76,6 +76,7 @@
             this.panel16 = new System.Windows.Forms.Panel();
             this.lblSoLuong = new System.Windows.Forms.Label();
             this.pnNgaySuaChua = new System.Windows.Forms.Panel();
+            this.txtBoxNgaySuaChua = new System.Windows.Forms.TextBox();
             this.lblNgaySuaChua = new System.Windows.Forms.Label();
             this.pnlBienSoXe = new System.Windows.Forms.Panel();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -86,25 +87,25 @@
             this.tPVTPT = new System.Windows.Forms.TabPage();
             this.tPTraCuu = new System.Windows.Forms.TabPage();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
+            this.flowLayoutPanel5 = new System.Windows.Forms.FlowLayoutPanel();
             this.panel17 = new System.Windows.Forms.Panel();
-            this.txtBoxTenChuXeTraCuu = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.textBoxTraCuuChinh = new System.Windows.Forms.TextBox();
+            this.lblTraCuuChinh = new System.Windows.Forms.Label();
+            this.flowLayoutPanel4 = new System.Windows.Forms.FlowLayoutPanel();
+            this.radioButtonTimTuongDoi = new System.Windows.Forms.RadioButton();
+            this.radioButtonTimChinhXac = new System.Windows.Forms.RadioButton();
+            this.panel26 = new System.Windows.Forms.Panel();
+            this.btnInKetQuaTraCuu = new System.Windows.Forms.Button();
+            this.btnDatLaiTraCuu = new System.Windows.Forms.Button();
+            this.btnTimKiemTraCuu = new System.Windows.Forms.Button();
+            this.flowLayoutPanelTimChinhXac = new System.Windows.Forms.FlowLayoutPanel();
             this.panel21 = new System.Windows.Forms.Panel();
             this.txtBoxBienSoTraCuu = new System.Windows.Forms.TextBox();
             this.lblBienSoTraCuu = new System.Windows.Forms.Label();
-            this.panel22 = new System.Windows.Forms.Panel();
-            this.txtBoxDienThoaiTraCuu = new System.Windows.Forms.TextBox();
-            this.lblDienThoaiTraCuu = new System.Windows.Forms.Label();
-            this.panel23 = new System.Windows.Forms.Panel();
-            this.txtBoxDiaChiTraCuu = new System.Windows.Forms.TextBox();
-            this.lblDiaChiTraCuu = new System.Windows.Forms.Label();
             this.panel24 = new System.Windows.Forms.Panel();
             this.comboBoxHieuXeTraCuu = new System.Windows.Forms.ComboBox();
             this.lblHieuXeTraCuu = new System.Windows.Forms.Label();
-            this.panel25 = new System.Windows.Forms.Panel();
-            this.dateTimePickerTraCuu = new System.Windows.Forms.DateTimePicker();
-            this.lblNgayTiepNhanTraCuu = new System.Windows.Forms.Label();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.tPBaoCao = new System.Windows.Forms.TabPage();
             this.tCtrlBaoCao = new System.Windows.Forms.TabControl();
             this.tPDoanhSo = new System.Windows.Forms.TabPage();
@@ -112,20 +113,21 @@
             this.dataGridViewBaoCaoDoanhSo = new System.Windows.Forms.DataGridView();
             this.pnlThang = new System.Windows.Forms.Panel();
             this.lblTongDoanhThu = new System.Windows.Forms.Label();
-            this.lblThang = new System.Windows.Forms.Label();
+            this.lblThangBaoCaoDoanhSo = new System.Windows.Forms.Label();
             this.pnlChonThoiDiem = new System.Windows.Forms.Panel();
             this.lblChonThoiDiem = new System.Windows.Forms.Label();
-            this.dateTimePickerChonThoiDiem = new System.Windows.Forms.DateTimePicker();
-            this.btnLapBaoCao = new System.Windows.Forms.Button();
+            this.dateTimePickerChonThoiDiemBaoCaoDoanhSo = new System.Windows.Forms.DateTimePicker();
+            this.btnLapBaoCaoDoanhSo = new System.Windows.Forms.Button();
             this.tPBaoCaoTon = new System.Windows.Forms.TabPage();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dataGridViewBaoCaoTon = new System.Windows.Forms.DataGridView();
             this.panelThang = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lblThangBaoCaoTon = new System.Windows.Forms.Label();
             this.pnChonThoiDiem = new System.Windows.Forms.Panel();
+            this.btnBaoCaoTonMoi = new System.Windows.Forms.Button();
             this.lblChonThoiDiemTon = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.button1 = new System.Windows.Forms.Button();
+            this.dateTimePickerChonThoiDiemBaoCaoTon = new System.Windows.Forms.DateTimePicker();
+            this.btnLapBaoCaoTon = new System.Windows.Forms.Button();
             this.tPQuyDinh = new System.Windows.Forms.TabPage();
             this.pnGiaTriHienTai = new System.Windows.Forms.Panel();
             this.lblGiaTriHienTai = new System.Windows.Forms.Label();
@@ -156,16 +158,8 @@
             this.hướngDẫnSửDụngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.liênHệToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.printDialog1 = new System.Windows.Forms.PrintDialog();
-            this.panel26 = new System.Windows.Forms.Panel();
-            this.btnTimKiemTraCuu = new System.Windows.Forms.Button();
-            this.btnDatLaiTraCuu = new System.Windows.Forms.Button();
-            this.flowLayoutPanel4 = new System.Windows.Forms.FlowLayoutPanel();
-            this.radioButtonTimTuongDoi = new System.Windows.Forms.RadioButton();
-            this.radioButtonTimChinhXac = new System.Windows.Forms.RadioButton();
-            this.btnInKetQuaTraCuu = new System.Windows.Forms.Button();
             this.printDialog2 = new System.Windows.Forms.PrintDialog();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.txtBoxNgaySuaChua = new System.Windows.Forms.TextBox();
+            this.btnBaoCaoDoanhSoMoi = new System.Windows.Forms.Button();
             this.tCrlChinh.SuspendLayout();
             this.tPChucNang.SuspendLayout();
             this.tCtrlChucNang.SuspendLayout();
@@ -196,13 +190,14 @@
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
-            this.flowLayoutPanel3.SuspendLayout();
+            this.flowLayoutPanel5.SuspendLayout();
             this.panel17.SuspendLayout();
+            this.flowLayoutPanel4.SuspendLayout();
+            this.panel26.SuspendLayout();
+            this.flowLayoutPanelTimChinhXac.SuspendLayout();
             this.panel21.SuspendLayout();
-            this.panel22.SuspendLayout();
-            this.panel23.SuspendLayout();
             this.panel24.SuspendLayout();
-            this.panel25.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.tPBaoCao.SuspendLayout();
             this.tCtrlBaoCao.SuspendLayout();
             this.tPDoanhSo.SuspendLayout();
@@ -224,9 +219,6 @@
             this.panel13.SuspendLayout();
             this.panel14.SuspendLayout();
             this.menuStripCongCu.SuspendLayout();
-            this.panel26.SuspendLayout();
-            this.flowLayoutPanel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
             // 
             // tCrlChinh
@@ -727,6 +719,15 @@
             this.pnNgaySuaChua.Size = new System.Drawing.Size(645, 26);
             this.pnNgaySuaChua.TabIndex = 2;
             // 
+            // txtBoxNgaySuaChua
+            // 
+            this.txtBoxNgaySuaChua.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBoxNgaySuaChua.Location = new System.Drawing.Point(277, -3);
+            this.txtBoxNgaySuaChua.Name = "txtBoxNgaySuaChua";
+            this.txtBoxNgaySuaChua.ReadOnly = true;
+            this.txtBoxNgaySuaChua.Size = new System.Drawing.Size(252, 30);
+            this.txtBoxNgaySuaChua.TabIndex = 4;
+            // 
             // lblNgaySuaChua
             // 
             this.lblNgaySuaChua.AutoSize = true;
@@ -818,8 +819,9 @@
             // 
             // splitContainer1.Panel1
             // 
+            this.splitContainer1.Panel1.Controls.Add(this.flowLayoutPanel5);
             this.splitContainer1.Panel1.Controls.Add(this.panel26);
-            this.splitContainer1.Panel1.Controls.Add(this.flowLayoutPanel3);
+            this.splitContainer1.Panel1.Controls.Add(this.flowLayoutPanelTimChinhXac);
             // 
             // splitContainer1.Panel2
             // 
@@ -828,51 +830,134 @@
             this.splitContainer1.SplitterDistance = 430;
             this.splitContainer1.TabIndex = 0;
             // 
-            // flowLayoutPanel3
+            // flowLayoutPanel5
             // 
-            this.flowLayoutPanel3.Controls.Add(this.panel17);
-            this.flowLayoutPanel3.Controls.Add(this.panel21);
-            this.flowLayoutPanel3.Controls.Add(this.panel22);
-            this.flowLayoutPanel3.Controls.Add(this.panel23);
-            this.flowLayoutPanel3.Controls.Add(this.panel24);
-            this.flowLayoutPanel3.Controls.Add(this.panel25);
-            this.flowLayoutPanel3.Location = new System.Drawing.Point(9, 7);
-            this.flowLayoutPanel3.Name = "flowLayoutPanel3";
-            this.flowLayoutPanel3.Size = new System.Drawing.Size(413, 304);
-            this.flowLayoutPanel3.TabIndex = 0;
+            this.flowLayoutPanel5.Controls.Add(this.panel17);
+            this.flowLayoutPanel5.Controls.Add(this.flowLayoutPanel4);
+            this.flowLayoutPanel5.Location = new System.Drawing.Point(7, 6);
+            this.flowLayoutPanel5.Name = "flowLayoutPanel5";
+            this.flowLayoutPanel5.Size = new System.Drawing.Size(420, 116);
+            this.flowLayoutPanel5.TabIndex = 2;
             // 
             // panel17
             // 
-            this.panel17.Controls.Add(this.txtBoxTenChuXeTraCuu);
-            this.panel17.Controls.Add(this.label1);
+            this.panel17.Controls.Add(this.textBoxTraCuuChinh);
+            this.panel17.Controls.Add(this.lblTraCuuChinh);
             this.panel17.Location = new System.Drawing.Point(3, 3);
             this.panel17.Name = "panel17";
-            this.panel17.Size = new System.Drawing.Size(403, 44);
-            this.panel17.TabIndex = 0;
+            this.panel17.Size = new System.Drawing.Size(417, 44);
+            this.panel17.TabIndex = 2;
             // 
-            // txtBoxTenChuXeTraCuu
+            // textBoxTraCuuChinh
             // 
-            this.txtBoxTenChuXeTraCuu.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBoxTenChuXeTraCuu.Location = new System.Drawing.Point(116, 7);
-            this.txtBoxTenChuXeTraCuu.Name = "txtBoxTenChuXeTraCuu";
-            this.txtBoxTenChuXeTraCuu.Size = new System.Drawing.Size(284, 30);
-            this.txtBoxTenChuXeTraCuu.TabIndex = 1;
+            this.textBoxTraCuuChinh.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxTraCuuChinh.Location = new System.Drawing.Point(116, 7);
+            this.textBoxTraCuuChinh.Name = "textBoxTraCuuChinh";
+            this.textBoxTraCuuChinh.Size = new System.Drawing.Size(295, 30);
+            this.textBoxTraCuuChinh.TabIndex = 1;
             // 
-            // label1
+            // lblTraCuuChinh
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(9, 10);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(101, 22);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Tên chủ xe:";
+            this.lblTraCuuChinh.AutoSize = true;
+            this.lblTraCuuChinh.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTraCuuChinh.Location = new System.Drawing.Point(9, 10);
+            this.lblTraCuuChinh.Name = "lblTraCuuChinh";
+            this.lblTraCuuChinh.Size = new System.Drawing.Size(81, 22);
+            this.lblTraCuuChinh.TabIndex = 0;
+            this.lblTraCuuChinh.Text = "Từ khóa:";
+            // 
+            // flowLayoutPanel4
+            // 
+            this.flowLayoutPanel4.Controls.Add(this.radioButtonTimTuongDoi);
+            this.flowLayoutPanel4.Controls.Add(this.radioButtonTimChinhXac);
+            this.flowLayoutPanel4.Location = new System.Drawing.Point(3, 53);
+            this.flowLayoutPanel4.Name = "flowLayoutPanel4";
+            this.flowLayoutPanel4.Size = new System.Drawing.Size(191, 58);
+            this.flowLayoutPanel4.TabIndex = 4;
+            // 
+            // radioButtonTimTuongDoi
+            // 
+            this.radioButtonTimTuongDoi.AutoSize = true;
+            this.radioButtonTimTuongDoi.Checked = true;
+            this.radioButtonTimTuongDoi.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioButtonTimTuongDoi.Location = new System.Drawing.Point(3, 3);
+            this.radioButtonTimTuongDoi.Name = "radioButtonTimTuongDoi";
+            this.radioButtonTimTuongDoi.Size = new System.Drawing.Size(127, 23);
+            this.radioButtonTimTuongDoi.TabIndex = 0;
+            this.radioButtonTimTuongDoi.TabStop = true;
+            this.radioButtonTimTuongDoi.Text = "Tìm tương đối";
+            this.radioButtonTimTuongDoi.UseVisualStyleBackColor = true;
+            this.radioButtonTimTuongDoi.CheckedChanged += new System.EventHandler(this.RadioButtonTimTuongDoi_CheckedChanged);
+            // 
+            // radioButtonTimChinhXac
+            // 
+            this.radioButtonTimChinhXac.AutoSize = true;
+            this.radioButtonTimChinhXac.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioButtonTimChinhXac.Location = new System.Drawing.Point(3, 32);
+            this.radioButtonTimChinhXac.Name = "radioButtonTimChinhXac";
+            this.radioButtonTimChinhXac.Size = new System.Drawing.Size(125, 23);
+            this.radioButtonTimChinhXac.TabIndex = 1;
+            this.radioButtonTimChinhXac.Text = "Tìm chính xác";
+            this.radioButtonTimChinhXac.UseVisualStyleBackColor = true;
+            this.radioButtonTimChinhXac.CheckedChanged += new System.EventHandler(this.RadioButtonTimChinhXac_CheckedChanged);
+            // 
+            // panel26
+            // 
+            this.panel26.Controls.Add(this.btnInKetQuaTraCuu);
+            this.panel26.Controls.Add(this.btnDatLaiTraCuu);
+            this.panel26.Controls.Add(this.btnTimKiemTraCuu);
+            this.panel26.Location = new System.Drawing.Point(10, 285);
+            this.panel26.Name = "panel26";
+            this.panel26.Size = new System.Drawing.Size(411, 151);
+            this.panel26.TabIndex = 1;
+            // 
+            // btnInKetQuaTraCuu
+            // 
+            this.btnInKetQuaTraCuu.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnInKetQuaTraCuu.Location = new System.Drawing.Point(228, 79);
+            this.btnInKetQuaTraCuu.Name = "btnInKetQuaTraCuu";
+            this.btnInKetQuaTraCuu.Size = new System.Drawing.Size(172, 45);
+            this.btnInKetQuaTraCuu.TabIndex = 5;
+            this.btnInKetQuaTraCuu.Text = "In kết quả";
+            this.btnInKetQuaTraCuu.UseVisualStyleBackColor = true;
+            this.btnInKetQuaTraCuu.Click += new System.EventHandler(this.BtnInKetQuaTraCuu_Click);
+            // 
+            // btnDatLaiTraCuu
+            // 
+            this.btnDatLaiTraCuu.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDatLaiTraCuu.Location = new System.Drawing.Point(3, 79);
+            this.btnDatLaiTraCuu.Name = "btnDatLaiTraCuu";
+            this.btnDatLaiTraCuu.Size = new System.Drawing.Size(173, 45);
+            this.btnDatLaiTraCuu.TabIndex = 3;
+            this.btnDatLaiTraCuu.Text = "Đặt lại";
+            this.btnDatLaiTraCuu.UseVisualStyleBackColor = true;
+            this.btnDatLaiTraCuu.Click += new System.EventHandler(this.BtnDatLaiTraCuu_Click);
+            // 
+            // btnTimKiemTraCuu
+            // 
+            this.btnTimKiemTraCuu.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTimKiemTraCuu.Location = new System.Drawing.Point(3, 14);
+            this.btnTimKiemTraCuu.Name = "btnTimKiemTraCuu";
+            this.btnTimKiemTraCuu.Size = new System.Drawing.Size(398, 45);
+            this.btnTimKiemTraCuu.TabIndex = 2;
+            this.btnTimKiemTraCuu.Text = "Tìm kiếm";
+            this.btnTimKiemTraCuu.UseVisualStyleBackColor = true;
+            // 
+            // flowLayoutPanelTimChinhXac
+            // 
+            this.flowLayoutPanelTimChinhXac.Controls.Add(this.panel21);
+            this.flowLayoutPanelTimChinhXac.Controls.Add(this.panel24);
+            this.flowLayoutPanelTimChinhXac.Location = new System.Drawing.Point(7, 128);
+            this.flowLayoutPanelTimChinhXac.Name = "flowLayoutPanelTimChinhXac";
+            this.flowLayoutPanelTimChinhXac.Size = new System.Drawing.Size(420, 106);
+            this.flowLayoutPanelTimChinhXac.TabIndex = 0;
+            this.flowLayoutPanelTimChinhXac.Visible = false;
             // 
             // panel21
             // 
             this.panel21.Controls.Add(this.txtBoxBienSoTraCuu);
             this.panel21.Controls.Add(this.lblBienSoTraCuu);
-            this.panel21.Location = new System.Drawing.Point(3, 53);
+            this.panel21.Location = new System.Drawing.Point(3, 3);
             this.panel21.Name = "panel21";
             this.panel21.Size = new System.Drawing.Size(403, 44);
             this.panel21.TabIndex = 1;
@@ -895,65 +980,11 @@
             this.lblBienSoTraCuu.TabIndex = 0;
             this.lblBienSoTraCuu.Text = "Biển số:";
             // 
-            // panel22
-            // 
-            this.panel22.Controls.Add(this.txtBoxDienThoaiTraCuu);
-            this.panel22.Controls.Add(this.lblDienThoaiTraCuu);
-            this.panel22.Location = new System.Drawing.Point(3, 103);
-            this.panel22.Name = "panel22";
-            this.panel22.Size = new System.Drawing.Size(403, 44);
-            this.panel22.TabIndex = 2;
-            // 
-            // txtBoxDienThoaiTraCuu
-            // 
-            this.txtBoxDienThoaiTraCuu.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBoxDienThoaiTraCuu.Location = new System.Drawing.Point(116, 7);
-            this.txtBoxDienThoaiTraCuu.Name = "txtBoxDienThoaiTraCuu";
-            this.txtBoxDienThoaiTraCuu.Size = new System.Drawing.Size(284, 30);
-            this.txtBoxDienThoaiTraCuu.TabIndex = 1;
-            // 
-            // lblDienThoaiTraCuu
-            // 
-            this.lblDienThoaiTraCuu.AutoSize = true;
-            this.lblDienThoaiTraCuu.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDienThoaiTraCuu.Location = new System.Drawing.Point(9, 10);
-            this.lblDienThoaiTraCuu.Name = "lblDienThoaiTraCuu";
-            this.lblDienThoaiTraCuu.Size = new System.Drawing.Size(98, 22);
-            this.lblDienThoaiTraCuu.TabIndex = 0;
-            this.lblDienThoaiTraCuu.Text = "Điện thoại:";
-            // 
-            // panel23
-            // 
-            this.panel23.Controls.Add(this.txtBoxDiaChiTraCuu);
-            this.panel23.Controls.Add(this.lblDiaChiTraCuu);
-            this.panel23.Location = new System.Drawing.Point(3, 153);
-            this.panel23.Name = "panel23";
-            this.panel23.Size = new System.Drawing.Size(403, 44);
-            this.panel23.TabIndex = 3;
-            // 
-            // txtBoxDiaChiTraCuu
-            // 
-            this.txtBoxDiaChiTraCuu.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBoxDiaChiTraCuu.Location = new System.Drawing.Point(116, 7);
-            this.txtBoxDiaChiTraCuu.Name = "txtBoxDiaChiTraCuu";
-            this.txtBoxDiaChiTraCuu.Size = new System.Drawing.Size(284, 30);
-            this.txtBoxDiaChiTraCuu.TabIndex = 1;
-            // 
-            // lblDiaChiTraCuu
-            // 
-            this.lblDiaChiTraCuu.AutoSize = true;
-            this.lblDiaChiTraCuu.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDiaChiTraCuu.Location = new System.Drawing.Point(9, 10);
-            this.lblDiaChiTraCuu.Name = "lblDiaChiTraCuu";
-            this.lblDiaChiTraCuu.Size = new System.Drawing.Size(74, 22);
-            this.lblDiaChiTraCuu.TabIndex = 0;
-            this.lblDiaChiTraCuu.Text = "Địa chỉ:";
-            // 
             // panel24
             // 
             this.panel24.Controls.Add(this.comboBoxHieuXeTraCuu);
             this.panel24.Controls.Add(this.lblHieuXeTraCuu);
-            this.panel24.Location = new System.Drawing.Point(3, 203);
+            this.panel24.Location = new System.Drawing.Point(3, 53);
             this.panel24.Name = "panel24";
             this.panel24.Size = new System.Drawing.Size(403, 44);
             this.panel24.TabIndex = 4;
@@ -981,31 +1012,15 @@
             this.lblHieuXeTraCuu.TabIndex = 0;
             this.lblHieuXeTraCuu.Text = "Hiệu xe:";
             // 
-            // panel25
+            // dataGridView2
             // 
-            this.panel25.Controls.Add(this.dateTimePickerTraCuu);
-            this.panel25.Controls.Add(this.lblNgayTiepNhanTraCuu);
-            this.panel25.Location = new System.Drawing.Point(3, 253);
-            this.panel25.Name = "panel25";
-            this.panel25.Size = new System.Drawing.Size(403, 44);
-            this.panel25.TabIndex = 5;
-            // 
-            // dateTimePickerTraCuu
-            // 
-            this.dateTimePickerTraCuu.Location = new System.Drawing.Point(148, 9);
-            this.dateTimePickerTraCuu.Name = "dateTimePickerTraCuu";
-            this.dateTimePickerTraCuu.Size = new System.Drawing.Size(252, 22);
-            this.dateTimePickerTraCuu.TabIndex = 1;
-            // 
-            // lblNgayTiepNhanTraCuu
-            // 
-            this.lblNgayTiepNhanTraCuu.AutoSize = true;
-            this.lblNgayTiepNhanTraCuu.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNgayTiepNhanTraCuu.Location = new System.Drawing.Point(9, 10);
-            this.lblNgayTiepNhanTraCuu.Name = "lblNgayTiepNhanTraCuu";
-            this.lblNgayTiepNhanTraCuu.Size = new System.Drawing.Size(133, 22);
-            this.lblNgayTiepNhanTraCuu.TabIndex = 0;
-            this.lblNgayTiepNhanTraCuu.Text = "Ngày tiếp nhận:";
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Location = new System.Drawing.Point(9, 8);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.RowHeadersWidth = 51;
+            this.dataGridView2.RowTemplate.Height = 24;
+            this.dataGridView2.Size = new System.Drawing.Size(837, 428);
+            this.dataGridView2.TabIndex = 0;
             // 
             // tPBaoCao
             // 
@@ -1061,7 +1076,7 @@
             // pnlThang
             // 
             this.pnlThang.Controls.Add(this.lblTongDoanhThu);
-            this.pnlThang.Controls.Add(this.lblThang);
+            this.pnlThang.Controls.Add(this.lblThangBaoCaoDoanhSo);
             this.pnlThang.Location = new System.Drawing.Point(0, 3);
             this.pnlThang.Name = "pnlThang";
             this.pnlThang.Size = new System.Drawing.Size(1256, 52);
@@ -1077,21 +1092,22 @@
             this.lblTongDoanhThu.TabIndex = 1;
             this.lblTongDoanhThu.Text = "Tổng doanh thu";
             // 
-            // lblThang
+            // lblThangBaoCaoDoanhSo
             // 
-            this.lblThang.AutoSize = true;
-            this.lblThang.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblThang.Location = new System.Drawing.Point(597, 0);
-            this.lblThang.Name = "lblThang";
-            this.lblThang.Size = new System.Drawing.Size(58, 22);
-            this.lblThang.TabIndex = 0;
-            this.lblThang.Text = "Tháng";
+            this.lblThangBaoCaoDoanhSo.AutoSize = true;
+            this.lblThangBaoCaoDoanhSo.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblThangBaoCaoDoanhSo.Location = new System.Drawing.Point(597, 0);
+            this.lblThangBaoCaoDoanhSo.Name = "lblThangBaoCaoDoanhSo";
+            this.lblThangBaoCaoDoanhSo.Size = new System.Drawing.Size(58, 22);
+            this.lblThangBaoCaoDoanhSo.TabIndex = 0;
+            this.lblThangBaoCaoDoanhSo.Text = "Tháng";
             // 
             // pnlChonThoiDiem
             // 
+            this.pnlChonThoiDiem.Controls.Add(this.btnBaoCaoDoanhSoMoi);
             this.pnlChonThoiDiem.Controls.Add(this.lblChonThoiDiem);
-            this.pnlChonThoiDiem.Controls.Add(this.dateTimePickerChonThoiDiem);
-            this.pnlChonThoiDiem.Controls.Add(this.btnLapBaoCao);
+            this.pnlChonThoiDiem.Controls.Add(this.dateTimePickerChonThoiDiemBaoCaoDoanhSo);
+            this.pnlChonThoiDiem.Controls.Add(this.btnLapBaoCaoDoanhSo);
             this.pnlChonThoiDiem.Location = new System.Drawing.Point(6, 6);
             this.pnlChonThoiDiem.Name = "pnlChonThoiDiem";
             this.pnlChonThoiDiem.Size = new System.Drawing.Size(1256, 38);
@@ -1107,23 +1123,24 @@
             this.lblChonThoiDiem.TabIndex = 5;
             this.lblChonThoiDiem.Text = "Chọn thời điểm:";
             // 
-            // dateTimePickerChonThoiDiem
+            // dateTimePickerChonThoiDiemBaoCaoDoanhSo
             // 
-            this.dateTimePickerChonThoiDiem.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePickerChonThoiDiem.Location = new System.Drawing.Point(523, 5);
-            this.dateTimePickerChonThoiDiem.Name = "dateTimePickerChonThoiDiem";
-            this.dateTimePickerChonThoiDiem.Size = new System.Drawing.Size(303, 22);
-            this.dateTimePickerChonThoiDiem.TabIndex = 1;
+            this.dateTimePickerChonThoiDiemBaoCaoDoanhSo.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimePickerChonThoiDiemBaoCaoDoanhSo.Location = new System.Drawing.Point(523, 5);
+            this.dateTimePickerChonThoiDiemBaoCaoDoanhSo.Name = "dateTimePickerChonThoiDiemBaoCaoDoanhSo";
+            this.dateTimePickerChonThoiDiemBaoCaoDoanhSo.Size = new System.Drawing.Size(303, 22);
+            this.dateTimePickerChonThoiDiemBaoCaoDoanhSo.TabIndex = 1;
             // 
-            // btnLapBaoCao
+            // btnLapBaoCaoDoanhSo
             // 
-            this.btnLapBaoCao.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLapBaoCao.Location = new System.Drawing.Point(947, 0);
-            this.btnLapBaoCao.Name = "btnLapBaoCao";
-            this.btnLapBaoCao.Size = new System.Drawing.Size(163, 35);
-            this.btnLapBaoCao.TabIndex = 4;
-            this.btnLapBaoCao.Text = "Lập báo cáo";
-            this.btnLapBaoCao.UseVisualStyleBackColor = true;
+            this.btnLapBaoCaoDoanhSo.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLapBaoCaoDoanhSo.Location = new System.Drawing.Point(888, 2);
+            this.btnLapBaoCaoDoanhSo.Name = "btnLapBaoCaoDoanhSo";
+            this.btnLapBaoCaoDoanhSo.Size = new System.Drawing.Size(163, 35);
+            this.btnLapBaoCaoDoanhSo.TabIndex = 4;
+            this.btnLapBaoCaoDoanhSo.Text = "Lập báo cáo";
+            this.btnLapBaoCaoDoanhSo.UseVisualStyleBackColor = true;
+            this.btnLapBaoCaoDoanhSo.Click += new System.EventHandler(this.BtnLapBaoCaoDoanhSo_Click);
             // 
             // tPBaoCaoTon
             // 
@@ -1158,31 +1175,43 @@
             // 
             // panelThang
             // 
-            this.panelThang.Controls.Add(this.label2);
+            this.panelThang.Controls.Add(this.lblThangBaoCaoTon);
             this.panelThang.Location = new System.Drawing.Point(0, 3);
             this.panelThang.Name = "panelThang";
             this.panelThang.Size = new System.Drawing.Size(1256, 52);
             this.panelThang.TabIndex = 0;
             // 
-            // label2
+            // lblThangBaoCaoTon
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(570, 14);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(58, 22);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Tháng";
+            this.lblThangBaoCaoTon.AutoSize = true;
+            this.lblThangBaoCaoTon.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblThangBaoCaoTon.Location = new System.Drawing.Point(570, 14);
+            this.lblThangBaoCaoTon.Name = "lblThangBaoCaoTon";
+            this.lblThangBaoCaoTon.Size = new System.Drawing.Size(58, 22);
+            this.lblThangBaoCaoTon.TabIndex = 0;
+            this.lblThangBaoCaoTon.Text = "Tháng";
             // 
             // pnChonThoiDiem
             // 
+            this.pnChonThoiDiem.Controls.Add(this.btnBaoCaoTonMoi);
             this.pnChonThoiDiem.Controls.Add(this.lblChonThoiDiemTon);
-            this.pnChonThoiDiem.Controls.Add(this.dateTimePicker1);
-            this.pnChonThoiDiem.Controls.Add(this.button1);
+            this.pnChonThoiDiem.Controls.Add(this.dateTimePickerChonThoiDiemBaoCaoTon);
+            this.pnChonThoiDiem.Controls.Add(this.btnLapBaoCaoTon);
             this.pnChonThoiDiem.Location = new System.Drawing.Point(6, 6);
             this.pnChonThoiDiem.Name = "pnChonThoiDiem";
             this.pnChonThoiDiem.Size = new System.Drawing.Size(1256, 38);
             this.pnChonThoiDiem.TabIndex = 2;
+            // 
+            // btnBaoCaoTonMoi
+            // 
+            this.btnBaoCaoTonMoi.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBaoCaoTonMoi.Location = new System.Drawing.Point(1090, 3);
+            this.btnBaoCaoTonMoi.Name = "btnBaoCaoTonMoi";
+            this.btnBaoCaoTonMoi.Size = new System.Drawing.Size(163, 35);
+            this.btnBaoCaoTonMoi.TabIndex = 6;
+            this.btnBaoCaoTonMoi.Text = "Báo cáo mới";
+            this.btnBaoCaoTonMoi.UseVisualStyleBackColor = true;
+            this.btnBaoCaoTonMoi.Click += new System.EventHandler(this.BtnBaoCaoTonMoi_Click);
             // 
             // lblChonThoiDiemTon
             // 
@@ -1194,23 +1223,24 @@
             this.lblChonThoiDiemTon.TabIndex = 5;
             this.lblChonThoiDiemTon.Text = "Chọn thời điểm:";
             // 
-            // dateTimePicker1
+            // dateTimePickerChonThoiDiemBaoCaoTon
             // 
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker1.Location = new System.Drawing.Point(523, 5);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(303, 22);
-            this.dateTimePicker1.TabIndex = 1;
+            this.dateTimePickerChonThoiDiemBaoCaoTon.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimePickerChonThoiDiemBaoCaoTon.Location = new System.Drawing.Point(523, 5);
+            this.dateTimePickerChonThoiDiemBaoCaoTon.Name = "dateTimePickerChonThoiDiemBaoCaoTon";
+            this.dateTimePickerChonThoiDiemBaoCaoTon.Size = new System.Drawing.Size(303, 22);
+            this.dateTimePickerChonThoiDiemBaoCaoTon.TabIndex = 1;
             // 
-            // button1
+            // btnLapBaoCaoTon
             // 
-            this.button1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(947, 0);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(163, 35);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "Lập báo cáo";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnLapBaoCaoTon.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLapBaoCaoTon.Location = new System.Drawing.Point(878, 3);
+            this.btnLapBaoCaoTon.Name = "btnLapBaoCaoTon";
+            this.btnLapBaoCaoTon.Size = new System.Drawing.Size(163, 35);
+            this.btnLapBaoCaoTon.TabIndex = 4;
+            this.btnLapBaoCaoTon.Text = "Lập báo cáo";
+            this.btnLapBaoCaoTon.UseVisualStyleBackColor = true;
+            this.btnLapBaoCaoTon.Click += new System.EventHandler(this.BtnLapBaoCaoTon_Click);
             // 
             // tPQuyDinh
             // 
@@ -1491,103 +1521,20 @@
             // 
             this.printDialog1.UseEXDialog = true;
             // 
-            // panel26
-            // 
-            this.panel26.Controls.Add(this.btnInKetQuaTraCuu);
-            this.panel26.Controls.Add(this.flowLayoutPanel4);
-            this.panel26.Controls.Add(this.btnDatLaiTraCuu);
-            this.panel26.Controls.Add(this.btnTimKiemTraCuu);
-            this.panel26.Location = new System.Drawing.Point(10, 310);
-            this.panel26.Name = "panel26";
-            this.panel26.Size = new System.Drawing.Size(411, 127);
-            this.panel26.TabIndex = 1;
-            // 
-            // btnTimKiemTraCuu
-            // 
-            this.btnTimKiemTraCuu.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTimKiemTraCuu.Location = new System.Drawing.Point(3, 7);
-            this.btnTimKiemTraCuu.Name = "btnTimKiemTraCuu";
-            this.btnTimKiemTraCuu.Size = new System.Drawing.Size(173, 45);
-            this.btnTimKiemTraCuu.TabIndex = 2;
-            this.btnTimKiemTraCuu.Text = "Tìm kiếm";
-            this.btnTimKiemTraCuu.UseVisualStyleBackColor = true;
-            // 
-            // btnDatLaiTraCuu
-            // 
-            this.btnDatLaiTraCuu.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDatLaiTraCuu.Location = new System.Drawing.Point(3, 79);
-            this.btnDatLaiTraCuu.Name = "btnDatLaiTraCuu";
-            this.btnDatLaiTraCuu.Size = new System.Drawing.Size(173, 45);
-            this.btnDatLaiTraCuu.TabIndex = 3;
-            this.btnDatLaiTraCuu.Text = "Đặt lại";
-            this.btnDatLaiTraCuu.UseVisualStyleBackColor = true;
-            this.btnDatLaiTraCuu.Click += new System.EventHandler(this.BtnDatLaiTraCuu_Click);
-            // 
-            // flowLayoutPanel4
-            // 
-            this.flowLayoutPanel4.Controls.Add(this.radioButtonTimChinhXac);
-            this.flowLayoutPanel4.Controls.Add(this.radioButtonTimTuongDoi);
-            this.flowLayoutPanel4.Location = new System.Drawing.Point(210, 7);
-            this.flowLayoutPanel4.Name = "flowLayoutPanel4";
-            this.flowLayoutPanel4.Size = new System.Drawing.Size(191, 58);
-            this.flowLayoutPanel4.TabIndex = 4;
-            // 
-            // radioButtonTimTuongDoi
-            // 
-            this.radioButtonTimTuongDoi.AutoSize = true;
-            this.radioButtonTimTuongDoi.Checked = true;
-            this.radioButtonTimTuongDoi.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButtonTimTuongDoi.Location = new System.Drawing.Point(3, 32);
-            this.radioButtonTimTuongDoi.Name = "radioButtonTimTuongDoi";
-            this.radioButtonTimTuongDoi.Size = new System.Drawing.Size(127, 23);
-            this.radioButtonTimTuongDoi.TabIndex = 0;
-            this.radioButtonTimTuongDoi.TabStop = true;
-            this.radioButtonTimTuongDoi.Text = "Tìm tương đối";
-            this.radioButtonTimTuongDoi.UseVisualStyleBackColor = true;
-            // 
-            // radioButtonTimChinhXac
-            // 
-            this.radioButtonTimChinhXac.AutoSize = true;
-            this.radioButtonTimChinhXac.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButtonTimChinhXac.Location = new System.Drawing.Point(3, 3);
-            this.radioButtonTimChinhXac.Name = "radioButtonTimChinhXac";
-            this.radioButtonTimChinhXac.Size = new System.Drawing.Size(125, 23);
-            this.radioButtonTimChinhXac.TabIndex = 1;
-            this.radioButtonTimChinhXac.Text = "Tìm chính xác";
-            this.radioButtonTimChinhXac.UseVisualStyleBackColor = true;
-            // 
-            // btnInKetQuaTraCuu
-            // 
-            this.btnInKetQuaTraCuu.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnInKetQuaTraCuu.Location = new System.Drawing.Point(228, 79);
-            this.btnInKetQuaTraCuu.Name = "btnInKetQuaTraCuu";
-            this.btnInKetQuaTraCuu.Size = new System.Drawing.Size(173, 45);
-            this.btnInKetQuaTraCuu.TabIndex = 5;
-            this.btnInKetQuaTraCuu.Text = "In kết quả";
-            this.btnInKetQuaTraCuu.UseVisualStyleBackColor = true;
-            this.btnInKetQuaTraCuu.Click += new System.EventHandler(this.BtnInKetQuaTraCuu_Click);
-            // 
             // printDialog2
             // 
             this.printDialog2.UseEXDialog = true;
             // 
-            // dataGridView2
+            // btnBaoCaoDoanhSoMoi
             // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(9, 8);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.RowHeadersWidth = 51;
-            this.dataGridView2.RowTemplate.Height = 24;
-            this.dataGridView2.Size = new System.Drawing.Size(837, 428);
-            this.dataGridView2.TabIndex = 0;
-            // 
-            // txtBoxNgaySuaChua
-            // 
-            this.txtBoxNgaySuaChua.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBoxNgaySuaChua.Location = new System.Drawing.Point(277, -3);
-            this.txtBoxNgaySuaChua.Name = "txtBoxNgaySuaChua";
-            this.txtBoxNgaySuaChua.Size = new System.Drawing.Size(252, 30);
-            this.txtBoxNgaySuaChua.TabIndex = 4;
+            this.btnBaoCaoDoanhSoMoi.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBaoCaoDoanhSoMoi.Location = new System.Drawing.Point(1093, 2);
+            this.btnBaoCaoDoanhSoMoi.Name = "btnBaoCaoDoanhSoMoi";
+            this.btnBaoCaoDoanhSoMoi.Size = new System.Drawing.Size(163, 35);
+            this.btnBaoCaoDoanhSoMoi.TabIndex = 6;
+            this.btnBaoCaoDoanhSoMoi.Text = "Báo cáo mới";
+            this.btnBaoCaoDoanhSoMoi.UseVisualStyleBackColor = true;
+            this.btnBaoCaoDoanhSoMoi.Click += new System.EventHandler(this.BtnBaoCaoDoanhSoMoi_Click);
             // 
             // frmMain
             // 
@@ -1647,19 +1594,18 @@
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
-            this.flowLayoutPanel3.ResumeLayout(false);
+            this.flowLayoutPanel5.ResumeLayout(false);
             this.panel17.ResumeLayout(false);
             this.panel17.PerformLayout();
+            this.flowLayoutPanel4.ResumeLayout(false);
+            this.flowLayoutPanel4.PerformLayout();
+            this.panel26.ResumeLayout(false);
+            this.flowLayoutPanelTimChinhXac.ResumeLayout(false);
             this.panel21.ResumeLayout(false);
             this.panel21.PerformLayout();
-            this.panel22.ResumeLayout(false);
-            this.panel22.PerformLayout();
-            this.panel23.ResumeLayout(false);
-            this.panel23.PerformLayout();
             this.panel24.ResumeLayout(false);
             this.panel24.PerformLayout();
-            this.panel25.ResumeLayout(false);
-            this.panel25.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.tPBaoCao.ResumeLayout(false);
             this.tCtrlBaoCao.ResumeLayout(false);
             this.tPDoanhSo.ResumeLayout(false);
@@ -1690,10 +1636,6 @@
             this.panel14.PerformLayout();
             this.menuStripCongCu.ResumeLayout(false);
             this.menuStripCongCu.PerformLayout();
-            this.panel26.ResumeLayout(false);
-            this.flowLayoutPanel4.ResumeLayout(false);
-            this.flowLayoutPanel4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1763,22 +1705,22 @@
         private System.Windows.Forms.Button btnCapNhatSoXeSuaToiDa;
         private System.Windows.Forms.Button btnCapNhatSoHieuXe;
         private System.Windows.Forms.Panel pnlChonThoiDiem;
-        private System.Windows.Forms.Button btnLapBaoCao;
-        private System.Windows.Forms.DateTimePicker dateTimePickerChonThoiDiem;
+        private System.Windows.Forms.Button btnLapBaoCaoDoanhSo;
+        private System.Windows.Forms.DateTimePicker dateTimePickerChonThoiDiemBaoCaoDoanhSo;
         private System.Windows.Forms.Label lblChonThoiDiem;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.DataGridView dataGridViewBaoCaoDoanhSo;
         private System.Windows.Forms.Panel pnlThang;
         private System.Windows.Forms.Label lblTongDoanhThu;
-        private System.Windows.Forms.Label lblThang;
+        private System.Windows.Forms.Label lblThangBaoCaoDoanhSo;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.DataGridView dataGridViewBaoCaoTon;
         private System.Windows.Forms.Panel panelThang;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblThangBaoCaoTon;
         private System.Windows.Forms.Panel pnChonThoiDiem;
         private System.Windows.Forms.Label lblChonThoiDiemTon;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.DateTimePicker dateTimePickerChonThoiDiemBaoCaoTon;
+        private System.Windows.Forms.Button btnLapBaoCaoTon;
         private System.Windows.Forms.Panel pnlBienSoXe;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label lblBienSoXe;
@@ -1810,25 +1752,13 @@
         private System.Windows.Forms.Button btnLuuPSC;
         private System.Windows.Forms.PrintDialog printDialog1;
         private System.Windows.Forms.SplitContainer splitContainer1;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel3;
-        private System.Windows.Forms.Panel panel17;
-        private System.Windows.Forms.TextBox txtBoxTenChuXeTraCuu;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanelTimChinhXac;
         private System.Windows.Forms.Panel panel21;
         private System.Windows.Forms.TextBox txtBoxBienSoTraCuu;
         private System.Windows.Forms.Label lblBienSoTraCuu;
-        private System.Windows.Forms.Panel panel22;
-        private System.Windows.Forms.TextBox txtBoxDienThoaiTraCuu;
-        private System.Windows.Forms.Label lblDienThoaiTraCuu;
-        private System.Windows.Forms.Panel panel23;
-        private System.Windows.Forms.TextBox txtBoxDiaChiTraCuu;
-        private System.Windows.Forms.Label lblDiaChiTraCuu;
         private System.Windows.Forms.Panel panel24;
         private System.Windows.Forms.ComboBox comboBoxHieuXeTraCuu;
         private System.Windows.Forms.Label lblHieuXeTraCuu;
-        private System.Windows.Forms.Panel panel25;
-        private System.Windows.Forms.DateTimePicker dateTimePickerTraCuu;
-        private System.Windows.Forms.Label lblNgayTiepNhanTraCuu;
         private System.Windows.Forms.Panel panel26;
         private System.Windows.Forms.Button btnInKetQuaTraCuu;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel4;
@@ -1839,5 +1769,11 @@
         private System.Windows.Forms.PrintDialog printDialog2;
         private System.Windows.Forms.TextBox txtBoxNgaySuaChua;
         private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel5;
+        private System.Windows.Forms.Panel panel17;
+        private System.Windows.Forms.TextBox textBoxTraCuuChinh;
+        private System.Windows.Forms.Label lblTraCuuChinh;
+        private System.Windows.Forms.Button btnBaoCaoTonMoi;
+        private System.Windows.Forms.Button btnBaoCaoDoanhSoMoi;
     }
 }

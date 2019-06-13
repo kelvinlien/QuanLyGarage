@@ -37,12 +37,12 @@ namespace GUI
 
         private void FrmMain_Load(object sender, EventArgs e)
         {
-            this.dateTimePickerChonThoiDiem.CustomFormat = "MM/yyyy";
-            this.dateTimePickerChonThoiDiem.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePickerChonThoiDiem.ShowUpDown = true;
-            this.dateTimePicker1.CustomFormat = "MM/yyyy";
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker1.ShowUpDown = true;
+            this.dateTimePickerChonThoiDiemBaoCaoDoanhSo.CustomFormat = "MM/yyyy";
+            this.dateTimePickerChonThoiDiemBaoCaoDoanhSo.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimePickerChonThoiDiemBaoCaoDoanhSo.ShowUpDown = true;
+            this.dateTimePickerChonThoiDiemBaoCaoTon.CustomFormat = "MM/yyyy";
+            this.dateTimePickerChonThoiDiemBaoCaoTon.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimePickerChonThoiDiemBaoCaoTon.ShowUpDown = true;
             this.txtBoxNgaySuaChua.Text = DateTime.Now.ToString("dd/MM/yyyy");
         }
 
@@ -63,13 +63,43 @@ namespace GUI
 
         private void BtnDatLaiTraCuu_Click(object sender, EventArgs e)
         {
-            txtBoxTenChuXeTraCuu.Text = "";
-            txtBoxDienThoaiTraCuu.Text = "";
-            txtBoxDiaChiTraCuu.Text = "";
+            textBoxTraCuuChinh.Text = "";
             txtBoxBienSoTraCuu.Text = "";
             comboBoxHieuXeTraCuu.Text = "";
-            dateTimePickerTraCuu.Value = DateTime.Now;
         }
 
+        private void RadioButtonTimTuongDoi_CheckedChanged(object sender, EventArgs e)
+        {
+            flowLayoutPanelTimChinhXac.Visible = false;
+            lblTraCuuChinh.Text = "Từ khóa:";
+        }
+
+        private void RadioButtonTimChinhXac_CheckedChanged(object sender, EventArgs e)
+        {
+            flowLayoutPanelTimChinhXac.Visible = true;
+            lblTraCuuChinh.Text = "Điện thoại:";
+        }
+
+        private void BtnLapBaoCaoDoanhSo_Click(object sender, EventArgs e)
+        {
+            lblThangBaoCaoDoanhSo.Text = "Tháng " + dateTimePickerChonThoiDiemBaoCaoDoanhSo.Value.ToString("MM/yyyy");
+        }
+
+        private void BtnLapBaoCaoTon_Click(object sender, EventArgs e)
+        {
+            lblThangBaoCaoTon.Text = "Tháng " + dateTimePickerChonThoiDiemBaoCaoTon.Value.ToString("MM/yyyy");
+        }
+
+        private void BtnBaoCaoTonMoi_Click(object sender, EventArgs e)
+        {
+            dateTimePickerChonThoiDiemBaoCaoTon.Value = DateTime.Now;
+            lblThangBaoCaoTon.Text = "Tháng";
+        }
+
+        private void BtnBaoCaoDoanhSoMoi_Click(object sender, EventArgs e)
+        {
+            dateTimePickerChonThoiDiemBaoCaoDoanhSo.Value = DateTime.Now;
+            lblThangBaoCaoDoanhSo.Text = "Tháng";
+        }
     }
 }
