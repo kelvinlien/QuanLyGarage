@@ -84,7 +84,46 @@
             this.panel8 = new System.Windows.Forms.Panel();
             this.lblPhieuSuaChua = new System.Windows.Forms.Label();
             this.tPPTT = new System.Windows.Forms.TabPage();
+            this.panel23 = new System.Windows.Forms.Panel();
+            this.buttonPhieuThuTienMoiPTT = new System.Windows.Forms.Button();
+            this.buttonInPhieuThuTienPTT = new System.Windows.Forms.Button();
+            this.buttonLapPhieuThuTienPTT = new System.Windows.Forms.Button();
+            this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
+            this.panelHoTenChuXePTT = new System.Windows.Forms.Panel();
+            this.textBoxHoTenChuXePTT = new System.Windows.Forms.TextBox();
+            this.labelHoTenChuXePTT = new System.Windows.Forms.Label();
+            this.panelBienSoPTT = new System.Windows.Forms.Panel();
+            this.textBoxBienSoPTT = new System.Windows.Forms.TextBox();
+            this.labelBienSoPTT = new System.Windows.Forms.Label();
+            this.panelDienThoaiPTT = new System.Windows.Forms.Panel();
+            this.textBoxDienThoaiPTT = new System.Windows.Forms.TextBox();
+            this.labelDienThoaiPTT = new System.Windows.Forms.Label();
+            this.panelEmailPTT = new System.Windows.Forms.Panel();
+            this.textBoxEmailPTT = new System.Windows.Forms.TextBox();
+            this.labelEmailPTT = new System.Windows.Forms.Label();
+            this.panelNgayThuTienPTT = new System.Windows.Forms.Panel();
+            this.dateTimePickerNgayThuTienPTT = new System.Windows.Forms.DateTimePicker();
+            this.labelNgayThuTienPTT = new System.Windows.Forms.Label();
+            this.panelSoTienThuPTT = new System.Windows.Forms.Panel();
+            this.textBoxSoTienThuPTT = new System.Windows.Forms.TextBox();
+            this.labelSoTienThuPTT = new System.Windows.Forms.Label();
+            this.panel22 = new System.Windows.Forms.Panel();
+            this.lblPhieuThuTien = new System.Windows.Forms.Label();
             this.tPVTPT = new System.Windows.Forms.TabPage();
+            this.flowLayoutPanelPhieuNhapVTPT = new System.Windows.Forms.FlowLayoutPanel();
+            this.panelMaVTPT = new System.Windows.Forms.Panel();
+            this.comboBoxMaVTPTPhieuNhapVTPT = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.panelTenVTPTPhieuNhap = new System.Windows.Forms.Panel();
+            this.textBoxTenVTPTPhieuNhap = new System.Windows.Forms.TextBox();
+            this.labelTenVTPTMoiPhieuNhap = new System.Windows.Forms.Label();
+            this.panelSoLuongPhieuNhap = new System.Windows.Forms.Panel();
+            this.labelSoLuongPhieuNhap = new System.Windows.Forms.Label();
+            this.panelMaVTPTMoiPhieuNhap = new System.Windows.Forms.Panel();
+            this.textBoxMaVTPTMoiPhieuNhap = new System.Windows.Forms.TextBox();
+            this.labelMaVTPTMoi = new System.Windows.Forms.Label();
+            this.panel25 = new System.Windows.Forms.Panel();
+            this.labelPhieuNhapVTPT = new System.Windows.Forms.Label();
             this.tPTraCuu = new System.Windows.Forms.TabPage();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.flowLayoutPanel5 = new System.Windows.Forms.FlowLayoutPanel();
@@ -95,7 +134,6 @@
             this.radioButtonTimTuongDoi = new System.Windows.Forms.RadioButton();
             this.radioButtonTimChinhXac = new System.Windows.Forms.RadioButton();
             this.panel26 = new System.Windows.Forms.Panel();
-            this.btnInKetQuaTraCuu = new System.Windows.Forms.Button();
             this.btnDatLaiTraCuu = new System.Windows.Forms.Button();
             this.btnTimKiemTraCuu = new System.Windows.Forms.Button();
             this.flowLayoutPanelTimChinhXac = new System.Windows.Forms.FlowLayoutPanel();
@@ -115,6 +153,7 @@
             this.lblTongDoanhThu = new System.Windows.Forms.Label();
             this.lblThangBaoCaoDoanhSo = new System.Windows.Forms.Label();
             this.pnlChonThoiDiem = new System.Windows.Forms.Panel();
+            this.btnBaoCaoDoanhSoMoi = new System.Windows.Forms.Button();
             this.lblChonThoiDiem = new System.Windows.Forms.Label();
             this.dateTimePickerChonThoiDiemBaoCaoDoanhSo = new System.Windows.Forms.DateTimePicker();
             this.btnLapBaoCaoDoanhSo = new System.Windows.Forms.Button();
@@ -157,9 +196,14 @@
             this.trợGiúpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.hướngDẫnSửDụngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.liênHệToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.printDialog1 = new System.Windows.Forms.PrintDialog();
-            this.printDialog2 = new System.Windows.Forms.PrintDialog();
-            this.btnBaoCaoDoanhSoMoi = new System.Windows.Forms.Button();
+            this.printDialogPSC = new System.Windows.Forms.PrintDialog();
+            this.printDialogPTT = new System.Windows.Forms.PrintDialog();
+            this.textBoxSoLuongPhieuNhap = new System.Windows.Forms.TextBox();
+            this.panel27 = new System.Windows.Forms.Panel();
+            this.buttonPhieuNhapVTPTMoi = new System.Windows.Forms.Button();
+            this.buttonInPhieuNhapVTPT = new System.Windows.Forms.Button();
+            this.buttonLapPhieuNhapVTPT = new System.Windows.Forms.Button();
+            this.printDialogPhieuNhapVTPT = new System.Windows.Forms.PrintDialog();
             this.tCrlChinh.SuspendLayout();
             this.tPChucNang.SuspendLayout();
             this.tCtrlChucNang.SuspendLayout();
@@ -185,6 +229,23 @@
             this.pnNgaySuaChua.SuspendLayout();
             this.pnlBienSoXe.SuspendLayout();
             this.panel8.SuspendLayout();
+            this.tPPTT.SuspendLayout();
+            this.panel23.SuspendLayout();
+            this.flowLayoutPanel3.SuspendLayout();
+            this.panelHoTenChuXePTT.SuspendLayout();
+            this.panelBienSoPTT.SuspendLayout();
+            this.panelDienThoaiPTT.SuspendLayout();
+            this.panelEmailPTT.SuspendLayout();
+            this.panelNgayThuTienPTT.SuspendLayout();
+            this.panelSoTienThuPTT.SuspendLayout();
+            this.panel22.SuspendLayout();
+            this.tPVTPT.SuspendLayout();
+            this.flowLayoutPanelPhieuNhapVTPT.SuspendLayout();
+            this.panelMaVTPT.SuspendLayout();
+            this.panelTenVTPTPhieuNhap.SuspendLayout();
+            this.panelSoLuongPhieuNhap.SuspendLayout();
+            this.panelMaVTPTMoiPhieuNhap.SuspendLayout();
+            this.panel25.SuspendLayout();
             this.tPTraCuu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -219,6 +280,7 @@
             this.panel13.SuspendLayout();
             this.panel14.SuspendLayout();
             this.menuStripCongCu.SuspendLayout();
+            this.panel27.SuspendLayout();
             this.SuspendLayout();
             // 
             // tCrlChinh
@@ -785,6 +847,9 @@
             // 
             // tPPTT
             // 
+            this.tPPTT.Controls.Add(this.panel23);
+            this.tPPTT.Controls.Add(this.flowLayoutPanel3);
+            this.tPPTT.Controls.Add(this.panel22);
             this.tPPTT.Location = new System.Drawing.Point(4, 25);
             this.tPPTT.Name = "tPPTT";
             this.tPPTT.Size = new System.Drawing.Size(1290, 450);
@@ -792,14 +857,387 @@
             this.tPPTT.Text = "Lập phiếu thu tiền";
             this.tPPTT.UseVisualStyleBackColor = true;
             // 
+            // panel23
+            // 
+            this.panel23.Controls.Add(this.buttonPhieuThuTienMoiPTT);
+            this.panel23.Controls.Add(this.buttonInPhieuThuTienPTT);
+            this.panel23.Controls.Add(this.buttonLapPhieuThuTienPTT);
+            this.panel23.Location = new System.Drawing.Point(0, 287);
+            this.panel23.Name = "panel23";
+            this.panel23.Size = new System.Drawing.Size(1288, 160);
+            this.panel23.TabIndex = 2;
+            // 
+            // buttonPhieuThuTienMoiPTT
+            // 
+            this.buttonPhieuThuTienMoiPTT.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonPhieuThuTienMoiPTT.Location = new System.Drawing.Point(938, 23);
+            this.buttonPhieuThuTienMoiPTT.Name = "buttonPhieuThuTienMoiPTT";
+            this.buttonPhieuThuTienMoiPTT.Size = new System.Drawing.Size(264, 52);
+            this.buttonPhieuThuTienMoiPTT.TabIndex = 2;
+            this.buttonPhieuThuTienMoiPTT.Text = "Phiếu thu tiền mới";
+            this.buttonPhieuThuTienMoiPTT.UseVisualStyleBackColor = true;
+            this.buttonPhieuThuTienMoiPTT.Click += new System.EventHandler(this.ButtonPhieuThuTienMoiPTT_Click);
+            // 
+            // buttonInPhieuThuTienPTT
+            // 
+            this.buttonInPhieuThuTienPTT.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonInPhieuThuTienPTT.Location = new System.Drawing.Point(938, 98);
+            this.buttonInPhieuThuTienPTT.Name = "buttonInPhieuThuTienPTT";
+            this.buttonInPhieuThuTienPTT.Size = new System.Drawing.Size(264, 52);
+            this.buttonInPhieuThuTienPTT.TabIndex = 1;
+            this.buttonInPhieuThuTienPTT.Text = "In phiếu thu tiền";
+            this.buttonInPhieuThuTienPTT.UseVisualStyleBackColor = true;
+            this.buttonInPhieuThuTienPTT.Click += new System.EventHandler(this.ButtonInPhieuThuTienPTT_Click);
+            // 
+            // buttonLapPhieuThuTienPTT
+            // 
+            this.buttonLapPhieuThuTienPTT.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonLapPhieuThuTienPTT.Location = new System.Drawing.Point(581, 23);
+            this.buttonLapPhieuThuTienPTT.Name = "buttonLapPhieuThuTienPTT";
+            this.buttonLapPhieuThuTienPTT.Size = new System.Drawing.Size(264, 127);
+            this.buttonLapPhieuThuTienPTT.TabIndex = 0;
+            this.buttonLapPhieuThuTienPTT.Text = "Lập phiếu thu tiền";
+            this.buttonLapPhieuThuTienPTT.UseVisualStyleBackColor = true;
+            // 
+            // flowLayoutPanel3
+            // 
+            this.flowLayoutPanel3.Controls.Add(this.panelHoTenChuXePTT);
+            this.flowLayoutPanel3.Controls.Add(this.panelBienSoPTT);
+            this.flowLayoutPanel3.Controls.Add(this.panelDienThoaiPTT);
+            this.flowLayoutPanel3.Controls.Add(this.panelEmailPTT);
+            this.flowLayoutPanel3.Controls.Add(this.panelNgayThuTienPTT);
+            this.flowLayoutPanel3.Controls.Add(this.panelSoTienThuPTT);
+            this.flowLayoutPanel3.Location = new System.Drawing.Point(0, 45);
+            this.flowLayoutPanel3.Name = "flowLayoutPanel3";
+            this.flowLayoutPanel3.Size = new System.Drawing.Size(1289, 237);
+            this.flowLayoutPanel3.TabIndex = 1;
+            // 
+            // panelHoTenChuXePTT
+            // 
+            this.panelHoTenChuXePTT.Controls.Add(this.textBoxHoTenChuXePTT);
+            this.panelHoTenChuXePTT.Controls.Add(this.labelHoTenChuXePTT);
+            this.panelHoTenChuXePTT.Location = new System.Drawing.Point(3, 3);
+            this.panelHoTenChuXePTT.Name = "panelHoTenChuXePTT";
+            this.panelHoTenChuXePTT.Size = new System.Drawing.Size(635, 72);
+            this.panelHoTenChuXePTT.TabIndex = 0;
+            // 
+            // textBoxHoTenChuXePTT
+            // 
+            this.textBoxHoTenChuXePTT.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxHoTenChuXePTT.Location = new System.Drawing.Point(161, 21);
+            this.textBoxHoTenChuXePTT.Name = "textBoxHoTenChuXePTT";
+            this.textBoxHoTenChuXePTT.Size = new System.Drawing.Size(424, 30);
+            this.textBoxHoTenChuXePTT.TabIndex = 1;
+            // 
+            // labelHoTenChuXePTT
+            // 
+            this.labelHoTenChuXePTT.AutoSize = true;
+            this.labelHoTenChuXePTT.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelHoTenChuXePTT.Location = new System.Drawing.Point(3, 24);
+            this.labelHoTenChuXePTT.Name = "labelHoTenChuXePTT";
+            this.labelHoTenChuXePTT.Size = new System.Drawing.Size(123, 22);
+            this.labelHoTenChuXePTT.TabIndex = 0;
+            this.labelHoTenChuXePTT.Text = "Họ tên chủ xe:";
+            // 
+            // panelBienSoPTT
+            // 
+            this.panelBienSoPTT.Controls.Add(this.textBoxBienSoPTT);
+            this.panelBienSoPTT.Controls.Add(this.labelBienSoPTT);
+            this.panelBienSoPTT.Location = new System.Drawing.Point(644, 3);
+            this.panelBienSoPTT.Name = "panelBienSoPTT";
+            this.panelBienSoPTT.Size = new System.Drawing.Size(635, 72);
+            this.panelBienSoPTT.TabIndex = 1;
+            // 
+            // textBoxBienSoPTT
+            // 
+            this.textBoxBienSoPTT.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxBienSoPTT.Location = new System.Drawing.Point(130, 21);
+            this.textBoxBienSoPTT.Name = "textBoxBienSoPTT";
+            this.textBoxBienSoPTT.Size = new System.Drawing.Size(358, 30);
+            this.textBoxBienSoPTT.TabIndex = 1;
+            // 
+            // labelBienSoPTT
+            // 
+            this.labelBienSoPTT.AutoSize = true;
+            this.labelBienSoPTT.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelBienSoPTT.Location = new System.Drawing.Point(3, 24);
+            this.labelBienSoPTT.Name = "labelBienSoPTT";
+            this.labelBienSoPTT.Size = new System.Drawing.Size(76, 22);
+            this.labelBienSoPTT.TabIndex = 0;
+            this.labelBienSoPTT.Text = "Biển số:";
+            // 
+            // panelDienThoaiPTT
+            // 
+            this.panelDienThoaiPTT.Controls.Add(this.textBoxDienThoaiPTT);
+            this.panelDienThoaiPTT.Controls.Add(this.labelDienThoaiPTT);
+            this.panelDienThoaiPTT.Location = new System.Drawing.Point(3, 81);
+            this.panelDienThoaiPTT.Name = "panelDienThoaiPTT";
+            this.panelDienThoaiPTT.Size = new System.Drawing.Size(635, 72);
+            this.panelDienThoaiPTT.TabIndex = 2;
+            // 
+            // textBoxDienThoaiPTT
+            // 
+            this.textBoxDienThoaiPTT.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxDienThoaiPTT.Location = new System.Drawing.Point(161, 21);
+            this.textBoxDienThoaiPTT.Name = "textBoxDienThoaiPTT";
+            this.textBoxDienThoaiPTT.Size = new System.Drawing.Size(358, 30);
+            this.textBoxDienThoaiPTT.TabIndex = 1;
+            // 
+            // labelDienThoaiPTT
+            // 
+            this.labelDienThoaiPTT.AutoSize = true;
+            this.labelDienThoaiPTT.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelDienThoaiPTT.Location = new System.Drawing.Point(3, 24);
+            this.labelDienThoaiPTT.Name = "labelDienThoaiPTT";
+            this.labelDienThoaiPTT.Size = new System.Drawing.Size(98, 22);
+            this.labelDienThoaiPTT.TabIndex = 0;
+            this.labelDienThoaiPTT.Text = "Điện thoại:";
+            // 
+            // panelEmailPTT
+            // 
+            this.panelEmailPTT.Controls.Add(this.textBoxEmailPTT);
+            this.panelEmailPTT.Controls.Add(this.labelEmailPTT);
+            this.panelEmailPTT.Location = new System.Drawing.Point(644, 81);
+            this.panelEmailPTT.Name = "panelEmailPTT";
+            this.panelEmailPTT.Size = new System.Drawing.Size(635, 72);
+            this.panelEmailPTT.TabIndex = 3;
+            // 
+            // textBoxEmailPTT
+            // 
+            this.textBoxEmailPTT.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxEmailPTT.Location = new System.Drawing.Point(130, 21);
+            this.textBoxEmailPTT.Name = "textBoxEmailPTT";
+            this.textBoxEmailPTT.Size = new System.Drawing.Size(428, 30);
+            this.textBoxEmailPTT.TabIndex = 1;
+            // 
+            // labelEmailPTT
+            // 
+            this.labelEmailPTT.AutoSize = true;
+            this.labelEmailPTT.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelEmailPTT.Location = new System.Drawing.Point(3, 24);
+            this.labelEmailPTT.Name = "labelEmailPTT";
+            this.labelEmailPTT.Size = new System.Drawing.Size(63, 22);
+            this.labelEmailPTT.TabIndex = 0;
+            this.labelEmailPTT.Text = "Email:";
+            // 
+            // panelNgayThuTienPTT
+            // 
+            this.panelNgayThuTienPTT.Controls.Add(this.dateTimePickerNgayThuTienPTT);
+            this.panelNgayThuTienPTT.Controls.Add(this.labelNgayThuTienPTT);
+            this.panelNgayThuTienPTT.Location = new System.Drawing.Point(3, 159);
+            this.panelNgayThuTienPTT.Name = "panelNgayThuTienPTT";
+            this.panelNgayThuTienPTT.Size = new System.Drawing.Size(635, 72);
+            this.panelNgayThuTienPTT.TabIndex = 4;
+            // 
+            // dateTimePickerNgayThuTienPTT
+            // 
+            this.dateTimePickerNgayThuTienPTT.Location = new System.Drawing.Point(161, 24);
+            this.dateTimePickerNgayThuTienPTT.Name = "dateTimePickerNgayThuTienPTT";
+            this.dateTimePickerNgayThuTienPTT.Size = new System.Drawing.Size(265, 22);
+            this.dateTimePickerNgayThuTienPTT.TabIndex = 1;
+            // 
+            // labelNgayThuTienPTT
+            // 
+            this.labelNgayThuTienPTT.AutoSize = true;
+            this.labelNgayThuTienPTT.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelNgayThuTienPTT.Location = new System.Drawing.Point(3, 24);
+            this.labelNgayThuTienPTT.Name = "labelNgayThuTienPTT";
+            this.labelNgayThuTienPTT.Size = new System.Drawing.Size(119, 22);
+            this.labelNgayThuTienPTT.TabIndex = 0;
+            this.labelNgayThuTienPTT.Text = "Ngày thu tiền:";
+            // 
+            // panelSoTienThuPTT
+            // 
+            this.panelSoTienThuPTT.Controls.Add(this.textBoxSoTienThuPTT);
+            this.panelSoTienThuPTT.Controls.Add(this.labelSoTienThuPTT);
+            this.panelSoTienThuPTT.Location = new System.Drawing.Point(644, 159);
+            this.panelSoTienThuPTT.Name = "panelSoTienThuPTT";
+            this.panelSoTienThuPTT.Size = new System.Drawing.Size(635, 72);
+            this.panelSoTienThuPTT.TabIndex = 5;
+            // 
+            // textBoxSoTienThuPTT
+            // 
+            this.textBoxSoTienThuPTT.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxSoTienThuPTT.Location = new System.Drawing.Point(130, 21);
+            this.textBoxSoTienThuPTT.Name = "textBoxSoTienThuPTT";
+            this.textBoxSoTienThuPTT.Size = new System.Drawing.Size(358, 30);
+            this.textBoxSoTienThuPTT.TabIndex = 1;
+            // 
+            // labelSoTienThuPTT
+            // 
+            this.labelSoTienThuPTT.AutoSize = true;
+            this.labelSoTienThuPTT.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelSoTienThuPTT.Location = new System.Drawing.Point(3, 24);
+            this.labelSoTienThuPTT.Name = "labelSoTienThuPTT";
+            this.labelSoTienThuPTT.Size = new System.Drawing.Size(99, 22);
+            this.labelSoTienThuPTT.TabIndex = 0;
+            this.labelSoTienThuPTT.Text = "Số tiền thu:";
+            // 
+            // panel22
+            // 
+            this.panel22.Controls.Add(this.lblPhieuThuTien);
+            this.panel22.Location = new System.Drawing.Point(0, 3);
+            this.panel22.Name = "panel22";
+            this.panel22.Size = new System.Drawing.Size(1290, 38);
+            this.panel22.TabIndex = 0;
+            // 
+            // lblPhieuThuTien
+            // 
+            this.lblPhieuThuTien.AutoSize = true;
+            this.lblPhieuThuTien.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPhieuThuTien.Location = new System.Drawing.Point(576, 11);
+            this.lblPhieuThuTien.Name = "lblPhieuThuTien";
+            this.lblPhieuThuTien.Size = new System.Drawing.Size(146, 27);
+            this.lblPhieuThuTien.TabIndex = 0;
+            this.lblPhieuThuTien.Text = "Phiếu thu tiền";
+            // 
             // tPVTPT
             // 
+            this.tPVTPT.Controls.Add(this.panel27);
+            this.tPVTPT.Controls.Add(this.flowLayoutPanelPhieuNhapVTPT);
+            this.tPVTPT.Controls.Add(this.panel25);
             this.tPVTPT.Location = new System.Drawing.Point(4, 25);
             this.tPVTPT.Name = "tPVTPT";
             this.tPVTPT.Size = new System.Drawing.Size(1290, 450);
             this.tPVTPT.TabIndex = 3;
             this.tPVTPT.Text = "Lập phiếu nhập VTPT";
             this.tPVTPT.UseVisualStyleBackColor = true;
+            // 
+            // flowLayoutPanelPhieuNhapVTPT
+            // 
+            this.flowLayoutPanelPhieuNhapVTPT.Controls.Add(this.panelMaVTPT);
+            this.flowLayoutPanelPhieuNhapVTPT.Controls.Add(this.panelTenVTPTPhieuNhap);
+            this.flowLayoutPanelPhieuNhapVTPT.Controls.Add(this.panelMaVTPTMoiPhieuNhap);
+            this.flowLayoutPanelPhieuNhapVTPT.Controls.Add(this.panelSoLuongPhieuNhap);
+            this.flowLayoutPanelPhieuNhapVTPT.Location = new System.Drawing.Point(0, 56);
+            this.flowLayoutPanelPhieuNhapVTPT.Name = "flowLayoutPanelPhieuNhapVTPT";
+            this.flowLayoutPanelPhieuNhapVTPT.Size = new System.Drawing.Size(1287, 190);
+            this.flowLayoutPanelPhieuNhapVTPT.TabIndex = 1;
+            // 
+            // panelMaVTPT
+            // 
+            this.panelMaVTPT.Controls.Add(this.comboBoxMaVTPTPhieuNhapVTPT);
+            this.panelMaVTPT.Controls.Add(this.label1);
+            this.panelMaVTPT.Location = new System.Drawing.Point(3, 3);
+            this.panelMaVTPT.Name = "panelMaVTPT";
+            this.panelMaVTPT.Size = new System.Drawing.Size(635, 80);
+            this.panelMaVTPT.TabIndex = 0;
+            // 
+            // comboBoxMaVTPTPhieuNhapVTPT
+            // 
+            this.comboBoxMaVTPTPhieuNhapVTPT.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxMaVTPTPhieuNhapVTPT.FormattingEnabled = true;
+            this.comboBoxMaVTPTPhieuNhapVTPT.Items.AddRange(new object[] {
+            "test",
+            "khác"});
+            this.comboBoxMaVTPTPhieuNhapVTPT.Location = new System.Drawing.Point(181, 24);
+            this.comboBoxMaVTPTPhieuNhapVTPT.Name = "comboBoxMaVTPTPhieuNhapVTPT";
+            this.comboBoxMaVTPTPhieuNhapVTPT.Size = new System.Drawing.Size(289, 30);
+            this.comboBoxMaVTPTPhieuNhapVTPT.TabIndex = 1;
+            this.comboBoxMaVTPTPhieuNhapVTPT.SelectedIndexChanged += new System.EventHandler(this.ComboBoxMaVTPTPhieuNhapVTPT_SelectedIndexChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(3, 27);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(157, 22);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Mã vật tư phụ tùng";
+            // 
+            // panelTenVTPTPhieuNhap
+            // 
+            this.panelTenVTPTPhieuNhap.Controls.Add(this.textBoxTenVTPTPhieuNhap);
+            this.panelTenVTPTPhieuNhap.Controls.Add(this.labelTenVTPTMoiPhieuNhap);
+            this.panelTenVTPTPhieuNhap.Location = new System.Drawing.Point(644, 3);
+            this.panelTenVTPTPhieuNhap.Name = "panelTenVTPTPhieuNhap";
+            this.panelTenVTPTPhieuNhap.Size = new System.Drawing.Size(635, 80);
+            this.panelTenVTPTPhieuNhap.TabIndex = 1;
+            this.panelTenVTPTPhieuNhap.Visible = false;
+            // 
+            // textBoxTenVTPTPhieuNhap
+            // 
+            this.textBoxTenVTPTPhieuNhap.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxTenVTPTPhieuNhap.Location = new System.Drawing.Point(206, 24);
+            this.textBoxTenVTPTPhieuNhap.Name = "textBoxTenVTPTPhieuNhap";
+            this.textBoxTenVTPTPhieuNhap.Size = new System.Drawing.Size(362, 30);
+            this.textBoxTenVTPTPhieuNhap.TabIndex = 1;
+            // 
+            // labelTenVTPTMoiPhieuNhap
+            // 
+            this.labelTenVTPTMoiPhieuNhap.AutoSize = true;
+            this.labelTenVTPTMoiPhieuNhap.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTenVTPTMoiPhieuNhap.Location = new System.Drawing.Point(3, 27);
+            this.labelTenVTPTMoiPhieuNhap.Name = "labelTenVTPTMoiPhieuNhap";
+            this.labelTenVTPTMoiPhieuNhap.Size = new System.Drawing.Size(197, 22);
+            this.labelTenVTPTMoiPhieuNhap.TabIndex = 0;
+            this.labelTenVTPTMoiPhieuNhap.Text = "Tên vật tư phụ tùng mới";
+            // 
+            // panelSoLuongPhieuNhap
+            // 
+            this.panelSoLuongPhieuNhap.Controls.Add(this.textBoxSoLuongPhieuNhap);
+            this.panelSoLuongPhieuNhap.Controls.Add(this.labelSoLuongPhieuNhap);
+            this.panelSoLuongPhieuNhap.Location = new System.Drawing.Point(644, 89);
+            this.panelSoLuongPhieuNhap.Name = "panelSoLuongPhieuNhap";
+            this.panelSoLuongPhieuNhap.Size = new System.Drawing.Size(635, 80);
+            this.panelSoLuongPhieuNhap.TabIndex = 2;
+            // 
+            // labelSoLuongPhieuNhap
+            // 
+            this.labelSoLuongPhieuNhap.AutoSize = true;
+            this.labelSoLuongPhieuNhap.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelSoLuongPhieuNhap.Location = new System.Drawing.Point(3, 27);
+            this.labelSoLuongPhieuNhap.Name = "labelSoLuongPhieuNhap";
+            this.labelSoLuongPhieuNhap.Size = new System.Drawing.Size(82, 22);
+            this.labelSoLuongPhieuNhap.TabIndex = 0;
+            this.labelSoLuongPhieuNhap.Text = "Số lượng";
+            // 
+            // panelMaVTPTMoiPhieuNhap
+            // 
+            this.panelMaVTPTMoiPhieuNhap.Controls.Add(this.textBoxMaVTPTMoiPhieuNhap);
+            this.panelMaVTPTMoiPhieuNhap.Controls.Add(this.labelMaVTPTMoi);
+            this.panelMaVTPTMoiPhieuNhap.Location = new System.Drawing.Point(3, 89);
+            this.panelMaVTPTMoiPhieuNhap.Name = "panelMaVTPTMoiPhieuNhap";
+            this.panelMaVTPTMoiPhieuNhap.Size = new System.Drawing.Size(635, 80);
+            this.panelMaVTPTMoiPhieuNhap.TabIndex = 2;
+            this.panelMaVTPTMoiPhieuNhap.Visible = false;
+            // 
+            // textBoxMaVTPTMoiPhieuNhap
+            // 
+            this.textBoxMaVTPTMoiPhieuNhap.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxMaVTPTMoiPhieuNhap.Location = new System.Drawing.Point(206, 24);
+            this.textBoxMaVTPTMoiPhieuNhap.Name = "textBoxMaVTPTMoiPhieuNhap";
+            this.textBoxMaVTPTMoiPhieuNhap.Size = new System.Drawing.Size(246, 30);
+            this.textBoxMaVTPTMoiPhieuNhap.TabIndex = 2;
+            // 
+            // labelMaVTPTMoi
+            // 
+            this.labelMaVTPTMoi.AutoSize = true;
+            this.labelMaVTPTMoi.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelMaVTPTMoi.Location = new System.Drawing.Point(3, 27);
+            this.labelMaVTPTMoi.Name = "labelMaVTPTMoi";
+            this.labelMaVTPTMoi.Size = new System.Drawing.Size(193, 22);
+            this.labelMaVTPTMoi.TabIndex = 0;
+            this.labelMaVTPTMoi.Text = "Mã vật tư phụ tùng mới";
+            // 
+            // panel25
+            // 
+            this.panel25.Controls.Add(this.labelPhieuNhapVTPT);
+            this.panel25.Location = new System.Drawing.Point(1, 4);
+            this.panel25.Name = "panel25";
+            this.panel25.Size = new System.Drawing.Size(1288, 42);
+            this.panel25.TabIndex = 0;
+            // 
+            // labelPhieuNhapVTPT
+            // 
+            this.labelPhieuNhapVTPT.AutoSize = true;
+            this.labelPhieuNhapVTPT.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelPhieuNhapVTPT.Location = new System.Drawing.Point(521, 15);
+            this.labelPhieuNhapVTPT.Name = "labelPhieuNhapVTPT";
+            this.labelPhieuNhapVTPT.Size = new System.Drawing.Size(272, 27);
+            this.labelPhieuNhapVTPT.TabIndex = 0;
+            this.labelPhieuNhapVTPT.Text = "Phiếu nhập vật tư phụ tùng";
             // 
             // tPTraCuu
             // 
@@ -903,7 +1341,6 @@
             // 
             // panel26
             // 
-            this.panel26.Controls.Add(this.btnInKetQuaTraCuu);
             this.panel26.Controls.Add(this.btnDatLaiTraCuu);
             this.panel26.Controls.Add(this.btnTimKiemTraCuu);
             this.panel26.Location = new System.Drawing.Point(10, 285);
@@ -911,23 +1348,12 @@
             this.panel26.Size = new System.Drawing.Size(411, 151);
             this.panel26.TabIndex = 1;
             // 
-            // btnInKetQuaTraCuu
-            // 
-            this.btnInKetQuaTraCuu.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnInKetQuaTraCuu.Location = new System.Drawing.Point(228, 79);
-            this.btnInKetQuaTraCuu.Name = "btnInKetQuaTraCuu";
-            this.btnInKetQuaTraCuu.Size = new System.Drawing.Size(172, 45);
-            this.btnInKetQuaTraCuu.TabIndex = 5;
-            this.btnInKetQuaTraCuu.Text = "In kết quả";
-            this.btnInKetQuaTraCuu.UseVisualStyleBackColor = true;
-            this.btnInKetQuaTraCuu.Click += new System.EventHandler(this.BtnInKetQuaTraCuu_Click);
-            // 
             // btnDatLaiTraCuu
             // 
             this.btnDatLaiTraCuu.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDatLaiTraCuu.Location = new System.Drawing.Point(3, 79);
             this.btnDatLaiTraCuu.Name = "btnDatLaiTraCuu";
-            this.btnDatLaiTraCuu.Size = new System.Drawing.Size(173, 45);
+            this.btnDatLaiTraCuu.Size = new System.Drawing.Size(397, 45);
             this.btnDatLaiTraCuu.TabIndex = 3;
             this.btnDatLaiTraCuu.Text = "Đặt lại";
             this.btnDatLaiTraCuu.UseVisualStyleBackColor = true;
@@ -1017,6 +1443,7 @@
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView2.Location = new System.Drawing.Point(9, 8);
             this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.ReadOnly = true;
             this.dataGridView2.RowHeadersWidth = 51;
             this.dataGridView2.RowTemplate.Height = 24;
             this.dataGridView2.Size = new System.Drawing.Size(837, 428);
@@ -1112,6 +1539,17 @@
             this.pnlChonThoiDiem.Name = "pnlChonThoiDiem";
             this.pnlChonThoiDiem.Size = new System.Drawing.Size(1256, 38);
             this.pnlChonThoiDiem.TabIndex = 0;
+            // 
+            // btnBaoCaoDoanhSoMoi
+            // 
+            this.btnBaoCaoDoanhSoMoi.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBaoCaoDoanhSoMoi.Location = new System.Drawing.Point(1093, 2);
+            this.btnBaoCaoDoanhSoMoi.Name = "btnBaoCaoDoanhSoMoi";
+            this.btnBaoCaoDoanhSoMoi.Size = new System.Drawing.Size(163, 35);
+            this.btnBaoCaoDoanhSoMoi.TabIndex = 6;
+            this.btnBaoCaoDoanhSoMoi.Text = "Báo cáo mới";
+            this.btnBaoCaoDoanhSoMoi.UseVisualStyleBackColor = true;
+            this.btnBaoCaoDoanhSoMoi.Click += new System.EventHandler(this.BtnBaoCaoDoanhSoMoi_Click);
             // 
             // lblChonThoiDiem
             // 
@@ -1510,31 +1948,77 @@
             this.hướngDẫnSửDụngToolStripMenuItem.Name = "hướngDẫnSửDụngToolStripMenuItem";
             this.hướngDẫnSửDụngToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.hướngDẫnSửDụngToolStripMenuItem.Text = "Hướng dẫn sử dụng";
+            this.hướngDẫnSửDụngToolStripMenuItem.Click += new System.EventHandler(this.HướngDẫnSửDụngToolStripMenuItem_Click);
             // 
             // liênHệToolStripMenuItem
             // 
             this.liênHệToolStripMenuItem.Name = "liênHệToolStripMenuItem";
             this.liênHệToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.liênHệToolStripMenuItem.Text = "Liên hệ";
+            this.liênHệToolStripMenuItem.Click += new System.EventHandler(this.LiênHệToolStripMenuItem_Click);
             // 
-            // printDialog1
+            // printDialogPSC
             // 
-            this.printDialog1.UseEXDialog = true;
+            this.printDialogPSC.UseEXDialog = true;
             // 
-            // printDialog2
+            // printDialogPTT
             // 
-            this.printDialog2.UseEXDialog = true;
+            this.printDialogPTT.UseEXDialog = true;
             // 
-            // btnBaoCaoDoanhSoMoi
+            // textBoxSoLuongPhieuNhap
             // 
-            this.btnBaoCaoDoanhSoMoi.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBaoCaoDoanhSoMoi.Location = new System.Drawing.Point(1093, 2);
-            this.btnBaoCaoDoanhSoMoi.Name = "btnBaoCaoDoanhSoMoi";
-            this.btnBaoCaoDoanhSoMoi.Size = new System.Drawing.Size(163, 35);
-            this.btnBaoCaoDoanhSoMoi.TabIndex = 6;
-            this.btnBaoCaoDoanhSoMoi.Text = "Báo cáo mới";
-            this.btnBaoCaoDoanhSoMoi.UseVisualStyleBackColor = true;
-            this.btnBaoCaoDoanhSoMoi.Click += new System.EventHandler(this.BtnBaoCaoDoanhSoMoi_Click);
+            this.textBoxSoLuongPhieuNhap.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxSoLuongPhieuNhap.Location = new System.Drawing.Point(206, 19);
+            this.textBoxSoLuongPhieuNhap.Name = "textBoxSoLuongPhieuNhap";
+            this.textBoxSoLuongPhieuNhap.Size = new System.Drawing.Size(246, 30);
+            this.textBoxSoLuongPhieuNhap.TabIndex = 3;
+            this.textBoxSoLuongPhieuNhap.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxSoLuongPhieuNhap_KeyPress);
+            // 
+            // panel27
+            // 
+            this.panel27.Controls.Add(this.buttonPhieuNhapVTPTMoi);
+            this.panel27.Controls.Add(this.buttonInPhieuNhapVTPT);
+            this.panel27.Controls.Add(this.buttonLapPhieuNhapVTPT);
+            this.panel27.Location = new System.Drawing.Point(1, 285);
+            this.panel27.Name = "panel27";
+            this.panel27.Size = new System.Drawing.Size(1288, 160);
+            this.panel27.TabIndex = 3;
+            // 
+            // buttonPhieuNhapVTPTMoi
+            // 
+            this.buttonPhieuNhapVTPTMoi.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonPhieuNhapVTPTMoi.Location = new System.Drawing.Point(938, 23);
+            this.buttonPhieuNhapVTPTMoi.Name = "buttonPhieuNhapVTPTMoi";
+            this.buttonPhieuNhapVTPTMoi.Size = new System.Drawing.Size(264, 52);
+            this.buttonPhieuNhapVTPTMoi.TabIndex = 2;
+            this.buttonPhieuNhapVTPTMoi.Text = "Phiếu nhập VTPT mới";
+            this.buttonPhieuNhapVTPTMoi.UseVisualStyleBackColor = true;
+            this.buttonPhieuNhapVTPTMoi.Click += new System.EventHandler(this.ButtonPhieuNhapVTPTMoi_Click);
+            // 
+            // buttonInPhieuNhapVTPT
+            // 
+            this.buttonInPhieuNhapVTPT.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonInPhieuNhapVTPT.Location = new System.Drawing.Point(938, 98);
+            this.buttonInPhieuNhapVTPT.Name = "buttonInPhieuNhapVTPT";
+            this.buttonInPhieuNhapVTPT.Size = new System.Drawing.Size(264, 52);
+            this.buttonInPhieuNhapVTPT.TabIndex = 1;
+            this.buttonInPhieuNhapVTPT.Text = "In phiếu nhập VTPT";
+            this.buttonInPhieuNhapVTPT.UseVisualStyleBackColor = true;
+            this.buttonInPhieuNhapVTPT.Click += new System.EventHandler(this.ButtonInPhieuNhapVTPT_Click);
+            // 
+            // buttonLapPhieuNhapVTPT
+            // 
+            this.buttonLapPhieuNhapVTPT.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonLapPhieuNhapVTPT.Location = new System.Drawing.Point(581, 23);
+            this.buttonLapPhieuNhapVTPT.Name = "buttonLapPhieuNhapVTPT";
+            this.buttonLapPhieuNhapVTPT.Size = new System.Drawing.Size(264, 127);
+            this.buttonLapPhieuNhapVTPT.TabIndex = 0;
+            this.buttonLapPhieuNhapVTPT.Text = "Lập phiếu nhập VTPT";
+            this.buttonLapPhieuNhapVTPT.UseVisualStyleBackColor = true;
+            // 
+            // printDialogPhieuNhapVTPT
+            // 
+            this.printDialogPhieuNhapVTPT.UseEXDialog = true;
             // 
             // frmMain
             // 
@@ -1589,6 +2073,35 @@
             this.pnlBienSoXe.PerformLayout();
             this.panel8.ResumeLayout(false);
             this.panel8.PerformLayout();
+            this.tPPTT.ResumeLayout(false);
+            this.panel23.ResumeLayout(false);
+            this.flowLayoutPanel3.ResumeLayout(false);
+            this.panelHoTenChuXePTT.ResumeLayout(false);
+            this.panelHoTenChuXePTT.PerformLayout();
+            this.panelBienSoPTT.ResumeLayout(false);
+            this.panelBienSoPTT.PerformLayout();
+            this.panelDienThoaiPTT.ResumeLayout(false);
+            this.panelDienThoaiPTT.PerformLayout();
+            this.panelEmailPTT.ResumeLayout(false);
+            this.panelEmailPTT.PerformLayout();
+            this.panelNgayThuTienPTT.ResumeLayout(false);
+            this.panelNgayThuTienPTT.PerformLayout();
+            this.panelSoTienThuPTT.ResumeLayout(false);
+            this.panelSoTienThuPTT.PerformLayout();
+            this.panel22.ResumeLayout(false);
+            this.panel22.PerformLayout();
+            this.tPVTPT.ResumeLayout(false);
+            this.flowLayoutPanelPhieuNhapVTPT.ResumeLayout(false);
+            this.panelMaVTPT.ResumeLayout(false);
+            this.panelMaVTPT.PerformLayout();
+            this.panelTenVTPTPhieuNhap.ResumeLayout(false);
+            this.panelTenVTPTPhieuNhap.PerformLayout();
+            this.panelSoLuongPhieuNhap.ResumeLayout(false);
+            this.panelSoLuongPhieuNhap.PerformLayout();
+            this.panelMaVTPTMoiPhieuNhap.ResumeLayout(false);
+            this.panelMaVTPTMoiPhieuNhap.PerformLayout();
+            this.panel25.ResumeLayout(false);
+            this.panel25.PerformLayout();
             this.tPTraCuu.ResumeLayout(false);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
@@ -1636,6 +2149,7 @@
             this.panel14.PerformLayout();
             this.menuStripCongCu.ResumeLayout(false);
             this.menuStripCongCu.PerformLayout();
+            this.panel27.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1750,7 +2264,7 @@
         private System.Windows.Forms.Button btnTaoMoiPCS;
         private System.Windows.Forms.Button btnInPhieuSuaChua;
         private System.Windows.Forms.Button btnLuuPSC;
-        private System.Windows.Forms.PrintDialog printDialog1;
+        private System.Windows.Forms.PrintDialog printDialogPSC;
         private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanelTimChinhXac;
         private System.Windows.Forms.Panel panel21;
@@ -1760,13 +2274,11 @@
         private System.Windows.Forms.ComboBox comboBoxHieuXeTraCuu;
         private System.Windows.Forms.Label lblHieuXeTraCuu;
         private System.Windows.Forms.Panel panel26;
-        private System.Windows.Forms.Button btnInKetQuaTraCuu;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel4;
         private System.Windows.Forms.RadioButton radioButtonTimChinhXac;
         private System.Windows.Forms.RadioButton radioButtonTimTuongDoi;
         private System.Windows.Forms.Button btnDatLaiTraCuu;
         private System.Windows.Forms.Button btnTimKiemTraCuu;
-        private System.Windows.Forms.PrintDialog printDialog2;
         private System.Windows.Forms.TextBox txtBoxNgaySuaChua;
         private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel5;
@@ -1775,5 +2287,51 @@
         private System.Windows.Forms.Label lblTraCuuChinh;
         private System.Windows.Forms.Button btnBaoCaoTonMoi;
         private System.Windows.Forms.Button btnBaoCaoDoanhSoMoi;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel3;
+        private System.Windows.Forms.Panel panelHoTenChuXePTT;
+        private System.Windows.Forms.TextBox textBoxHoTenChuXePTT;
+        private System.Windows.Forms.Label labelHoTenChuXePTT;
+        private System.Windows.Forms.Panel panelBienSoPTT;
+        private System.Windows.Forms.TextBox textBoxBienSoPTT;
+        private System.Windows.Forms.Label labelBienSoPTT;
+        private System.Windows.Forms.Panel panel22;
+        private System.Windows.Forms.Label lblPhieuThuTien;
+        private System.Windows.Forms.Panel panelDienThoaiPTT;
+        private System.Windows.Forms.TextBox textBoxDienThoaiPTT;
+        private System.Windows.Forms.Label labelDienThoaiPTT;
+        private System.Windows.Forms.Panel panelEmailPTT;
+        private System.Windows.Forms.TextBox textBoxEmailPTT;
+        private System.Windows.Forms.Label labelEmailPTT;
+        private System.Windows.Forms.Panel panelNgayThuTienPTT;
+        private System.Windows.Forms.DateTimePicker dateTimePickerNgayThuTienPTT;
+        private System.Windows.Forms.Label labelNgayThuTienPTT;
+        private System.Windows.Forms.Panel panelSoTienThuPTT;
+        private System.Windows.Forms.TextBox textBoxSoTienThuPTT;
+        private System.Windows.Forms.Label labelSoTienThuPTT;
+        private System.Windows.Forms.Panel panel23;
+        private System.Windows.Forms.Button buttonPhieuThuTienMoiPTT;
+        private System.Windows.Forms.Button buttonInPhieuThuTienPTT;
+        private System.Windows.Forms.Button buttonLapPhieuThuTienPTT;
+        private System.Windows.Forms.PrintDialog printDialogPTT;
+        private System.Windows.Forms.Panel panel25;
+        private System.Windows.Forms.Label labelPhieuNhapVTPT;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanelPhieuNhapVTPT;
+        private System.Windows.Forms.Panel panelMaVTPT;
+        private System.Windows.Forms.ComboBox comboBoxMaVTPTPhieuNhapVTPT;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Panel panelTenVTPTPhieuNhap;
+        private System.Windows.Forms.TextBox textBoxTenVTPTPhieuNhap;
+        private System.Windows.Forms.Label labelTenVTPTMoiPhieuNhap;
+        private System.Windows.Forms.Panel panelSoLuongPhieuNhap;
+        private System.Windows.Forms.Label labelSoLuongPhieuNhap;
+        private System.Windows.Forms.Panel panelMaVTPTMoiPhieuNhap;
+        private System.Windows.Forms.TextBox textBoxMaVTPTMoiPhieuNhap;
+        private System.Windows.Forms.Label labelMaVTPTMoi;
+        private System.Windows.Forms.TextBox textBoxSoLuongPhieuNhap;
+        private System.Windows.Forms.Panel panel27;
+        private System.Windows.Forms.Button buttonPhieuNhapVTPTMoi;
+        private System.Windows.Forms.Button buttonInPhieuNhapVTPT;
+        private System.Windows.Forms.Button buttonLapPhieuNhapVTPT;
+        private System.Windows.Forms.PrintDialog printDialogPhieuNhapVTPT;
     }
 }

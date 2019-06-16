@@ -53,12 +53,7 @@ namespace GUI
 
         private void BtnInPhieuSuaChua_Click(object sender, EventArgs e)
         {
-            printDialog1.ShowDialog();
-        }
-
-        private void BtnInKetQuaTraCuu_Click(object sender, EventArgs e)
-        {
-            printDialog2.ShowDialog();
+            printDialogPSC.ShowDialog();
         }
 
         private void BtnDatLaiTraCuu_Click(object sender, EventArgs e)
@@ -100,6 +95,61 @@ namespace GUI
         {
             dateTimePickerChonThoiDiemBaoCaoDoanhSo.Value = DateTime.Now;
             lblThangBaoCaoDoanhSo.Text = "Tháng";
+        }
+
+        private void HướngDẫnSửDụngToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("D:/Git/QuanLyGarage/README.md") ;
+        }
+
+        private void LiênHệToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://github.com/AProperName/QuanLyGarage");
+        }
+
+        private void ButtonPhieuThuTienMoiPTT_Click(object sender, EventArgs e)
+        {
+            textBoxBienSoPTT.Text = "";
+            textBoxDienThoaiPTT.Text = "";
+            textBoxEmailPTT.Text = "";
+            textBoxHoTenChuXePTT.Text = "";
+            textBoxSoTienThuPTT.Text = "";
+            dateTimePickerNgayThuTienPTT.Value = DateTime.Now;
+        }
+
+        private void ButtonInPhieuThuTienPTT_Click(object sender, EventArgs e)
+        {
+            printDialogPTT.ShowDialog();
+        }
+
+        private void ComboBoxMaVTPTPhieuNhapVTPT_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (comboBoxMaVTPTPhieuNhapVTPT.Text.ToString() == "khác")
+            {
+                panelMaVTPT.Visible = false;
+                panelMaVTPTMoiPhieuNhap.Visible = true;
+                panelTenVTPTPhieuNhap.Visible = true;
+            }
+        }
+        private void textBoxSoLuongPhieuNhap_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void ButtonInPhieuNhapVTPT_Click(object sender, EventArgs e)
+        {
+            printDialogPhieuNhapVTPT.ShowDialog();
+        }
+
+        private void ButtonPhieuNhapVTPTMoi_Click(object sender, EventArgs e)
+        {
+            textBoxMaVTPTMoiPhieuNhap.Text = "";
+            textBoxTenVTPTPhieuNhap.Text = "";
+            comboBoxMaVTPTPhieuNhapVTPT.Text = "";
+            textBoxSoLuongPhieuNhap.Text = "";
         }
     }
 }
