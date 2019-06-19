@@ -1,6 +1,5 @@
 use Karaoke
-DROP PROCEDURE ThemKhachHang
-exec ThemKhachHang 'Ta Cong Duy', '5', 'QN', 0
+
 CREATE PROCEDURE ThemKhachHang
 	@TenKH varchar(30),
 	@DienThoai varchar(10),
@@ -30,10 +29,7 @@ BEGIN
 	SELECT @iMaHX = MaHX from HIEUXE where @HieuXe = TenHieuXe
 	INSERT INTO Xe (BienSo, MaHX, MaKH, NgaySuaChua) VALUES (@BienSo, @iMaHX, @MaKH,@NgaySuaChua)
 END;
-select * from KHACHHANG
-select * from XE
-delete from XE where BienSo = 8342
-SELECT MaKH, TenKH from KHACHHANG  
+
 create table TAIKHOAN
 (
 	TenDangNhap varchar(20) PRIMARY KEY,
@@ -53,17 +49,7 @@ create table HIEUXE
 	MaHX int PRIMARY KEY,
 	TenHieuXe varchar(30)
 )
-insert into HIEUXE values('1','Dream')
-insert into HIEUXE values('2','Innova')
-insert into HIEUXE values('3','Honda')
-insert into XE values('8337','1','1','6/2/2019')
-insert into XE values('8338','2','2','5/2/2019')
-insert into XE values('8339','3','3','4/2/2019')
-insert into XE values('8340','3','4','3/2/2019')
-insert into KHACHHANG values('1','Tran Kim Trung','1','QN','1000')
-insert into KHACHHANG values('2','Tran Thi Kim Dung','2','QN','2000')
-insert into KHACHHANG values('3','Ta Thi Thu Lieu','3','QN','3000')
-insert into KHACHHANG values('4','Tran Kim Ngoc','4','QN','0')
+
 create table KHACHHANG
 (
 	MaKH int PRIMARY KEY,
