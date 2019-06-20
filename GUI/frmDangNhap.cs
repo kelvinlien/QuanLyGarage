@@ -49,7 +49,7 @@ namespace GUI
                 if (busDN.checkDangNhap(dn) == true)
                 {
                     MessageBox.Show("Đăng nhập thành công!", "Thông Báo");
-                    frmGiaoDienChinh f = new frmGiaoDienChinh();
+                    frmMain f = new frmMain();
                     this.Hide();
                     f.ShowDialog();
                     labelThongBao.Visible = false;

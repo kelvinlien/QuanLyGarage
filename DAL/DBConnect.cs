@@ -9,6 +9,6 @@ namespace DAL
 {
     public class DBConnect
     {
-        public SqlConnection _conn = new SqlConnection(@"Data Source=DESKTOP-G243QOS\RADIUM;Initial Catalog=Karaoke;Integrated Security=True");
+        public SqlConnection _conn = new SqlConnection(@"Data Source=MAHLAP\MAHLAP;Initial Catalog=Karaoke;Integrated Security=True");
     }
 }
