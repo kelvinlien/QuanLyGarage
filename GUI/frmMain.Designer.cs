@@ -204,6 +204,7 @@
             this.printDialogPSC = new System.Windows.Forms.PrintDialog();
             this.printDialogPTT = new System.Windows.Forms.PrintDialog();
             this.printDialogPhieuNhapVTPT = new System.Windows.Forms.PrintDialog();
+            this.progressBarSoXeDaThem = new System.Windows.Forms.ProgressBar();
             this.tCrlChinh.SuspendLayout();
             this.tPChucNang.SuspendLayout();
             this.tCtrlChucNang.SuspendLayout();
@@ -317,6 +318,7 @@
             this.tCtrlChucNang.SelectedIndex = 0;
             this.tCtrlChucNang.Size = new System.Drawing.Size(1298, 479);
             this.tCtrlChucNang.TabIndex = 0;
+            this.tCtrlChucNang.Enter += new System.EventHandler(this.TCtrlChucNang_Enter);
             // 
             // tPTiepNhan
             // 
@@ -336,7 +338,7 @@
             this.pnDanhSachTiepNhan.Controls.Add(this.dataGridViewXeDaTiepNhan);
             this.pnDanhSachTiepNhan.Location = new System.Drawing.Point(648, 1);
             this.pnDanhSachTiepNhan.Name = "pnDanhSachTiepNhan";
-            this.pnDanhSachTiepNhan.Size = new System.Drawing.Size(641, 450);
+            this.pnDanhSachTiepNhan.Size = new System.Drawing.Size(642, 450);
             this.pnDanhSachTiepNhan.TabIndex = 1;
             // 
             // lblDanhSachTiepNhan
@@ -356,16 +358,17 @@
             this.dataGridViewXeDaTiepNhan.AllowUserToAddRows = false;
             this.dataGridViewXeDaTiepNhan.AllowUserToDeleteRows = false;
             this.dataGridViewXeDaTiepNhan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewXeDaTiepNhan.Location = new System.Drawing.Point(0, 79);
+            this.dataGridViewXeDaTiepNhan.Location = new System.Drawing.Point(3, 79);
             this.dataGridViewXeDaTiepNhan.Name = "dataGridViewXeDaTiepNhan";
             this.dataGridViewXeDaTiepNhan.ReadOnly = true;
             this.dataGridViewXeDaTiepNhan.RowHeadersWidth = 51;
             this.dataGridViewXeDaTiepNhan.RowTemplate.Height = 24;
-            this.dataGridViewXeDaTiepNhan.Size = new System.Drawing.Size(640, 367);
+            this.dataGridViewXeDaTiepNhan.Size = new System.Drawing.Size(639, 367);
             this.dataGridViewXeDaTiepNhan.TabIndex = 0;
             // 
             // pnThemThongTinKHVaXe
             // 
+            this.pnThemThongTinKHVaXe.Controls.Add(this.progressBarSoXeDaThem);
             this.pnThemThongTinKHVaXe.Controls.Add(this.labelTieuDe);
             this.pnThemThongTinKHVaXe.Controls.Add(this.panel7);
             this.pnThemThongTinKHVaXe.Controls.Add(this.panel6);
@@ -393,7 +396,7 @@
             // 
             this.panel7.Controls.Add(this.comBoxHieuXe);
             this.panel7.Controls.Add(this.lblHieuXe);
-            this.panel7.Location = new System.Drawing.Point(1, 356);
+            this.panel7.Location = new System.Drawing.Point(2, 317);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(633, 30);
             this.panel7.TabIndex = 4;
@@ -432,7 +435,7 @@
             // 
             this.panel6.Controls.Add(this.lblBienSo);
             this.panel6.Controls.Add(this.txtBoxBienSo);
-            this.panel6.Location = new System.Drawing.Point(2, 284);
+            this.panel6.Location = new System.Drawing.Point(2, 254);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(633, 30);
             this.panel6.TabIndex = 3;
@@ -460,7 +463,7 @@
             // 
             this.panel5.Controls.Add(this.lblDiaChi);
             this.panel5.Controls.Add(this.txtBoxDiaChi);
-            this.panel5.Location = new System.Drawing.Point(2, 210);
+            this.panel5.Location = new System.Drawing.Point(2, 195);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(633, 30);
             this.panel5.TabIndex = 2;
@@ -488,7 +491,7 @@
             // 
             this.panel4.Controls.Add(this.lblDienThoai);
             this.panel4.Controls.Add(this.txtBoxDienThoai);
-            this.panel4.Location = new System.Drawing.Point(2, 142);
+            this.panel4.Location = new System.Drawing.Point(2, 136);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(633, 30);
             this.panel4.TabIndex = 1;
@@ -1741,6 +1744,7 @@
             this.tPQuyDinh.TabIndex = 2;
             this.tPQuyDinh.Text = "Quy định";
             this.tPQuyDinh.UseVisualStyleBackColor = true;
+            this.tPQuyDinh.Enter += new System.EventHandler(this.TPQuyDinh_Enter);
             // 
             // pnGiaTriHienTai
             // 
@@ -2019,6 +2023,14 @@
             // printDialogPhieuNhapVTPT
             // 
             this.printDialogPhieuNhapVTPT.UseEXDialog = true;
+            // 
+            // progressBarSoXeDaThem
+            // 
+            this.progressBarSoXeDaThem.Location = new System.Drawing.Point(2, 388);
+            this.progressBarSoXeDaThem.Name = "progressBarSoXeDaThem";
+            this.progressBarSoXeDaThem.Size = new System.Drawing.Size(633, 30);
+            this.progressBarSoXeDaThem.TabIndex = 6;
+            this.progressBarSoXeDaThem.Value = 50;
             // 
             // frmMain
             // 
@@ -2333,5 +2345,6 @@
         private System.Windows.Forms.Button buttonInPhieuNhapVTPT;
         private System.Windows.Forms.Button buttonLapPhieuNhapVTPT;
         private System.Windows.Forms.PrintDialog printDialogPhieuNhapVTPT;
+        private System.Windows.Forms.ProgressBar progressBarSoXeDaThem;
     }
 }

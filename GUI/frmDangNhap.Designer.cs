@@ -65,6 +65,7 @@
             this.textDangNhap.Name = "textDangNhap";
             this.textDangNhap.Size = new System.Drawing.Size(184, 22);
             this.textDangNhap.TabIndex = 2;
+            this.textDangNhap.TextChanged += new System.EventHandler(this.TextDangNhap_TextChanged);
             // 
             // textMatKhau
             // 
@@ -75,6 +76,7 @@
             this.textMatKhau.Size = new System.Drawing.Size(184, 22);
             this.textMatKhau.TabIndex = 3;
             this.textMatKhau.UseSystemPasswordChar = true;
+            this.textMatKhau.TextChanged += new System.EventHandler(this.TextMatKhau_TextChanged);
             // 
             // buttonDangNhap
             // 

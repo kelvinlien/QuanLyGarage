@@ -9,12 +9,12 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DTO;
 using BUS;
+using DAO;
 
 namespace GUI
 {
     public partial class frmDangNhap : Form
     {
-        BUS_DangNhap busDN = new BUS.BUS_DangNhap();
         public frmDangNhap()
         {
             InitializeComponent();
@@ -28,25 +28,16 @@ namespace GUI
                 labelThongBao.Text = "Vui lòng nhập tài khoản!";
                 labelThongBao.Visible = true;
             }
-            else if (textDangNhap.Text.Length > 20)
-            {
-                labelThongBao.Text = "Tài khoản gồm 20 kí tự trở xuống!";
-                labelThongBao.Visible = true;
-            }
             else if (textMatKhau.Text.Length == 0)
             {
                 labelThongBao.Text = "Vui lòng nhập mật khẩu!";
                 labelThongBao.Visible = true;
             }
-            else if (textMatKhau.Text.Length > 20)
-            {
-                labelThongBao.Text = "Mật khẩu gồm 20 kí tự trở xuống!";
-                labelThongBao.Visible = true;
-            }
             else
             {
-                DTO_DangNhap dn = new DTO_DangNhap(textDangNhap.Text, textMatKhau.Text);
-                if (busDN.checkDangNhap(dn) == true)
+                string TaiKhoan = textDangNhap.Text;
+                string MatKhau = textMatKhau.Text;
+                if (DangNhap(TaiKhoan, MatKhau))
                 {
                     MessageBox.Show("Đăng nhập thành công!", "Thông Báo");
                     frmMain f = new frmMain();
@@ -57,10 +48,16 @@ namespace GUI
                 }
                 else
                 {
+                    labelThongBao.Text = "Vui lòng kiểm tra lại tên hoặc mật khẩu!";
                     labelThongBao.Visible = true;
                 }
 
             }
+        }
+        
+        bool DangNhap(string TaiKhoan, string MatKhau)
+        {
+            return TaiKhoanDAO.Instance.DangNhap(TaiKhoan,MatKhau);
         }
 
         private void buttonThoat_Click(object sender, EventArgs e)
@@ -77,6 +74,16 @@ namespace GUI
         {
             if (MessageBox.Show("Đóng ứng dụng?", "Thông báo", MessageBoxButtons.OKCancel) != DialogResult.OK)
                 e.Cancel = true;
+        }
+
+        private void TextDangNhap_TextChanged(object sender, EventArgs e)
+        {
+            labelThongBao.Visible = false;
+        }
+
+        private void TextMatKhau_TextChanged(object sender, EventArgs e)
+        {
+            labelThongBao.Visible = false;
         }
     }
 }
