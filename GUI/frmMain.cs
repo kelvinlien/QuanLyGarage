@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using QuanLyGarage.DAO;
 
 namespace GUI
 {
@@ -44,6 +45,7 @@ namespace GUI
             this.dateTimePickerChonThoiDiemBaoCaoTon.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateTimePickerChonThoiDiemBaoCaoTon.ShowUpDown = true;
             this.txtBoxNgaySuaChua.Text = DateTime.Now.ToString("dd/MM/yyyy");
+            this.dataGridViewXeDaTiepNhan.DataSource = DataProvider.Instance.ExecuteQuery("select * from XE");
         }
 
         private void MenuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
@@ -150,6 +152,11 @@ namespace GUI
             textBoxTenVTPTPhieuNhap.Text = "";
             comboBoxMaVTPTPhieuNhapVTPT.Text = "";
             textBoxSoLuongPhieuNhap.Text = "";
+        }
+        private void DataGridViewXeDaTiepNhan_Load(object sender, EventArgs e)
+        {
+            MessageBox.Show("Loaded!");
+
         }
     }
 }

@@ -52,12 +52,6 @@
     <Compile Include="frmDangNhap.Designer.cs">
       <DependentUpon>frmDangNhap.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmGiaoDienChinh.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmGiaoDienChinh.Designer.cs">
-      <DependentUpon>frmGiaoDienChinh.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -86,9 +80,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frmDangNhap.resx">
       <DependentUpon>frmDangNhap.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmGiaoDienChinh.resx">
-      <DependentUpon>frmGiaoDienChinh.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
@@ -138,6 +129,10 @@
     <ProjectReference Include="..\DAL\DAL.csproj">
       <Project>{2fe01c60-b77a-4ee8-baa4-f7b28cadc0e3}</Project>
       <Name>DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DAO\DAO.csproj">
+      <Project>{3f9df791-df4e-49a2-b07f-64a998cafde3}</Project>
+      <Name>DAO</Name>
     </ProjectReference>
     <ProjectReference Include="..\DTO\DTO.csproj">
       <Project>{4bc08365-23f1-467a-9c0a-ab68d5bb89cf}</Project>
