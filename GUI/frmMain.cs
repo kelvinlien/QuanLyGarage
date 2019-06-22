@@ -18,6 +18,37 @@ namespace GUI
             InitializeComponent();
         }
 
+        #region Methods
+        void DoiDateTimePickerFormat(DateTimePicker dtp) //Ham thuc hien chuyen format DateTimePicker sang MM/yyyy.
+        {
+                dtp.CustomFormat = "MM/yyyy";
+                dtp.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+                dtp.ShowUpDown = true;
+        }
+        void TaoThoiDiemBaoCao() //Ham thuc hien format DateTimePicker cho cac bao cao thang.
+        {
+            DoiDateTimePickerFormat(this.dateTimePickerChonThoiDiemBaoCaoDoanhSo);
+            DoiDateTimePickerFormat(this.dateTimePickerChonThoiDiemBaoCaoTon);
+        }
+        string LayNgayThangNamHienTai() //Ham thuc hien lay ngay/thang/nam thoi diem hien tai.
+        {
+            return DateTime.Now.ToString("dd/MM/yyyy");
+        }
+        void DatThoiDiemHienTai(TextBox tb) //Ham dat noi dung textbox la thoi diem hien tai.
+        {
+            tb.Text = LayNgayThangNamHienTai();
+        }
+        void DatLaiDateTimePicker(DateTimePicker dtp) //Dat lai gia tri DatTimePicker thanh hom nay.
+        {
+            dtp.Value = DateTime.Now;
+        }
+        void DatVisibleChoControl(Control ctrl, bool result) //Dat thuoc tinh Visible cho Control.
+        {
+            ctrl.Visible = result;
+        }
+        #endregion
+
+        #region Events
         private void ThôngTinTàiKhoảnToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmThongTinTaiKhoan tttk = new frmThongTinTaiKhoan();
@@ -38,13 +69,8 @@ namespace GUI
 
         private void FrmMain_Load(object sender, EventArgs e)
         {
-            this.dateTimePickerChonThoiDiemBaoCaoDoanhSo.CustomFormat = "MM/yyyy";
-            this.dateTimePickerChonThoiDiemBaoCaoDoanhSo.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePickerChonThoiDiemBaoCaoDoanhSo.ShowUpDown = true;
-            this.dateTimePickerChonThoiDiemBaoCaoTon.CustomFormat = "MM/yyyy";
-            this.dateTimePickerChonThoiDiemBaoCaoTon.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePickerChonThoiDiemBaoCaoTon.ShowUpDown = true;
-            this.txtBoxNgaySuaChua.Text = DateTime.Now.ToString("dd/MM/yyyy");
+            TaoThoiDiemBaoCao();
+            DatThoiDiemHienTai(this.txtBoxNgaySuaChua);
         }
 
         private void MenuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
@@ -66,13 +92,13 @@ namespace GUI
 
         private void RadioButtonTimTuongDoi_CheckedChanged(object sender, EventArgs e)
         {
-            flowLayoutPanelTimChinhXac.Visible = false;
+            DatVisibleChoControl(flowLayoutPanelTimChinhXac, false);
             lblTraCuuChinh.Text = "Từ khóa:";
         }
 
         private void RadioButtonTimChinhXac_CheckedChanged(object sender, EventArgs e)
         {
-            flowLayoutPanelTimChinhXac.Visible = true;
+            DatVisibleChoControl(flowLayoutPanelTimChinhXac, true);
             lblTraCuuChinh.Text = "Điện thoại:";
         }
 
@@ -88,13 +114,13 @@ namespace GUI
 
         private void BtnBaoCaoTonMoi_Click(object sender, EventArgs e)
         {
-            dateTimePickerChonThoiDiemBaoCaoTon.Value = DateTime.Now;
+            DatLaiDateTimePicker(dateTimePickerChonThoiDiemBaoCaoTon);
             lblThangBaoCaoTon.Text = "Tháng";
         }
 
         private void BtnBaoCaoDoanhSoMoi_Click(object sender, EventArgs e)
         {
-            dateTimePickerChonThoiDiemBaoCaoDoanhSo.Value = DateTime.Now;
+            DatLaiDateTimePicker(dateTimePickerChonThoiDiemBaoCaoDoanhSo);
             lblThangBaoCaoDoanhSo.Text = "Tháng";
         }
 
@@ -115,7 +141,7 @@ namespace GUI
             textBoxEmailPTT.Text = "";
             textBoxHoTenChuXePTT.Text = "";
             textBoxSoTienThuPTT.Text = "";
-            dateTimePickerNgayThuTienPTT.Value = DateTime.Now;
+            DatLaiDateTimePicker(dateTimePickerNgayThuTienPTT);
         }
 
         private void ButtonInPhieuThuTienPTT_Click(object sender, EventArgs e)
@@ -127,9 +153,9 @@ namespace GUI
         {
             if (comboBoxMaVTPTPhieuNhapVTPT.Text.ToString() == "khác")
             {
-                panelMaVTPT.Visible = false;
-                panelMaVTPTMoiPhieuNhap.Visible = true;
-                panelTenVTPTPhieuNhap.Visible = true;
+                DatVisibleChoControl(panelMaVTPT, false);
+                DatVisibleChoControl(panelMaVTPTMoiPhieuNhap, true);
+                DatVisibleChoControl(panelTenVTPTPhieuNhap, true);
             }
         }
         private void textBoxSoLuongPhieuNhap_KeyPress(object sender, KeyPressEventArgs e)
@@ -162,5 +188,6 @@ namespace GUI
         {
             this.dataGridViewGiaTriHienTai.DataSource = DataProvider.Instance.ExecuteQuery("select * from THAMSO");
         }
+        #endregion
     }
 }
