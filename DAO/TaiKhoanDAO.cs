@@ -10,7 +10,20 @@ namespace DAO
     public class TaiKhoanDAO
     {
         private static TaiKhoanDAO instance;
+        private string User = "";
+        private string Pass = "";
 
+        void LuuThongTinNguoiDungHienTai(string user, string pass)
+        {
+            User = user;
+            Pass = pass;
+        }
+
+        public void XoaThongTinNguoiDungGanNhat()
+        {
+            User = "";
+            Pass = "";
+        }
         public static TaiKhoanDAO Instance {
             get
             {
@@ -30,7 +43,21 @@ namespace DAO
 
             DataTable result = DataProvider.Instance.ExecuteQuery(query, new object[] { TaiKhoan, MatKhau });
 
-            return result.Rows.Count > 0;
+            if( result.Rows.Count > 0)
+            {
+                LuuThongTinNguoiDungHienTai(TaiKhoan, MatKhau);
+                return true;
+            }
+            return false;
+        }
+        public int LayQuyenHan()
+        {
+            string query = "USP_Dangnhap @TenDangNhap , @MatKhau";
+
+            DataTable result = DataProvider.Instance.ExecuteQuery(query, new object[] { User, Pass });
+
+            int qh = Int32.Parse(result.Rows[0][2].ToString());
+            return qh ;
         }
     }
 }

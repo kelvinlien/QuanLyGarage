@@ -188,6 +188,12 @@ namespace GUI
         {
             this.dataGridViewGiaTriHienTai.DataSource = DataProvider.Instance.ExecuteQuery("select * from THAMSO");
         }
+
+        private void FrmMain_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            TaiKhoanDAO.Instance.XoaThongTinNguoiDungGanNhat();
+        }
+
         #endregion
     }
 }

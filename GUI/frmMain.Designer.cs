@@ -36,6 +36,7 @@
             this.lblDanhSachTiepNhan = new System.Windows.Forms.Label();
             this.dataGridViewXeDaTiepNhan = new System.Windows.Forms.DataGridView();
             this.pnThemThongTinKHVaXe = new System.Windows.Forms.Panel();
+            this.progressBarSoXeDaThem = new System.Windows.Forms.ProgressBar();
             this.labelTieuDe = new System.Windows.Forms.Label();
             this.panel7 = new System.Windows.Forms.Panel();
             this.comBoxHieuXe = new System.Windows.Forms.ComboBox();
@@ -204,7 +205,6 @@
             this.printDialogPSC = new System.Windows.Forms.PrintDialog();
             this.printDialogPTT = new System.Windows.Forms.PrintDialog();
             this.printDialogPhieuNhapVTPT = new System.Windows.Forms.PrintDialog();
-            this.progressBarSoXeDaThem = new System.Windows.Forms.ProgressBar();
             this.tCrlChinh.SuspendLayout();
             this.tPChucNang.SuspendLayout();
             this.tCtrlChucNang.SuspendLayout();
@@ -379,6 +379,14 @@
             this.pnThemThongTinKHVaXe.Name = "pnThemThongTinKHVaXe";
             this.pnThemThongTinKHVaXe.Size = new System.Drawing.Size(635, 449);
             this.pnThemThongTinKHVaXe.TabIndex = 0;
+            // 
+            // progressBarSoXeDaThem
+            // 
+            this.progressBarSoXeDaThem.Location = new System.Drawing.Point(2, 388);
+            this.progressBarSoXeDaThem.Name = "progressBarSoXeDaThem";
+            this.progressBarSoXeDaThem.Size = new System.Drawing.Size(633, 30);
+            this.progressBarSoXeDaThem.TabIndex = 6;
+            this.progressBarSoXeDaThem.Value = 50;
             // 
             // labelTieuDe
             // 
@@ -2024,14 +2032,6 @@
             // 
             this.printDialogPhieuNhapVTPT.UseEXDialog = true;
             // 
-            // progressBarSoXeDaThem
-            // 
-            this.progressBarSoXeDaThem.Location = new System.Drawing.Point(2, 388);
-            this.progressBarSoXeDaThem.Name = "progressBarSoXeDaThem";
-            this.progressBarSoXeDaThem.Size = new System.Drawing.Size(633, 30);
-            this.progressBarSoXeDaThem.TabIndex = 6;
-            this.progressBarSoXeDaThem.Value = 50;
-            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -2043,6 +2043,7 @@
             this.MainMenuStrip = this.menuStripCongCu;
             this.Name = "frmMain";
             this.Text = "Giao diện chính";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmMain_FormClosed);
             this.Load += new System.EventHandler(this.FrmMain_Load);
             this.tCrlChinh.ResumeLayout(false);
             this.tPChucNang.ResumeLayout(false);

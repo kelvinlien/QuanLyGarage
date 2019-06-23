@@ -45,6 +45,8 @@ namespace GUI
                     f.ShowDialog();
                     labelThongBao.Visible = false;
                     this.Show();
+                    textDangNhap.Clear();
+                    textMatKhau.Clear();
                 }
                 else
                 {
@@ -54,7 +56,6 @@ namespace GUI
 
             }
         }
-        
         bool DangNhap(string TaiKhoan, string MatKhau)
         {
             return TaiKhoanDAO.Instance.DangNhap(TaiKhoan,MatKhau);
