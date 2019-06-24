@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DAO;
 
 namespace GUI
 {
@@ -51,6 +52,14 @@ namespace GUI
         {
             frmThayDoiMatKhau tdmk = new frmThayDoiMatKhau();
             tdmk.ShowDialog();
+        }
+
+        private void FrmThongTinTaiKhoan_Load(object sender, EventArgs e)
+        {
+            txtBoxHoTen.Text = TaiKhoanDAO.Instance.LayHoTen();
+            txtBoxMaNV.Text = TaiKhoanDAO.Instance.LayMaNhanVien();
+            txtBoxTaiKhoan.Text = TaiKhoanDAO.Instance.LayTenTaiKhoan();
+            txtBoxMatKhau.Text = TaiKhoanDAO.Instance.LayMatKhau();
         }
     }
 }

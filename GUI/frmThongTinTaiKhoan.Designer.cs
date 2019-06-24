@@ -36,7 +36,7 @@
             this.lblMatKhau = new System.Windows.Forms.Label();
             this.txtBoxTaiKhoan = new System.Windows.Forms.TextBox();
             this.lblTaiKhoan = new System.Windows.Forms.Label();
-            this.txtMaSo = new System.Windows.Forms.TextBox();
+            this.txtBoxMaNV = new System.Windows.Forms.TextBox();
             this.lblMaSo = new System.Windows.Forms.Label();
             this.txtBoxHoTen = new System.Windows.Forms.TextBox();
             this.lblHoten = new System.Windows.Forms.Label();
@@ -52,7 +52,7 @@
             this.panel1.Controls.Add(this.lblMatKhau);
             this.panel1.Controls.Add(this.txtBoxTaiKhoan);
             this.panel1.Controls.Add(this.lblTaiKhoan);
-            this.panel1.Controls.Add(this.txtMaSo);
+            this.panel1.Controls.Add(this.txtBoxMaNV);
             this.panel1.Controls.Add(this.lblMaSo);
             this.panel1.Controls.Add(this.txtBoxHoTen);
             this.panel1.Controls.Add(this.lblHoten);
@@ -132,14 +132,14 @@
             this.lblTaiKhoan.Text = "Tài khoản:";
             this.lblTaiKhoan.Click += new System.EventHandler(this.LblTaiKhoan_Click);
             // 
-            // txtMaSo
+            // txtBoxMaNV
             // 
-            this.txtMaSo.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMaSo.Location = new System.Drawing.Point(101, 60);
-            this.txtMaSo.Name = "txtMaSo";
-            this.txtMaSo.ReadOnly = true;
-            this.txtMaSo.Size = new System.Drawing.Size(272, 30);
-            this.txtMaSo.TabIndex = 3;
+            this.txtBoxMaNV.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBoxMaNV.Location = new System.Drawing.Point(101, 60);
+            this.txtBoxMaNV.Name = "txtBoxMaNV";
+            this.txtBoxMaNV.ReadOnly = true;
+            this.txtBoxMaNV.Size = new System.Drawing.Size(272, 30);
+            this.txtBoxMaNV.TabIndex = 3;
             // 
             // lblMaSo
             // 
@@ -179,6 +179,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "frmThongTinTaiKhoan";
             this.Text = "Thông tin tài khoản";
+            this.Load += new System.EventHandler(this.FrmThongTinTaiKhoan_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
@@ -192,7 +193,7 @@
         private System.Windows.Forms.Label lblHoten;
         private System.Windows.Forms.TextBox txtBoxTaiKhoan;
         private System.Windows.Forms.Label lblTaiKhoan;
-        private System.Windows.Forms.TextBox txtMaSo;
+        private System.Windows.Forms.TextBox txtBoxMaNV;
         private System.Windows.Forms.Label lblMaSo;
         private System.Windows.Forms.TextBox txtBoxMatKhau;
         private System.Windows.Forms.Label lblMatKhau;

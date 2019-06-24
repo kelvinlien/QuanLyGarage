@@ -56,8 +56,38 @@ namespace DAO
 
             DataTable result = DataProvider.Instance.ExecuteQuery(query, new object[] { User, Pass });
 
-            int qh = Int32.Parse(result.Rows[0][2].ToString());
+            int qh = Int32.Parse(result.Rows[0][4].ToString());
             return qh ;
+        }
+
+        public string LayHoTen()
+        {
+            string query = "USP_Dangnhap @TenDangNhap , @MatKhau";
+
+            DataTable result = DataProvider.Instance.ExecuteQuery(query, new object[] { User, Pass });
+
+            string qh = result.Rows[0][1].ToString();
+            return qh;
+        }
+
+        public string LayMaNhanVien()
+        {
+            string query = "USP_Dangnhap @TenDangNhap , @MatKhau";
+
+            DataTable result = DataProvider.Instance.ExecuteQuery(query, new object[] { User, Pass });
+
+            string qh = result.Rows[0][0].ToString();
+            return qh;
+        }
+
+        public string LayTenTaiKhoan()
+        {
+            return User;
+        }
+
+        public string LayMatKhau()
+        {
+            return Pass;
         }
     }
 }
