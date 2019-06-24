@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.pnlThayDoiMatKhau = new System.Windows.Forms.Panel();
+            this.btnThoat = new System.Windows.Forms.Button();
+            this.btnLuuThayDoi = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
             this.txtBoxXacNhanMatKhauMoi = new System.Windows.Forms.TextBox();
             this.lblXacNhanMatKhauMoi = new System.Windows.Forms.Label();
@@ -41,8 +43,9 @@
             this.panel5 = new System.Windows.Forms.Panel();
             this.txtBoxTaiKhoan = new System.Windows.Forms.TextBox();
             this.lblTaiKhoan = new System.Windows.Forms.Label();
-            this.btnLuuThayDoi = new System.Windows.Forms.Button();
-            this.btnThoat = new System.Windows.Forms.Button();
+            this.btnHienMatKhauCu = new System.Windows.Forms.Button();
+            this.btnHienMatKhauMoi = new System.Windows.Forms.Button();
+            this.btnHienMatKhauMoiXacNhan = new System.Windows.Forms.Button();
             this.pnlThayDoiMatKhau.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -60,16 +63,39 @@
             this.pnlThayDoiMatKhau.Controls.Add(this.panel5);
             this.pnlThayDoiMatKhau.Location = new System.Drawing.Point(12, 12);
             this.pnlThayDoiMatKhau.Name = "pnlThayDoiMatKhau";
-            this.pnlThayDoiMatKhau.Size = new System.Drawing.Size(501, 297);
+            this.pnlThayDoiMatKhau.Size = new System.Drawing.Size(662, 297);
             this.pnlThayDoiMatKhau.TabIndex = 0;
+            // 
+            // btnThoat
+            // 
+            this.btnThoat.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThoat.Location = new System.Drawing.Point(322, 247);
+            this.btnThoat.Name = "btnThoat";
+            this.btnThoat.Size = new System.Drawing.Size(155, 37);
+            this.btnThoat.TabIndex = 9;
+            this.btnThoat.Text = "Thoát";
+            this.btnThoat.UseVisualStyleBackColor = true;
+            this.btnThoat.Click += new System.EventHandler(this.BtnThoat_Click);
+            // 
+            // btnLuuThayDoi
+            // 
+            this.btnLuuThayDoi.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLuuThayDoi.Location = new System.Drawing.Point(112, 247);
+            this.btnLuuThayDoi.Name = "btnLuuThayDoi";
+            this.btnLuuThayDoi.Size = new System.Drawing.Size(158, 37);
+            this.btnLuuThayDoi.TabIndex = 8;
+            this.btnLuuThayDoi.Text = "Lưu thay đổi";
+            this.btnLuuThayDoi.UseVisualStyleBackColor = true;
+            this.btnLuuThayDoi.Click += new System.EventHandler(this.BtnLuuThayDoi_Click);
             // 
             // panel4
             // 
+            this.panel4.Controls.Add(this.btnHienMatKhauMoiXacNhan);
             this.panel4.Controls.Add(this.txtBoxXacNhanMatKhauMoi);
             this.panel4.Controls.Add(this.lblXacNhanMatKhauMoi);
             this.panel4.Location = new System.Drawing.Point(3, 190);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(494, 39);
+            this.panel4.Size = new System.Drawing.Size(656, 39);
             this.panel4.TabIndex = 7;
             // 
             // txtBoxXacNhanMatKhauMoi
@@ -77,9 +103,9 @@
             this.txtBoxXacNhanMatKhauMoi.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBoxXacNhanMatKhauMoi.Location = new System.Drawing.Point(202, 3);
             this.txtBoxXacNhanMatKhauMoi.Name = "txtBoxXacNhanMatKhauMoi";
-            this.txtBoxXacNhanMatKhauMoi.ReadOnly = true;
             this.txtBoxXacNhanMatKhauMoi.Size = new System.Drawing.Size(272, 30);
             this.txtBoxXacNhanMatKhauMoi.TabIndex = 7;
+            this.txtBoxXacNhanMatKhauMoi.UseSystemPasswordChar = true;
             // 
             // lblXacNhanMatKhauMoi
             // 
@@ -93,11 +119,12 @@
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.btnHienMatKhauMoi);
             this.panel3.Controls.Add(this.txtBoxNhapMatKhauMoi);
             this.panel3.Controls.Add(this.lblNhapMatKhauMoi);
             this.panel3.Location = new System.Drawing.Point(3, 128);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(494, 39);
+            this.panel3.Size = new System.Drawing.Size(656, 39);
             this.panel3.TabIndex = 6;
             // 
             // txtBoxNhapMatKhauMoi
@@ -105,9 +132,9 @@
             this.txtBoxNhapMatKhauMoi.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBoxNhapMatKhauMoi.Location = new System.Drawing.Point(202, 3);
             this.txtBoxNhapMatKhauMoi.Name = "txtBoxNhapMatKhauMoi";
-            this.txtBoxNhapMatKhauMoi.ReadOnly = true;
             this.txtBoxNhapMatKhauMoi.Size = new System.Drawing.Size(272, 30);
             this.txtBoxNhapMatKhauMoi.TabIndex = 7;
+            this.txtBoxNhapMatKhauMoi.UseSystemPasswordChar = true;
             // 
             // lblNhapMatKhauMoi
             // 
@@ -121,11 +148,12 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.btnHienMatKhauCu);
             this.panel2.Controls.Add(this.txtBoxNhapLaiMatKhauCu);
             this.panel2.Controls.Add(this.lblNhapMatKhauCu);
             this.panel2.Location = new System.Drawing.Point(3, 67);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(494, 39);
+            this.panel2.Size = new System.Drawing.Size(656, 39);
             this.panel2.TabIndex = 5;
             // 
             // txtBoxNhapLaiMatKhauCu
@@ -133,9 +161,9 @@
             this.txtBoxNhapLaiMatKhauCu.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBoxNhapLaiMatKhauCu.Location = new System.Drawing.Point(202, 3);
             this.txtBoxNhapLaiMatKhauCu.Name = "txtBoxNhapLaiMatKhauCu";
-            this.txtBoxNhapLaiMatKhauCu.ReadOnly = true;
             this.txtBoxNhapLaiMatKhauCu.Size = new System.Drawing.Size(272, 30);
             this.txtBoxNhapLaiMatKhauCu.TabIndex = 7;
+            this.txtBoxNhapLaiMatKhauCu.UseSystemPasswordChar = true;
             // 
             // lblNhapMatKhauCu
             // 
@@ -175,35 +203,45 @@
             this.lblTaiKhoan.TabIndex = 6;
             this.lblTaiKhoan.Text = "Tài khoản:";
             // 
-            // btnLuuThayDoi
+            // btnHienMatKhauCu
             // 
-            this.btnLuuThayDoi.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLuuThayDoi.Location = new System.Drawing.Point(112, 247);
-            this.btnLuuThayDoi.Name = "btnLuuThayDoi";
-            this.btnLuuThayDoi.Size = new System.Drawing.Size(158, 37);
-            this.btnLuuThayDoi.TabIndex = 8;
-            this.btnLuuThayDoi.Text = "Lưu thay đổi";
-            this.btnLuuThayDoi.UseVisualStyleBackColor = true;
+            this.btnHienMatKhauCu.Location = new System.Drawing.Point(499, -1);
+            this.btnHienMatKhauCu.Name = "btnHienMatKhauCu";
+            this.btnHienMatKhauCu.Size = new System.Drawing.Size(151, 38);
+            this.btnHienMatKhauCu.TabIndex = 8;
+            this.btnHienMatKhauCu.Text = "Hiện mật khẩu";
+            this.btnHienMatKhauCu.UseVisualStyleBackColor = true;
+            this.btnHienMatKhauCu.Click += new System.EventHandler(this.BtnHienMatKhauCu_Click);
             // 
-            // btnThoat
+            // btnHienMatKhauMoi
             // 
-            this.btnThoat.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnThoat.Location = new System.Drawing.Point(322, 247);
-            this.btnThoat.Name = "btnThoat";
-            this.btnThoat.Size = new System.Drawing.Size(155, 37);
-            this.btnThoat.TabIndex = 9;
-            this.btnThoat.Text = "Thoát";
-            this.btnThoat.UseVisualStyleBackColor = true;
-            this.btnThoat.Click += new System.EventHandler(this.BtnThoat_Click);
+            this.btnHienMatKhauMoi.Location = new System.Drawing.Point(499, -1);
+            this.btnHienMatKhauMoi.Name = "btnHienMatKhauMoi";
+            this.btnHienMatKhauMoi.Size = new System.Drawing.Size(151, 38);
+            this.btnHienMatKhauMoi.TabIndex = 9;
+            this.btnHienMatKhauMoi.Text = "Hiện mật khẩu";
+            this.btnHienMatKhauMoi.UseVisualStyleBackColor = true;
+            this.btnHienMatKhauMoi.Click += new System.EventHandler(this.BtnHienMatKhauMoi_Click);
+            // 
+            // btnHienMatKhauMoiXacNhan
+            // 
+            this.btnHienMatKhauMoiXacNhan.Location = new System.Drawing.Point(499, -1);
+            this.btnHienMatKhauMoiXacNhan.Name = "btnHienMatKhauMoiXacNhan";
+            this.btnHienMatKhauMoiXacNhan.Size = new System.Drawing.Size(151, 38);
+            this.btnHienMatKhauMoiXacNhan.TabIndex = 9;
+            this.btnHienMatKhauMoiXacNhan.Text = "Hiện mật khẩu";
+            this.btnHienMatKhauMoiXacNhan.UseVisualStyleBackColor = true;
+            this.btnHienMatKhauMoiXacNhan.Click += new System.EventHandler(this.BtnHienMatKhauMoiXacNhan_Click);
             // 
             // frmThayDoiMatKhau
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(516, 318);
+            this.ClientSize = new System.Drawing.Size(677, 311);
             this.Controls.Add(this.pnlThayDoiMatKhau);
             this.Name = "frmThayDoiMatKhau";
             this.Text = "Thay đổi mật khẩu";
+            this.Load += new System.EventHandler(this.FrmThayDoiMatKhau_Load);
             this.pnlThayDoiMatKhau.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
@@ -234,5 +272,8 @@
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.TextBox txtBoxTaiKhoan;
         private System.Windows.Forms.Label lblTaiKhoan;
+        private System.Windows.Forms.Button btnHienMatKhauMoiXacNhan;
+        private System.Windows.Forms.Button btnHienMatKhauMoi;
+        private System.Windows.Forms.Button btnHienMatKhauCu;
     }
 }

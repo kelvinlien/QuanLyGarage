@@ -34,14 +34,6 @@ namespace GUI
 
         }
 
-        private void BtnMatKhauHienAn_Click(object sender, EventArgs e)
-        {
-            if (txtBoxMatKhau.UseSystemPasswordChar)
-                btnMatKhauHienAn.Text = "Hiện mật khẩu";
-            else
-                btnMatKhauHienAn.Text = "Ẩn mật khẩu";
-            txtBoxMatKhau.UseSystemPasswordChar = !txtBoxMatKhau.UseSystemPasswordChar;
-        }
 
         private void BtnThoat_Click(object sender, EventArgs e)
         {
@@ -59,7 +51,6 @@ namespace GUI
             txtBoxHoTen.Text = TaiKhoanDAO.Instance.LayHoTen();
             txtBoxMaNV.Text = TaiKhoanDAO.Instance.LayMaNhanVien();
             txtBoxTaiKhoan.Text = TaiKhoanDAO.Instance.LayTenTaiKhoan();
-            txtBoxMatKhau.Text = TaiKhoanDAO.Instance.LayMatKhau();
         }
     }
 }

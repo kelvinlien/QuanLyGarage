@@ -31,9 +31,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnThoat = new System.Windows.Forms.Button();
             this.btnDoiMatKhau = new System.Windows.Forms.Button();
-            this.btnMatKhauHienAn = new System.Windows.Forms.Button();
-            this.txtBoxMatKhau = new System.Windows.Forms.TextBox();
-            this.lblMatKhau = new System.Windows.Forms.Label();
             this.txtBoxTaiKhoan = new System.Windows.Forms.TextBox();
             this.lblTaiKhoan = new System.Windows.Forms.Label();
             this.txtBoxMaNV = new System.Windows.Forms.TextBox();
@@ -47,9 +44,6 @@
             // 
             this.panel1.Controls.Add(this.btnThoat);
             this.panel1.Controls.Add(this.btnDoiMatKhau);
-            this.panel1.Controls.Add(this.btnMatKhauHienAn);
-            this.panel1.Controls.Add(this.txtBoxMatKhau);
-            this.panel1.Controls.Add(this.lblMatKhau);
             this.panel1.Controls.Add(this.txtBoxTaiKhoan);
             this.panel1.Controls.Add(this.lblTaiKhoan);
             this.panel1.Controls.Add(this.txtBoxMaNV);
@@ -63,9 +57,9 @@
             // 
             // btnThoat
             // 
-            this.btnThoat.Location = new System.Drawing.Point(547, 244);
+            this.btnThoat.Location = new System.Drawing.Point(446, 205);
             this.btnThoat.Name = "btnThoat";
-            this.btnThoat.Size = new System.Drawing.Size(115, 30);
+            this.btnThoat.Size = new System.Drawing.Size(216, 69);
             this.btnThoat.TabIndex = 10;
             this.btnThoat.Text = "Thoát";
             this.btnThoat.UseVisualStyleBackColor = true;
@@ -73,43 +67,13 @@
             // 
             // btnDoiMatKhau
             // 
-            this.btnDoiMatKhau.Location = new System.Drawing.Point(547, 185);
+            this.btnDoiMatKhau.Location = new System.Drawing.Point(446, 121);
             this.btnDoiMatKhau.Name = "btnDoiMatKhau";
-            this.btnDoiMatKhau.Size = new System.Drawing.Size(115, 30);
+            this.btnDoiMatKhau.Size = new System.Drawing.Size(216, 69);
             this.btnDoiMatKhau.TabIndex = 9;
             this.btnDoiMatKhau.Text = "Đổi mật khẩu";
             this.btnDoiMatKhau.UseVisualStyleBackColor = true;
             this.btnDoiMatKhau.Click += new System.EventHandler(this.BtnDoiMatKhau_Click);
-            // 
-            // btnMatKhauHienAn
-            // 
-            this.btnMatKhauHienAn.Location = new System.Drawing.Point(400, 185);
-            this.btnMatKhauHienAn.Name = "btnMatKhauHienAn";
-            this.btnMatKhauHienAn.Size = new System.Drawing.Size(115, 30);
-            this.btnMatKhauHienAn.TabIndex = 8;
-            this.btnMatKhauHienAn.Text = "Hiện mật khẩu";
-            this.btnMatKhauHienAn.UseVisualStyleBackColor = true;
-            this.btnMatKhauHienAn.Click += new System.EventHandler(this.BtnMatKhauHienAn_Click);
-            // 
-            // txtBoxMatKhau
-            // 
-            this.txtBoxMatKhau.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBoxMatKhau.Location = new System.Drawing.Point(101, 185);
-            this.txtBoxMatKhau.Name = "txtBoxMatKhau";
-            this.txtBoxMatKhau.ReadOnly = true;
-            this.txtBoxMatKhau.Size = new System.Drawing.Size(272, 30);
-            this.txtBoxMatKhau.TabIndex = 7;
-            this.txtBoxMatKhau.UseSystemPasswordChar = true;
-            // 
-            // lblMatKhau
-            // 
-            this.lblMatKhau.AutoSize = true;
-            this.lblMatKhau.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMatKhau.Location = new System.Drawing.Point(3, 188);
-            this.lblMatKhau.Name = "lblMatKhau";
-            this.lblMatKhau.Size = new System.Drawing.Size(88, 22);
-            this.lblMatKhau.TabIndex = 6;
-            this.lblMatKhau.Text = "Mật khẩu:";
             // 
             // txtBoxTaiKhoan
             // 
@@ -195,9 +159,6 @@
         private System.Windows.Forms.Label lblTaiKhoan;
         private System.Windows.Forms.TextBox txtBoxMaNV;
         private System.Windows.Forms.Label lblMaSo;
-        private System.Windows.Forms.TextBox txtBoxMatKhau;
-        private System.Windows.Forms.Label lblMatKhau;
-        private System.Windows.Forms.Button btnMatKhauHienAn;
         private System.Windows.Forms.Button btnThoat;
         private System.Windows.Forms.Button btnDoiMatKhau;
     }
