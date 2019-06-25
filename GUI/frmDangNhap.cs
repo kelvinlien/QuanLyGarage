@@ -25,13 +25,11 @@ namespace GUI
         {
             if (textDangNhap.Text.Length == 0)
             {
-                labelThongBao.Text = "Vui lòng nhập tài khoản!";
-                labelThongBao.Visible = true;
+                MessageBox.Show("Vui lòng nhập tài khoản!");
             }
             else if (textMatKhau.Text.Length == 0)
             {
-                labelThongBao.Text = "Vui lòng nhập mật khẩu!";
-                labelThongBao.Visible = true;
+                MessageBox.Show("Vui lòng nhập mật khẩu!");
             }
             else
             {
@@ -43,15 +41,13 @@ namespace GUI
                     frmMain f = new frmMain();
                     this.Hide();
                     f.ShowDialog();
-                    labelThongBao.Visible = false;
                     this.Show();
                     textDangNhap.Clear();
                     textMatKhau.Clear();
                 }
                 else
                 {
-                    labelThongBao.Text = "Vui lòng kiểm tra lại tên hoặc mật khẩu!";
-                    labelThongBao.Visible = true;
+                    MessageBox.Show("Vui lòng kiểm tra lại tên hoặc mật khẩu!");
                 }
 
             }
@@ -75,16 +71,6 @@ namespace GUI
         {
             if (MessageBox.Show("Đóng ứng dụng?", "Thông báo", MessageBoxButtons.OKCancel) != DialogResult.OK)
                 e.Cancel = true;
-        }
-
-        private void TextDangNhap_TextChanged(object sender, EventArgs e)
-        {
-            labelThongBao.Visible = false;
-        }
-
-        private void TextMatKhau_TextChanged(object sender, EventArgs e)
-        {
-            labelThongBao.Visible = false;
         }
     }
 }
