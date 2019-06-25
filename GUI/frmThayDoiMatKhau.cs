@@ -22,6 +22,11 @@ namespace GUI
         {
             return txtBoxNhapLaiMatKhauCu.Text == TaiKhoanDAO.Instance.LayMatKhau();
         }
+
+        bool XacNhanMatKhauMoi()
+        {
+            return txtBoxNhapMatKhauMoi.Text == txtBoxXacNhanMatKhauMoi.Text;
+        }
         private void BtnThoat_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -78,12 +83,26 @@ namespace GUI
         {
             if (XacNhanChuTaiKhoan())
             {
-                //Kiem tra mat khau moi co trung voi xac nhan mat khau moi khong
-                //Goi ham update DB tu DAO ra roi tao MessageBox xac nhan da doi mat khau thanh cong
+                if (XacNhanMatKhauMoi())
+                {
+                    TaiKhoanDAO.Instance.CapNhatMatKhau(txtBoxNhapMatKhauMoi.Text, TaiKhoanDAO.Instance.LayMaNhanVien());
+                    MessageBox.Show("Cập nhật mật khẩu thành công!", "Thành công!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Mật khẩu mới không trùng khớp. Xin vui lòng nhập lại!", "Thất bại!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    txtBoxNhapLaiMatKhauCu.Clear();
+                    txtBoxNhapMatKhauMoi.Clear();
+                    txtBoxXacNhanMatKhauMoi.Clear();
+                }
             }
             else
             {
-                MessageBox.Show("Xin vui lòng thử lại!", "Sai mật khẩu cũ!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Mật khẩu cũ không đúng. Xin vui lòng thử lại!", "Thất bại!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtBoxNhapLaiMatKhauCu.Clear();
+                txtBoxNhapMatKhauMoi.Clear();
+                txtBoxXacNhanMatKhauMoi.Clear();
             }
         }
     }

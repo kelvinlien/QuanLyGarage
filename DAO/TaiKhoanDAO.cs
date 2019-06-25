@@ -89,5 +89,11 @@ namespace DAO
         {
             return Pass;
         }
+
+        public void CapNhatMatKhau(string matkhau, string id) //Ham chay thanh cong nhung khong co thay doi len co so du lieu
+        {
+            string query = "UPDATE dbo.TAIKHOAN SET @column = @colval WHERE @id = @idval ";
+            DataProvider.Instance.UpdateDatabase(query, new object[] { "MatKhau", matkhau, "MaNhanVien", id });
+        }
     }
 }
