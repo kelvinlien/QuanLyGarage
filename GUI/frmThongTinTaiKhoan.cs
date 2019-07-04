@@ -49,7 +49,7 @@ namespace GUI
         private void FrmThongTinTaiKhoan_Load(object sender, EventArgs e)
         {
             txtBoxHoTen.Text = TaiKhoanDAO.Instance.LayHoTen();
-            txtBoxMaNV.Text = TaiKhoanDAO.Instance.LayMaNhanVien();
+            txtBoxMaNV.Text = TaiKhoanDAO.Instance.LayQuyenHan();
             txtBoxTaiKhoan.Text = TaiKhoanDAO.Instance.LayTenTaiKhoan();
         }
     }

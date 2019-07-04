@@ -12,7 +12,7 @@ namespace DAO
     {
         private static DataProvider instance;
         private DataProvider() { }
-        private string connectionSTR = @"Data Source=MAHLAP\MAHLAP;Initial Catalog=QuanLyGarage;Integrated Security=True";
+        private string connectionSTR = @"Data Source=DESKTOP-G243QOS\RADIUM;Initial Catalog=Garage;Integrated Security=True";
 
         public static DataProvider Instance
         {
@@ -26,6 +26,7 @@ namespace DAO
 
             using (SqlConnection connection = new SqlConnection(connectionSTR))
             {
+
                 connection.Open();
 
                 SqlCommand command = new SqlCommand(query, connection);
@@ -49,6 +50,7 @@ namespace DAO
                 adapter.Fill(data);
 
                 connection.Close();
+
             }
 
             return data;
@@ -60,6 +62,7 @@ namespace DAO
 
             using (SqlConnection connection = new SqlConnection(connectionSTR))
             {
+
                 connection.Open();
 
                 SqlCommand command = new SqlCommand(query, connection);
@@ -81,6 +84,7 @@ namespace DAO
                 data = command.ExecuteNonQuery();
 
                 connection.Close();
+
             }
 
             return data;
@@ -92,6 +96,7 @@ namespace DAO
 
             using (SqlConnection connection = new SqlConnection(connectionSTR))
             {
+
                 connection.Open();
 
                 SqlCommand command = new SqlCommand(query, connection);
@@ -113,6 +118,7 @@ namespace DAO
                 data = command.ExecuteScalar();
 
                 connection.Close();
+
             }
 
             return data;
@@ -122,6 +128,7 @@ namespace DAO
         {
             using (SqlConnection connection = new SqlConnection(connectionSTR))
             {
+
                 connection.Open();
 
                 SqlCommand command = new SqlCommand(query, connection);
@@ -143,7 +150,7 @@ namespace DAO
                 command.ExecuteNonQuery();
 
                 connection.Close();
-            }
+            }         
         }
     }
 }

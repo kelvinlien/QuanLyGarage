@@ -39,42 +39,44 @@ namespace GUI
 
         private void BtnHienMatKhauCu_Click(object sender, EventArgs e)
         {
-            if (txtBoxNhapLaiMatKhauCu.UseSystemPasswordChar)
+            if (btnHienMatKhauCu.Text == "Hiện mật khẩu")
             {
-                btnHienMatKhauCu.Text = "Hiện mật khẩu";
+                btnHienMatKhauCu.Text = "Ẩn mật khẩu";
                 txtBoxNhapLaiMatKhauCu.UseSystemPasswordChar = !txtBoxNhapLaiMatKhauCu.UseSystemPasswordChar;
             }
             else
             {
-                btnHienMatKhauCu.Text = "Ẩn mật khẩu";
+                btnHienMatKhauCu.Text = "Hiện mật khẩu";
                 txtBoxNhapLaiMatKhauCu.UseSystemPasswordChar = !txtBoxNhapLaiMatKhauCu.UseSystemPasswordChar;
             }
         }
 
         private void BtnHienMatKhauMoi_Click(object sender, EventArgs e)
         {
-            if (txtBoxNhapMatKhauMoi.UseSystemPasswordChar)
+
+            if (btnHienMatKhauMoi.Text == "Hiện mật khẩu")
             {
-                btnHienMatKhauMoi.Text = "Hiện mật khẩu";
+                btnHienMatKhauMoi.Text = "Ẩn mật khẩu";
                 txtBoxNhapMatKhauMoi.UseSystemPasswordChar = !txtBoxNhapMatKhauMoi.UseSystemPasswordChar;
             }
             else
             {
-                btnHienMatKhauMoi.Text = "Ẩn mật khẩu";
+                btnHienMatKhauMoi.Text = "Hiện mật khẩu";
                 txtBoxNhapMatKhauMoi.UseSystemPasswordChar = !txtBoxNhapMatKhauMoi.UseSystemPasswordChar;
             }
         }
 
         private void BtnHienMatKhauMoiXacNhan_Click(object sender, EventArgs e)
         {
-            if (txtBoxXacNhanMatKhauMoi.UseSystemPasswordChar)
+
+            if (btnHienMatKhauMoiXacNhan.Text == "Hiện mật khẩu")
             {
-                btnHienMatKhauMoiXacNhan.Text = "Hiện mật khẩu";
+                btnHienMatKhauMoiXacNhan.Text = "Ẩn mật khẩu";
                 txtBoxXacNhanMatKhauMoi.UseSystemPasswordChar = !txtBoxXacNhanMatKhauMoi.UseSystemPasswordChar;
             }
             else
             {
-                btnHienMatKhauMoiXacNhan.Text = "Ẩn mật khẩu";
+                btnHienMatKhauMoiXacNhan.Text = "Hiện mật khẩu";
                 txtBoxXacNhanMatKhauMoi.UseSystemPasswordChar = !txtBoxXacNhanMatKhauMoi.UseSystemPasswordChar;
             }
         }
@@ -87,6 +89,12 @@ namespace GUI
                 {
                     TaiKhoanDAO.Instance.CapNhatMatKhau(txtBoxNhapMatKhauMoi.Text, TaiKhoanDAO.Instance.LayMaNhanVien());
                     MessageBox.Show("Cập nhật mật khẩu thành công!", "Thành công!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    btnHienMatKhauCu.Text = "Hiện mật khẩu";
+                    txtBoxNhapLaiMatKhauCu.UseSystemPasswordChar = false;
+                    btnHienMatKhauMoi.Text = "Hiện mật khẩu";
+                    txtBoxNhapMatKhauMoi.UseSystemPasswordChar = false;
+                    btnHienMatKhauMoiXacNhan.Text = "Hiện mật khẩu";
+                    txtBoxXacNhanMatKhauMoi.UseSystemPasswordChar = false;
                     this.Close();
                 }
                 else
@@ -95,6 +103,12 @@ namespace GUI
                     txtBoxNhapLaiMatKhauCu.Clear();
                     txtBoxNhapMatKhauMoi.Clear();
                     txtBoxXacNhanMatKhauMoi.Clear();
+                    btnHienMatKhauCu.Text = "Hiện mật khẩu";
+                    txtBoxNhapLaiMatKhauCu.UseSystemPasswordChar = false;
+                    btnHienMatKhauMoi.Text = "Hiện mật khẩu";
+                    txtBoxNhapMatKhauMoi.UseSystemPasswordChar = false;
+                    btnHienMatKhauMoiXacNhan.Text = "Hiện mật khẩu";
+                    txtBoxXacNhanMatKhauMoi.UseSystemPasswordChar = false;
                 }
             }
             else

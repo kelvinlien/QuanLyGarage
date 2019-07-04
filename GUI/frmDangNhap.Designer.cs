@@ -73,7 +73,7 @@
             // 
             // buttonDangNhap
             // 
-            this.buttonDangNhap.Location = new System.Drawing.Point(227, 149);
+            this.buttonDangNhap.Location = new System.Drawing.Point(227, 124);
             this.buttonDangNhap.Name = "buttonDangNhap";
             this.buttonDangNhap.Size = new System.Drawing.Size(75, 23);
             this.buttonDangNhap.TabIndex = 4;
@@ -83,7 +83,7 @@
             // 
             // buttonThoat
             // 
-            this.buttonThoat.Location = new System.Drawing.Point(346, 149);
+            this.buttonThoat.Location = new System.Drawing.Point(343, 124);
             this.buttonThoat.Name = "buttonThoat";
             this.buttonThoat.Size = new System.Drawing.Size(75, 23);
             this.buttonThoat.TabIndex = 5;
@@ -96,7 +96,7 @@
             this.AcceptButton = this.buttonDangNhap;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(492, 213);
+            this.ClientSize = new System.Drawing.Size(492, 173);
             this.Controls.Add(this.buttonThoat);
             this.Controls.Add(this.buttonDangNhap);
             this.Controls.Add(this.textMatKhau);
@@ -106,7 +106,6 @@
             this.MaximizeBox = false;
             this.Name = "frmDangNhap";
             this.Text = "frmDangNhap";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmDangNhap_FormClosing);
             this.Load += new System.EventHandler(this.frmDangNhap_Load);
             this.Enter += new System.EventHandler(this.buttonDangNhap_Click);
             this.ResumeLayout(false);

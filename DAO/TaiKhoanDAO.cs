@@ -50,13 +50,13 @@ namespace DAO
             }
             return false;
         }
-        public int LayQuyenHan()
+        public string LayQuyenHan()
         {
             string query = "USP_Dangnhap @TenDangNhap , @MatKhau";
 
             DataTable result = DataProvider.Instance.ExecuteQuery(query, new object[] { User, Pass });
 
-            int qh = Int32.Parse(result.Rows[0][4].ToString());
+            string qh = result.Rows[0][4].ToString();
             return qh ;
         }
 
@@ -70,13 +70,13 @@ namespace DAO
             return qh;
         }
 
-        public string LayMaNhanVien()
+        public int LayMaNhanVien()
         {
             string query = "USP_Dangnhap @TenDangNhap , @MatKhau";
 
             DataTable result = DataProvider.Instance.ExecuteQuery(query, new object[] { User, Pass });
 
-            string qh = result.Rows[0][0].ToString();
+            int qh = int.Parse(result.Rows[0][0].ToString());
             return qh;
         }
 
@@ -90,10 +90,11 @@ namespace DAO
             return Pass;
         }
 
-        public void CapNhatMatKhau(string matkhau, string id) //Ham chay thanh cong nhung khong co thay doi len co so du lieu
+        public void CapNhatMatKhau(string matkhau, int id) 
         {
-            string query = "UPDATE dbo.TAIKHOAN SET @column = @colval WHERE @id = @idval ";
-            DataProvider.Instance.UpdateDatabase(query, new object[] { "MatKhau", matkhau, "MaNhanVien", id });
+            string query = "DoiMk @MaTK , @MatKhauMoi";
+            int test;
+            test = DataProvider.Instance.ExecuteNonQuery(query, new object[] { id, matkhau });
         }
     }
 }
