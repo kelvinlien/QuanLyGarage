@@ -39,43 +39,50 @@
             // account
             // 
             this.account.AutoSize = true;
-            this.account.Location = new System.Drawing.Point(131, 55);
+            this.account.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.account.Location = new System.Drawing.Point(32, 31);
+            this.account.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.account.Name = "account";
-            this.account.Size = new System.Drawing.Size(90, 13);
+            this.account.Size = new System.Drawing.Size(144, 22);
             this.account.TabIndex = 0;
             this.account.Text = "Tên Đăng Nhập: ";
             // 
             // password
             // 
             this.password.AutoSize = true;
-            this.password.Location = new System.Drawing.Point(131, 83);
+            this.password.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.password.Location = new System.Drawing.Point(32, 65);
+            this.password.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.password.Name = "password";
-            this.password.Size = new System.Drawing.Size(59, 13);
+            this.password.Size = new System.Drawing.Size(98, 22);
             this.password.TabIndex = 1;
             this.password.Text = "Mật Khẩu: ";
             // 
             // textDangNhap
             // 
-            this.textDangNhap.Location = new System.Drawing.Point(227, 52);
+            this.textDangNhap.Location = new System.Drawing.Point(175, 32);
+            this.textDangNhap.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textDangNhap.MaxLength = 30;
             this.textDangNhap.Name = "textDangNhap";
-            this.textDangNhap.Size = new System.Drawing.Size(139, 20);
+            this.textDangNhap.Size = new System.Drawing.Size(227, 22);
             this.textDangNhap.TabIndex = 2;
             // 
             // textMatKhau
             // 
-            this.textMatKhau.Location = new System.Drawing.Point(227, 80);
+            this.textMatKhau.Location = new System.Drawing.Point(175, 66);
+            this.textMatKhau.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textMatKhau.MaxLength = 30;
             this.textMatKhau.Name = "textMatKhau";
-            this.textMatKhau.Size = new System.Drawing.Size(139, 20);
+            this.textMatKhau.Size = new System.Drawing.Size(227, 22);
             this.textMatKhau.TabIndex = 3;
             this.textMatKhau.UseSystemPasswordChar = true;
             // 
             // buttonDangNhap
             // 
-            this.buttonDangNhap.Location = new System.Drawing.Point(227, 149);
+            this.buttonDangNhap.Location = new System.Drawing.Point(175, 121);
+            this.buttonDangNhap.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonDangNhap.Name = "buttonDangNhap";
-            this.buttonDangNhap.Size = new System.Drawing.Size(75, 23);
+            this.buttonDangNhap.Size = new System.Drawing.Size(100, 28);
             this.buttonDangNhap.TabIndex = 4;
             this.buttonDangNhap.Text = "Đăng nhập";
             this.buttonDangNhap.UseVisualStyleBackColor = true;
@@ -83,9 +90,10 @@
             // 
             // buttonThoat
             // 
-            this.buttonThoat.Location = new System.Drawing.Point(346, 149);
+            this.buttonThoat.Location = new System.Drawing.Point(302, 121);
+            this.buttonThoat.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonThoat.Name = "buttonThoat";
-            this.buttonThoat.Size = new System.Drawing.Size(75, 23);
+            this.buttonThoat.Size = new System.Drawing.Size(100, 28);
             this.buttonThoat.TabIndex = 5;
             this.buttonThoat.Text = "Thoát";
             this.buttonThoat.UseVisualStyleBackColor = true;
@@ -94,19 +102,22 @@
             // frmDangNhap
             // 
             this.AcceptButton = this.buttonDangNhap;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(492, 213);
+            this.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.ClientSize = new System.Drawing.Size(448, 177);
             this.Controls.Add(this.buttonThoat);
             this.Controls.Add(this.buttonDangNhap);
             this.Controls.Add(this.textMatKhau);
             this.Controls.Add(this.textDangNhap);
             this.Controls.Add(this.password);
             this.Controls.Add(this.account);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MaximizeBox = false;
             this.Name = "frmDangNhap";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmDangNhap";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmDangNhap_FormClosing);
             this.Load += new System.EventHandler(this.frmDangNhap_Load);
             this.Enter += new System.EventHandler(this.buttonDangNhap_Click);
             this.ResumeLayout(false);

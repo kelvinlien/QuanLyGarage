@@ -48,10 +48,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\DAL\DAL.csproj">
-      <Project>{2fe01c60-b77a-4ee8-baa4-f7b28cadc0e3}</Project>
-      <Name>DAL</Name>
-    </ProjectReference>
     <ProjectReference Include="..\DTO\DTO.csproj">
       <Project>{4bc08365-23f1-467a-9c0a-ab68d5bb89cf}</Project>
       <Name>DTO</Name>

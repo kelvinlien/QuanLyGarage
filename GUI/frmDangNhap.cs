@@ -8,7 +8,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DTO;
-using BUS;
 using DAO;
 
 namespace GUI
@@ -65,12 +64,6 @@ namespace GUI
         private void frmDangNhap_Load(object sender, EventArgs e)
         {
 
-        }
-
-        private void FrmDangNhap_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            if (MessageBox.Show("Đóng ứng dụng?", "Thông báo", MessageBoxButtons.OKCancel) != DialogResult.OK)
-                e.Cancel = true;
         }
     }
 }

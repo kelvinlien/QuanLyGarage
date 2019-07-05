@@ -41,11 +41,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DAL_DangNhap.cs" />
-    <Compile Include="DAL_DuyetXe.cs" />
-    <Compile Include="DAL_KhachHang.cs" />
-    <Compile Include="DAL_ThemXe.cs" />
-    <Compile Include="DBConnect.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
