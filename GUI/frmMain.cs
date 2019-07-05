@@ -18,6 +18,10 @@ namespace GUI
             InitializeComponent();
         }
 
+        #region Parameters
+        private int SoHangVTPTPhieuSuaChua, SoHangTienCongPhieuSuaChua;
+        #endregion
+
         #region Methods
         void DoiDateTimePickerFormat(DateTimePicker dtp) //Ham thuc hien chuyen format DateTimePicker sang MM/yyyy.
         {
@@ -41,6 +45,70 @@ namespace GUI
         void DatVisibleChoControl(Control ctrl, bool result) //Dat thuoc tinh Visible cho Control.
         {
             ctrl.Visible = result;
+        }
+
+        void KhoiTaoDataGridviewVTPT()
+        {
+            dataGridViewVTPTPhieuSuaChua.DataSource = PhieuSuaChuaDAO.Instance.TaoDataTable(5, new string[] { "STT", "Vật tư phụ tùng", "Số lượng", "Đơn giá", "Thành tiền" });
+            int dc = dataGridViewVTPTPhieuSuaChua.ColumnCount;
+            for (int i = 0; i < dc; i++)
+            {
+                dataGridViewVTPTPhieuSuaChua.Columns[i].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            }
+        }
+
+        void KhoiTaoDataGridviewTienCong()
+        {
+            dataGridViewTienCongPhieuSuaChua.DataSource = PhieuSuaChuaDAO.Instance.TaoDataTable(3, new string[] { "STT", "Nội dung", "Chi phí" });
+            int dc = dataGridViewTienCongPhieuSuaChua.ColumnCount;
+            for (int i = 0; i < dc; i++)
+            {
+                dataGridViewTienCongPhieuSuaChua.Columns[i].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            }
+        }
+
+        void TestThuNhapVTPTChoPhieuSuaChua()
+        {
+            PhieuSuaChuaDAO.Instance.ThemHangVTPT((DataTable)dataGridViewVTPTPhieuSuaChua.DataSource, 1, "Bánh xe siêu chắc siêu bền siêu đẹp thể hiện sự sang trọng, quý phái, lù xú ri ợt của chủ nhơn", 3, 200000);
+        }
+
+        void TestThuNhapTienCongChoPhieuSuaChua()
+        {
+            PhieuSuaChuaDAO.Instance.ThemHangTienCong((DataTable)dataGridViewTienCongPhieuSuaChua.DataSource, dataGridViewTienCongPhieuSuaChua.Rows.Count, "Lắp bánh xe vào một cách sang chảnh nhứt có thể", 500000);
+        }
+
+        void NhapVTPTChoPhieuSuaChua(int DonGia)
+        {
+            DataTable dt = new DataTable();
+            dt = (DataTable)dataGridViewVTPTPhieuSuaChua.DataSource;
+            PhieuSuaChuaDAO.Instance.ThemHangVTPT(dt, dt.Rows.Count, comboBoxVTPTPhieuSuaChua.Text, int.Parse(textBoxSoLuongVTPTPhieuSuaChua.Text), DonGia);
+        }
+
+        void NhapTienCongChoPhieuSuaChua(int ChiPhi)
+        {
+            DataTable dt = new DataTable();
+            dt = (DataTable)dataGridViewTienCongPhieuSuaChua.DataSource;
+            PhieuSuaChuaDAO.Instance.ThemHangTienCong(dt, dt.Rows.Count, comboBoxTienCongPhieuSuaChua.DisplayMember, ChiPhi);
+        }
+
+        int TinhTongThanhTien()
+        {
+            int TongThanhTien = 0;
+            foreach (DataGridViewRow row in dataGridViewVTPTPhieuSuaChua.Rows)
+            {
+                TongThanhTien += int.Parse(row.Cells["Thành tiền"].Value.ToString());
+            }
+            return TongThanhTien;
+        }
+
+        int TinhTongChiPhi()
+        {
+            int TongChiPhi = 0;
+            foreach (DataGridViewRow row in dataGridViewTienCongPhieuSuaChua.Rows)
+            {
+                TongChiPhi += int.Parse(row.Cells["Chi phí"].Value.ToString());
+            }
+            return TongChiPhi;
         }
         #endregion
 
@@ -94,6 +162,11 @@ namespace GUI
             textBoxDiaChiPTT.Text = TTKhachHangLPTT.Rows[0][2].ToString();
             // Điển ngày thu tiền
             textBoxNgayThuTien.Text = now.ToString("dd-MM-yyyy");
+            //Khởi tạo Datagridview Phiếu sửa chữa và tiền công
+            KhoiTaoDataGridviewTienCong();
+            KhoiTaoDataGridviewVTPT();
+            TestThuNhapTienCongChoPhieuSuaChua();
+            TestThuNhapVTPTChoPhieuSuaChua();
         }
 
         private void MenuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
@@ -214,8 +287,6 @@ namespace GUI
         {
             TaiKhoanDAO.Instance.XoaThongTinNguoiDungGanNhat();
         }
-
-        #endregion
 
         private void buttonThemXe_Click(object sender, EventArgs e)
         {
@@ -431,11 +502,40 @@ namespace GUI
             }
         }
 
+        private void TextBoxSoLuongVTPTPhieuSuaChua_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void ButtonNhapVTPTPhieuSuaChua_Click(object sender, EventArgs e)
+        {
+            NhapVTPTChoPhieuSuaChua(PhieuSuaChuaDAO.Instance.LayDonGiaVTPT(comboBoxVTPTPhieuSuaChua.ValueMember));
+        }
+
+        private void ButtonNhapTienCongPhieuSuaChua_Click(object sender, EventArgs e)
+        {
+            NhapTienCongChoPhieuSuaChua(PhieuSuaChuaDAO.Instance.LayChiPhiTienCong(comboBoxTienCongPhieuSuaChua.ValueMember));
+        }
+
+        private void BtnHoanTat_Click(object sender, EventArgs e)
+        {
+            int TongTien;
+            TongTien = TinhTongThanhTien() + TinhTongChiPhi();
+            textBoxTongTienPhieuSuaChua.Text = TongTien.ToString();
+
+        }
+
         private void comboBoxTenVTPT_Click(object sender, EventArgs e)
         {
             textBoxTenVTPTMoi.Enabled = false;
             textBoxGiaVTPT.Enabled = false;
         }
+
+        #endregion
+
 
     }
 }
