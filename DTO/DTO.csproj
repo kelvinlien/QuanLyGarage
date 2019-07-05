@@ -33,6 +33,8 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -41,11 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DTO_ChiTietPhieuSuaChua.cs" />
-    <Compile Include="DTO_DangNhap.cs" />
     <Compile Include="DTO_KhachHang.cs" />
-    <Compile Include="DTO_Kho.cs" />
-    <Compile Include="DTO_PhieuSuaChua.cs" />
     <Compile Include="DTO_Xe.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

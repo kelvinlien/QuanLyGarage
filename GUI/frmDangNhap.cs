@@ -8,13 +8,12 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DTO;
-using BUS;
+using DAO;
 
 namespace GUI
 {
     public partial class frmDangNhap : Form
     {
-        BUS_DangNhap busDN = new BUS.BUS_DangNhap();
         public frmDangNhap()
         {
             InitializeComponent();
@@ -25,40 +24,36 @@ namespace GUI
         {
             if (textDangNhap.Text.Length == 0)
             {
-                labelThongBao.Text = "Vui lòng nhập tài khoản!";
-                labelThongBao.Visible = true;
-            }
-            else if (textDangNhap.Text.Length > 20)
-            {
-                labelThongBao.Text = "Tài khoản gồm 20 kí tự trở xuống!";
-                labelThongBao.Visible = true;
+                MessageBox.Show("Vui lòng nhập tài khoản!");
             }
             else if (textMatKhau.Text.Length == 0)
             {
-                labelThongBao.Text = "Vui lòng nhập mật khẩu!";
-                labelThongBao.Visible = true;
-            }
-            else if (textMatKhau.Text.Length > 20)
-            {
-                labelThongBao.Text = "Mật khẩu gồm 20 kí tự trở xuống!";
-                labelThongBao.Visible = true;
+                MessageBox.Show("Vui lòng nhập mật khẩu!");
             }
             else
             {
-                DTO_DangNhap dn = new DTO_DangNhap(textDangNhap.Text, textMatKhau.Text);
-                if (busDN.checkDangNhap(dn) == true)
+                string TaiKhoan = textDangNhap.Text;
+                string MatKhau = textMatKhau.Text;
+                if (DangNhap(TaiKhoan, MatKhau))
                 {
                     MessageBox.Show("Đăng nhập thành công!", "Thông Báo");
-                    frmGiaoDienChinh f = new frmGiaoDienChinh();
+                    frmMain f = new frmMain();
+                    this.Hide();
                     f.ShowDialog();
-                    labelThongBao.Visible = false;                 
+                    this.Show();
+                    textDangNhap.Clear();
+                    textMatKhau.Clear();
                 }
                 else
                 {
-                    labelThongBao.Visible = true;
+                    MessageBox.Show("Vui lòng kiểm tra lại tên hoặc mật khẩu!");
                 }
 
             }
+        }
+        bool DangNhap(string TaiKhoan, string MatKhau)
+        {
+            return TaiKhoanDAO.Instance.DangNhap(TaiKhoan,MatKhau);
         }
 
         private void buttonThoat_Click(object sender, EventArgs e)
