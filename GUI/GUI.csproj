@@ -70,6 +70,11 @@
     <Compile Include="frmThongTinTaiKhoan.Designer.cs">
       <DependentUpon>frmThongTinTaiKhoan.cs</DependentUpon>
     </Compile>
+    <Compile Include="GarageDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GarageDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frmDangNhap.resx">
@@ -93,6 +98,17 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="GarageDataSet.xsc">
+      <DependentUpon>GarageDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="GarageDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>GarageDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="GarageDataSet.xss">
+      <DependentUpon>GarageDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Properties\DataSources\DTO.DTO_KhachHang.datasource" />
     <None Include="Properties\DataSources\DTO.DTO_Xe.datasource" />
     <None Include="Properties\Settings.settings">

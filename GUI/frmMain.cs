@@ -135,6 +135,12 @@ namespace GUI
 
         private void FrmMain_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'garageDataSet.KHO' table. You can move, or remove it, as needed.
+            this.kHOTableAdapter.Fill(this.garageDataSet.KHO);
+            // TODO: This line of code loads data into the 'garageDataSet.XE' table. You can move, or remove it, as needed.
+            this.xETableAdapter.Fill(this.garageDataSet.XE);
+            // TODO: This line of code loads data into the 'garageDataSet.HIEUXE' table. You can move, or remove it, as needed.
+            this.hIEUXETableAdapter.Fill(this.garageDataSet.HIEUXE);
             // TODO: This line of code loads data into the 'quanLyGarageDataSetLayTT.KHO' table. You can move, or remove it, as needed.
             this.kHOTableAdapter.Fill(this.quanLyGarageDataSetLayTT.KHO);
             // TODO: This line of code loads data into the 'quanLyGarageDataSetLayTT.XE' table. You can move, or remove it, as needed.
@@ -408,9 +414,10 @@ namespace GUI
                 MessageBox.Show("Vui lòng nhập số lượng vật tư trước khi thêm mới phiếu nhập !");
             else
             {
-                string query = "NhapVTPT @MaPhuTung , @SoLuong";
+                DateTime now = DateTime.Now;
+                string query = "NhapVTPT @MaPhuTung , @SoLuong , @ThoiDiem";
                 int test = 0;
-                test = DataProvider.Instance.ExecuteNonQuery(query, new object[] { comboBoxTenVTPT.SelectedValue, int.Parse(textBoxSoLuongVTPT.Text) });
+                test = DataProvider.Instance.ExecuteNonQuery(query, new object[] { comboBoxTenVTPT.SelectedValue, int.Parse(textBoxSoLuongVTPT.Text, now) });
                 if (test > 0)
                     MessageBox.Show("Nhập vật thêm tư phụ tùng thành công!");
             }
