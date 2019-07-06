@@ -61,7 +61,7 @@ namespace DAO
 
         public int LayDonGiaVTPT(string maVTPT)//Lấy đơn giá của VTPT theo mã
         {
-            string query = "Select from KHO where MaPhuTung = " + maVTPT;
+            string query = "Select * from KHO where MaPhuTung = " + maVTPT;
             DataTable result = DataProvider.Instance.ExecuteQuery(query);
             int DonGia = int.Parse(result.Rows[0][3].ToString());
             return DonGia;
@@ -69,7 +69,7 @@ namespace DAO
 
         public int LayChiPhiTienCong(string maTienCong)//Lấy chi phí của tiền công theo mã
         {
-            string query = "Select from TIENCONG where MaTC = " + maTienCong;
+            string query = "Select * from TIENCONG where MaTC = " + maTienCong;
             DataTable result = DataProvider.Instance.ExecuteQuery(query);
             int ChiPhi = int.Parse(result.Rows[0][2].ToString());
             return ChiPhi;
