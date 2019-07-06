@@ -411,7 +411,7 @@ namespace GUI
                 DateTime now = DateTime.Now;
                 string query = "NhapVTPT @MaPhuTung , @SoLuong , @ThoiDiem";
                 int test = 0;
-                test = DataProvider.Instance.ExecuteNonQuery(query, new object[] { comboBoxTenVTPT.SelectedValue, int.Parse(textBoxSoLuongVTPT.Text, now) });
+                test = DataProvider.Instance.ExecuteNonQuery(query, new object[] { comboBoxTenVTPT.SelectedValue, int.Parse(textBoxSoLuongVTPT.Text), now });
                 if (test > 0)
                     MessageBox.Show("Nhập vật thêm tư phụ tùng thành công!");
             }
