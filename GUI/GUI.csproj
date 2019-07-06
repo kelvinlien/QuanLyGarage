@@ -70,49 +70,8 @@
     <Compile Include="frmThongTinTaiKhoan.Designer.cs">
       <DependentUpon>frmThongTinTaiKhoan.cs</DependentUpon>
     </Compile>
-    <Compile Include="GarageDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>GarageDataSet.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="GarageDataSet1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>GarageDataSet1.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="GarageDataSetVTPT.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>GarageDataSetVTPT.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="GarageDataSetXeDaTiepNhan.cs">
-      <DependentUpon>GarageDataSetXeDaTiepNhan.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="GarageDataSetXeDaTiepNhan.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>GarageDataSetXeDaTiepNhan.xsd</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="QuanLyGarageDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>QuanLyGarageDataSet.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="QuanLyGarageDataSetHieuXe.cs">
-      <DependentUpon>QuanLyGarageDataSetHieuXe.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="QuanLyGarageDataSetHieuXe.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>QuanLyGarageDataSetHieuXe.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="QuanLyGarageDataSetLayTT.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>QuanLyGarageDataSetLayTT.xsd</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="frmDangNhap.resx">
       <DependentUpon>frmDangNhap.cs</DependentUpon>
     </EmbeddedResource>
@@ -134,50 +93,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <None Include="GarageDataSet.xsc">
-      <DependentUpon>GarageDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="GarageDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>GarageDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="GarageDataSet.xss">
-      <DependentUpon>GarageDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="GarageDataSet1.xsc">
-      <DependentUpon>GarageDataSet1.xsd</DependentUpon>
-    </None>
-    <None Include="GarageDataSet1.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>GarageDataSet1.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="GarageDataSet1.xss">
-      <DependentUpon>GarageDataSet1.xsd</DependentUpon>
-    </None>
-    <None Include="GarageDataSetVTPT.xsc">
-      <DependentUpon>GarageDataSetVTPT.xsd</DependentUpon>
-    </None>
-    <None Include="GarageDataSetVTPT.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>GarageDataSetVTPT.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="GarageDataSetVTPT.xss">
-      <DependentUpon>GarageDataSetVTPT.xsd</DependentUpon>
-    </None>
-    <None Include="GarageDataSetXeDaTiepNhan.xsc">
-      <DependentUpon>GarageDataSetXeDaTiepNhan.xsd</DependentUpon>
-    </None>
-    <None Include="GarageDataSetXeDaTiepNhan.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>GarageDataSetXeDaTiepNhan.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="GarageDataSetXeDaTiepNhan.xss">
-      <DependentUpon>GarageDataSetXeDaTiepNhan.xsd</DependentUpon>
-    </None>
     <None Include="Properties\DataSources\DTO.DTO_KhachHang.datasource" />
     <None Include="Properties\DataSources\DTO.DTO_Xe.datasource" />
     <None Include="Properties\Settings.settings">
@@ -189,39 +104,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="QuanLyGarageDataSet.xsc">
-      <DependentUpon>QuanLyGarageDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="QuanLyGarageDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>QuanLyGarageDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="QuanLyGarageDataSet.xss">
-      <DependentUpon>QuanLyGarageDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="QuanLyGarageDataSetHieuXe.xsc">
-      <DependentUpon>QuanLyGarageDataSetHieuXe.xsd</DependentUpon>
-    </None>
-    <None Include="QuanLyGarageDataSetHieuXe.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>QuanLyGarageDataSetHieuXe.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="QuanLyGarageDataSetHieuXe.xss">
-      <DependentUpon>QuanLyGarageDataSetHieuXe.xsd</DependentUpon>
-    </None>
-    <None Include="QuanLyGarageDataSetLayTT.xsc">
-      <DependentUpon>QuanLyGarageDataSetLayTT.xsd</DependentUpon>
-    </None>
-    <None Include="QuanLyGarageDataSetLayTT.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>QuanLyGarageDataSetLayTT.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="QuanLyGarageDataSetLayTT.xss">
-      <DependentUpon>QuanLyGarageDataSetLayTT.xsd</DependentUpon>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
