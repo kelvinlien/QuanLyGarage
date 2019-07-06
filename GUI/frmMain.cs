@@ -19,7 +19,6 @@ namespace GUI
         }
 
         #region Parameters
-        private int SoHangVTPTPhieuSuaChua, SoHangTienCongPhieuSuaChua;
         #endregion
 
         #region Methods
@@ -49,46 +48,49 @@ namespace GUI
 
         void KhoiTaoDataGridviewVTPT()
         {
-            dataGridViewVTPTPhieuSuaChua.DataSource = PhieuSuaChuaDAO.Instance.TaoDataTable(5, new string[] { "STT", "Vật tư phụ tùng", "Số lượng", "Đơn giá", "Thành tiền" });
+            DataTable dt = PhieuSuaChuaDAO.Instance.TaoDataTable(6, new string[] { "STT", "Vật tư phụ tùng", "Số lượng", "Đơn giá", "Thành tiền", "Mã phụ tùng" });
+            dataGridViewVTPTPhieuSuaChua.DataSource = dt;
             int dc = dataGridViewVTPTPhieuSuaChua.ColumnCount;
             for (int i = 0; i < dc; i++)
             {
                 dataGridViewVTPTPhieuSuaChua.Columns[i].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
             }
+            //dataGridViewVTPTPhieuSuaChua.Columns["Mã phụ tùng"].Visible = false;
         }
 
         void KhoiTaoDataGridviewTienCong()
         {
-            dataGridViewTienCongPhieuSuaChua.DataSource = PhieuSuaChuaDAO.Instance.TaoDataTable(3, new string[] { "STT", "Nội dung", "Chi phí" });
+            dataGridViewTienCongPhieuSuaChua.DataSource = PhieuSuaChuaDAO.Instance.TaoDataTable(4, new string[] { "STT", "Nội dung", "Chi phí" ,"Mã tiền công"});
             int dc = dataGridViewTienCongPhieuSuaChua.ColumnCount;
             for (int i = 0; i < dc; i++)
             {
                 dataGridViewTienCongPhieuSuaChua.Columns[i].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
             }
+            //dataGridViewVTPTPhieuSuaChua.Columns["Mã tiền công"].Visible = false;
         }
 
         void TestThuNhapVTPTChoPhieuSuaChua()
         {
-            PhieuSuaChuaDAO.Instance.ThemHangVTPT((DataTable)dataGridViewVTPTPhieuSuaChua.DataSource, 1, "Bánh xe siêu chắc siêu bền siêu đẹp thể hiện sự sang trọng, quý phái, lù xú ri ợt của chủ nhơn", 3, 200000);
+            PhieuSuaChuaDAO.Instance.ThemHangVTPT((DataTable)dataGridViewVTPTPhieuSuaChua.DataSource, dataGridViewVTPTPhieuSuaChua.Rows.Count, "Bánh xe siêu chắc siêu bền siêu đẹp thể hiện sự sang trọng, quý phái, lù xú ri ợt của chủ nhơn", 3, 200000,"PT1");
         }
 
         void TestThuNhapTienCongChoPhieuSuaChua()
         {
-            PhieuSuaChuaDAO.Instance.ThemHangTienCong((DataTable)dataGridViewTienCongPhieuSuaChua.DataSource, dataGridViewTienCongPhieuSuaChua.Rows.Count, "Lắp bánh xe vào một cách sang chảnh nhứt có thể", 500000);
+            PhieuSuaChuaDAO.Instance.ThemHangTienCong((DataTable)dataGridViewTienCongPhieuSuaChua.DataSource, dataGridViewTienCongPhieuSuaChua.Rows.Count, "Lắp bánh xe vào một cách sang chảnh nhứt có thể", 500000,"TC1");
         }
 
         void NhapVTPTChoPhieuSuaChua(int DonGia)
         {
             DataTable dt = new DataTable();
             dt = (DataTable)dataGridViewVTPTPhieuSuaChua.DataSource;
-            PhieuSuaChuaDAO.Instance.ThemHangVTPT(dt, dt.Rows.Count, comboBoxVTPTPhieuSuaChua.Text, int.Parse(textBoxSoLuongVTPTPhieuSuaChua.Text), DonGia);
+            PhieuSuaChuaDAO.Instance.ThemHangVTPT(dt, dt.Rows.Count, comboBoxVTPTPhieuSuaChua.Text, int.Parse(textBoxSoLuongVTPTPhieuSuaChua.Text), DonGia, comboBoxVTPTPhieuSuaChua.ValueMember.ToString());
         }
 
         void NhapTienCongChoPhieuSuaChua(int ChiPhi)
         {
             DataTable dt = new DataTable();
             dt = (DataTable)dataGridViewTienCongPhieuSuaChua.DataSource;
-            PhieuSuaChuaDAO.Instance.ThemHangTienCong(dt, dt.Rows.Count, comboBoxTienCongPhieuSuaChua.DisplayMember, ChiPhi);
+            PhieuSuaChuaDAO.Instance.ThemHangTienCong(dt, dt.Rows.Count, comboBoxTienCongPhieuSuaChua.DisplayMember, ChiPhi, comboBoxTienCongPhieuSuaChua.ValueMember.ToString());
         }
 
         int TinhTongThanhTien()
@@ -167,6 +169,10 @@ namespace GUI
             KhoiTaoDataGridviewVTPT();
             TestThuNhapTienCongChoPhieuSuaChua();
             TestThuNhapVTPTChoPhieuSuaChua();
+            TestThuNhapTienCongChoPhieuSuaChua();
+            TestThuNhapVTPTChoPhieuSuaChua();
+            //Khởi tạo 1 dt để lưu lại các mã vtpt đã nhập và kiểm tra, so sánh số lượng nhập vào.
+            PhieuSuaChuaDAO.Instance.KhoiTaoDtVTPTDangNhap();
         }
 
         private void MenuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
@@ -512,7 +518,14 @@ namespace GUI
 
         private void ButtonNhapVTPTPhieuSuaChua_Click(object sender, EventArgs e)
         {
-            NhapVTPTChoPhieuSuaChua(PhieuSuaChuaDAO.Instance.LayDonGiaVTPT(comboBoxVTPTPhieuSuaChua.ValueMember));
+            if (PhieuSuaChuaDAO.Instance.KiemTraSoLuong(comboBoxVTPTPhieuSuaChua.ValueMember, int.Parse(textBoxSoLuongVTPTPhieuSuaChua.Text)))
+            {
+                NhapVTPTChoPhieuSuaChua(PhieuSuaChuaDAO.Instance.LayDonGiaVTPT(comboBoxVTPTPhieuSuaChua.ValueMember));
+            }
+            else
+            {
+                MessageBox.Show("Vui lòng kiểm tra lại số lượng vật tư phụ tùng!", "Kho không đủ đáp ứng", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void ButtonNhapTienCongPhieuSuaChua_Click(object sender, EventArgs e)
@@ -534,8 +547,24 @@ namespace GUI
             textBoxGiaVTPT.Enabled = false;
         }
 
+
         #endregion
 
+        private void BtnTaoMoiPCS_Click(object sender, EventArgs e)
+        {
+            comboBoxBienSoXe1.Text = "";
+            comboBoxVTPTPhieuSuaChua.Text = "";
+            comboBoxTienCongPhieuSuaChua.Text = "";
+            textBoxSoLuongVTPTPhieuSuaChua.Text = "";
+            KhoiTaoDataGridviewVTPT();
+            KhoiTaoDataGridviewTienCong();
+            PhieuSuaChuaDAO.Instance.XoaDtVTPTDangNhap();
+        }
 
+        private void BtnLuuPSC_Click(object sender, EventArgs e)
+        {
+            PhieuSuaChuaDAO.Instance.NhapVTPT();
+            PhieuSuaChuaDAO.Instance.LuuPhieuSuaChua(comboBoxBienSoXe1.Text, TinhTongChiPhi(), TinhTongThanhTien(), TinhTongThanhTien() + TinhTongChiPhi(), (DataTable)dataGridViewTienCongPhieuSuaChua.DataSource);
+        }
     }
 }
