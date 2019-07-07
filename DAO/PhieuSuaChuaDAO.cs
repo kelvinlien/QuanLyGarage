@@ -89,12 +89,12 @@ namespace DAO
             {
                 for(int i = 0; i < sltc; i++)
                 {
-                    query = "insert into CHITIETPHIEUNHAP values ("+ ma + " , " + VTPTDangNhap.Rows[i][0].ToString() + " , " + TC.Rows[i][3].ToString() + ")";
+                    query = "insert into CHITIETPHIEUNHAP values ("+ ma + " , " + TC.Rows[i][3].ToString() + " , " +  VTPTDangNhap.Rows[i][0].ToString() + " , " + VTPTDangNhap.Rows[i][1]+")";
                     re = DataProvider.Instance.ExecuteNonQuery(query);
                 }
                 for(int i = sltc; i < slvtpt; i++)
                 {
-                    query = "insert into CHITIETPHIEUNHAP values (" + ma + " , " + VTPTDangNhap.Rows[i][0].ToString() + " , " + null + ")";
+                    query = "insert into CHITIETPHIEUNHAP values (" + ma + " , " + null + " , " + VTPTDangNhap.Rows[i][0].ToString() + " , " + VTPTDangNhap.Rows[i][1] + ")";
                     re = DataProvider.Instance.ExecuteNonQuery(query);
                 }
             }
@@ -102,12 +102,12 @@ namespace DAO
             {
                 for (int i = 0; i < slvtpt; i++)
                 {
-                    query = "insert into CHITIETPHIEUNHAP values (" + ma + " , " + VTPTDangNhap.Rows[i][0].ToString() + " , " + TC.Rows[i][3].ToString() + ")";
+                    query = "insert into CHITIETPHIEUNHAP values (" + ma + " , " + TC.Rows[i][3].ToString() + " , " + VTPTDangNhap.Rows[i][0].ToString() + " , " + VTPTDangNhap.Rows[i][1] + ")";
                     re = DataProvider.Instance.ExecuteNonQuery(query);
                 }
                 for (int i = slvtpt; i < sltc; i++)
                 {
-                    query = "insert into CHITIETPHIEUNHAP values (" + ma + " , " + null + " , " + TC.Rows[i][3].ToString() + ")";
+                    query = "insert into CHITIETPHIEUNHAP values (" + ma + " , " + TC.Rows[i][3].ToString() + " , " + null + " , " + null + ")";
                     re = DataProvider.Instance.ExecuteNonQuery(query);
                 }
             }
@@ -171,19 +171,6 @@ namespace DAO
             VTPTDangNhap.Clear();
         }
 
-
-        //public int DiemSoLuongPhuTung(DataTable a,string PhuTung)
-        //{
-        //    int sum = 0;
-        //    foreach(DataRow row in a.Rows)
-        //    {
-        //        if(row["Vật tư phụ tùng"].ToString() == PhuTung)
-        //        {
-        //            sum += int.Parse(row["Số lượng"].ToString());
-        //        }
-        //    }
-        //    return sum;
-        //}
 
         
     }

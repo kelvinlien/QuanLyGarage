@@ -112,6 +112,15 @@ namespace GUI
             }
             return TongChiPhi;
         }
+
+        void KiemTraDuLieuBaoCaoKhiLoad(DateTime a)
+        {
+            if (!BaoCaoTonDAO.Instance.KiemTraDuLieuBaoCao(a))
+            {
+                DataTable dt = new DataTable();
+                BaoCaoTonDAO.Instance.NhapBaoCaoTon(BaoCaoTonDAO.Instance.TaoBaoCaoTon(dt,a), a);
+            }
+        }
         #endregion
 
         #region Events
@@ -135,12 +144,14 @@ namespace GUI
 
         private void FrmMain_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'quanLyGarageDataSetLayTT.KHO' table. You can move, or remove it, as needed.
-            this.kHOTableAdapter.Fill(this.quanLyGarageDataSetLayTT.KHO);
-            // TODO: This line of code loads data into the 'quanLyGarageDataSetLayTT.XE' table. You can move, or remove it, as needed.
-            this.xETableAdapter.Fill(this.quanLyGarageDataSetLayTT.XE);
-            // TODO: This line of code loads data into the 'quanLyGarageDataSetLayTT.HIEUXE' table. You can move, or remove it, as needed.
-            this.hIEUXETableAdapter.Fill(this.quanLyGarageDataSetLayTT.HIEUXE);
+            // TODO: This line of code loads data into the 'quanLyGarageDataSet.TIENCONG' table. You can move, or remove it, as needed.
+            this.tIENCONGTableAdapter.Fill(this.quanLyGarageDataSet.TIENCONG);
+            // TODO: This line of code loads data into the 'quanLyGarageDataSet.KHO' table. You can move, or remove it, as needed.
+            this.kHOTableAdapter.Fill(this.quanLyGarageDataSet.KHO);
+            // TODO: This line of code loads data into the 'quanLyGarageDataSet.XE' table. You can move, or remove it, as needed.
+            this.xETableAdapter.Fill(this.quanLyGarageDataSet.XE);
+            // TODO: This line of code loads data into the 'quanLyGarageDataSet.HIEUXE' table. You can move, or remove it, as needed.
+            this.hIEUXETableAdapter.Fill(this.quanLyGarageDataSet.HIEUXE);
             // Lấy dữ liệu các xe đã tiếp nhận
             string query = "SELECT BienSo, TenHieuXe, TenKH, DienThoai, DiaChi FROM XE, HIEUXE as HX, KHACHHANG as KH WHERE XE.MaKH = KH.MaKH and XE.MaHX = HX.MaHX and XE.TrangThai = 1";
             dataGridViewXeDaTiepNhan.DataSource = DataProvider.Instance.ExecuteQuery(query);
@@ -167,12 +178,14 @@ namespace GUI
             //Khởi tạo Datagridview Phiếu sửa chữa và tiền công
             KhoiTaoDataGridviewTienCong();
             KhoiTaoDataGridviewVTPT();
-            TestThuNhapTienCongChoPhieuSuaChua();
-            TestThuNhapVTPTChoPhieuSuaChua();
-            TestThuNhapTienCongChoPhieuSuaChua();
-            TestThuNhapVTPTChoPhieuSuaChua();
+            //TestThuNhapTienCongChoPhieuSuaChua();//cai nay la sao, co can phai tesst ko hay la xoa? 4 dong nay ne
+            //TestThuNhapVTPTChoPhieuSuaChua();
+            //TestThuNhapTienCongChoPhieuSuaChua();
+            //TestThuNhapVTPTChoPhieuSuaChua();
             //Khởi tạo 1 dt để lưu lại các mã vtpt đã nhập và kiểm tra, so sánh số lượng nhập vào.
             PhieuSuaChuaDAO.Instance.KhoiTaoDtVTPTDangNhap();
+            KiemTraDuLieuBaoCaoKhiLoad(DateTime.Now);
+            dataGridViewBaoCaoTon.DataSource=BaoCaoTonDAO.Instance.KhoiTaoBaoCaoTon();
         }
 
         private void MenuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
@@ -220,13 +233,18 @@ namespace GUI
 
         private void BtnLapBaoCaoTon_Click(object sender, EventArgs e)
         {
-            lblThangBaoCaoTon.Text = "Tháng " + dateTimePickerChonThoiDiemBaoCaoTon.Value.ToString("MM/yyyy");
+            if (BaoCaoTonDAO.Instance.KiemTraThoiDiem(dateTimePickerChonThoiDiemBaoCaoTon.Value))
+            {
+                lblThangBaoCaoTon.Text = "Tháng " + dateTimePickerChonThoiDiemBaoCaoTon.Value.ToString("MM/yyyy");
+                dataGridViewBaoCaoTon.DataSource=BaoCaoTonDAO.Instance.TruyXuatBaoCaoTon(dateTimePickerChonThoiDiemBaoCaoTon.Value);
+            }
         }
 
         private void BtnBaoCaoTonMoi_Click(object sender, EventArgs e)
         {
             DatLaiDateTimePicker(dateTimePickerChonThoiDiemBaoCaoTon);
             lblThangBaoCaoTon.Text = "Tháng";
+            BaoCaoTonDAO.Instance.TaoBaoCaoMoi((DataTable)dataGridViewBaoCaoTon.DataSource);
         }
 
         private void BtnBaoCaoDoanhSoMoi_Click(object sender, EventArgs e)
@@ -402,7 +420,7 @@ namespace GUI
             textBoxDiaChiPTT.Text = TTKhachHangLPTT.Rows[0][2].ToString();
         }
 
-        private void buttonLapPhieuNhapVTPT_Click(object sender, EventArgs e)
+        private void buttonLapPhieuNhapVTPT_Click(object sender, EventArgs e) //chỗ này chỉnh lại database này
         {
             if (textBoxSoLuongVTPT.Text == "")
                 MessageBox.Show("Vui lòng nhập số lượng vật tư trước khi thêm mới phiếu nhập !");
@@ -417,7 +435,7 @@ namespace GUI
             }
         }
 
-        private void buttonTaoMoiVTPT_Click(object sender, EventArgs e)
+        private void buttonTaoMoiVTPT_Click(object sender, EventArgs e) //chỗ này thiếu thêm thời gian, để tối về anh kiểm tra thử database có thêm chưa, nếu chưa thêm thì anh gởi lệnh SQL qua và sửa vào trong này
         {
             if (textBoxSoLuongVTPT.Text == "")
                 MessageBox.Show("Vui lòng nhập số lượng vật tư trước khi thêm mới vật tư vào kho !");
@@ -548,9 +566,6 @@ namespace GUI
             textBoxGiaVTPT.Enabled = false;
         }
 
-
-        #endregion
-
         private void BtnTaoMoiPCS_Click(object sender, EventArgs e)
         {
             comboBoxBienSoXe1.Text = "";
@@ -567,5 +582,8 @@ namespace GUI
             PhieuSuaChuaDAO.Instance.NhapVTPT();
             PhieuSuaChuaDAO.Instance.LuuPhieuSuaChua(comboBoxBienSoXe1.Text, TinhTongChiPhi(), TinhTongThanhTien(), TinhTongThanhTien() + TinhTongChiPhi(), (DataTable)dataGridViewTienCongPhieuSuaChua.DataSource);
         }
+
+        #endregion
+
     }
 }

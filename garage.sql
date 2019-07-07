@@ -201,3 +201,94 @@ BaoCaoDoanhThu 6 ,2019
 TongTienDoanhThu 6, 2019
 select * from PHIEUTHUTIEN
 select *from PHIEUSUACHUA
+
+drop procedure NhapVTPT
+
+create table PHIEUNHAPVTPT
+(
+	MaPNVTPT int PRIMARY KEY,
+	MaPhuTung int,
+	SoLuong int,
+	ThoiDiem datetime
+)
+drop procedure NhapVTPT
+create procedure NhapVTPT
+	@MaPhuTung int,
+	@SoLuong int,
+	@ThoiDiem datetime
+AS
+BEGIN
+	DECLARE @iMPNVTPT int
+	SELECT @iMPNVTPT = COUNT(MaPNVTPT) FROM PHIEUNHAPVTPT
+	SET @iMPNVTPT = @iMPNVTPT + 1
+	INSERT INTO PHIEUNHAPVTPT (MaPNVTPT, MaPhuTung, SoLuong, ThoiDiem) VALUES (@iMPNVTPT, @MaPhuTung, @SoLuong, @ThoiDiem)
+	UPDATE KHO SET SoLuong = SoLuong + @SoLuong WHERE MaPhuTung = @MaPhuTung
+END
+
+drop procedure NhapMoiVTPT
+create procedure NhapMoiVTPT
+	@TenPhuTung varchar(30),
+	@SoLuong int,
+	@DonGia int
+AS
+BEGIN
+	DECLARE @iMVTPT int
+	SELECT @iMVTPT = COUNT(MaPhuTung) FROM KHO
+	SET @iMVTPT = @iMVTPT + 1
+	INSERT INTO KHO (MaPhuTung, TenVatTuPhuTung, SoLuong, DonGia) VALUES (@iMVTPT, @TenPhuTung, @SoLuong, @DonGia)
+END
+drop procedure ThemPhieuThuTien
+CREATE PROCEDURE ThemPhieuThuTien
+	@BienSo varchar(10),
+	@TienThu int,
+	@NgayThuTien datetime
+AS
+BEGIN
+		DECLARE @imaptt int
+		DECLARE @MaKH int
+		SELECT @imaptt = COUNT(MaPhieuThuTien) from PHIEUTHUTIEN
+		SET @imaptt = @imaptt + 1
+		SELECT @MaKH = MaKH FROM XE WHERE XE.BienSo = @BienSo
+		INSERT INTO PHIEUTHUTIEN (MaPhieuThuTien, MaKH, TienThu, NgayThuTien) VALUES (@imaptt, @MaKH, @TienThu, @NgayThuTien)
+		UPDATE KHACHHANG SET TienNo = TienNo - @TienThu WHERE MaKH = @MaKH
+END
+drop procedure ThemKhachHang
+CREATE PROCEDURE ThemKhachHang
+	@TenKH varchar(30),
+	@DienThoai varchar(10),
+	@DiaChi varchar(100),
+	@TienNo int
+AS
+BEGIN
+	DECLARE @test int
+	SELECT @test=COUNT(MaKH) FROM KHACHHANG WHERE (@TenKH = TenKH) and (@DienThoai = DienThoai) 
+	if @test = 0
+	BEGIN
+		DECLARE @imakh int
+		SELECT @imakh = MAX(MaKH) from KHACHHANG
+		SET @imakh = @imakh + 1
+		INSERT INTO KHACHHANG (MaKH, TenKH, DiaChi, DienThoai, TienNo) VALUES (@imakh, @TenKH, @DiaChi,@DienThoai, @TienNo)
+	END
+END;
+
+create table BAOCAOTON
+(
+	MaBCT int PRIMARY KEY,
+	ThoiDiemBaoCao datetime
+)
+
+create table CT_BAOCAOTON
+(
+	MaBCT int not null,
+	MaPhuTung int not null,
+	TonDau int,
+	PhatSinh int,
+	TonCuoi int
+)
+drop table BAOCAOTON
+drop table CT_BAOCAOTON
+alter table CT_BAOCAOTON add constraint pk_ctBCT primary key (MaBCT, MaPhuTung)
+
+insert into BAOCAOTON 
+
+select * from (XE join KHACHHANG on XE.MaKH = KHACHHANG.MaKH) join HIEUXE on XE.MaHX = HIEUXE.MaHX
