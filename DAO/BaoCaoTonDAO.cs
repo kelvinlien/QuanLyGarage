@@ -6,7 +6,15 @@ using System.Threading.Tasks;
 
 namespace DAO
 {
-    class BaoCaoTonDAO
+    public class BaoCaoTonDAO
     {
+        private static BaoCaoTonDAO instance;
+
+        public static BaoCaoTonDAO Instance { get {
+                if (instance == null)
+                    instance = new BaoCaoTonDAO();
+                return instance;
+            } private set => instance = value; }
+
     }
 }

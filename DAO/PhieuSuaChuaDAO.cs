@@ -81,7 +81,7 @@ namespace DAO
             int ma = int.Parse(dt.Rows[0][0].ToString());
             dt = DataProvider.Instance.ExecuteQuery("Select MaKH from XE where BienSo = " + BienSo);
             string makh = dt.Rows[0][0].ToString();
-            string query = "insert into PHIEUSUACHUA values (PCS" + ma + " , " + BienSo + " , " + makh + " , " + TienCong + " , " + TienPhuTung + " , " + TongTien + ")";
+            string query = "insert into PHIEUSUACHUA values ("+ma + " , " + BienSo + " , " + makh + " , " + TienCong + " , " + TienPhuTung + " , " + TongTien + ")";
             int re = DataProvider.Instance.ExecuteNonQuery(query);
             int slvtpt = VTPTDangNhap.Rows.Count;
             int sltc = TC.Rows.Count;
@@ -89,12 +89,12 @@ namespace DAO
             {
                 for(int i = 0; i < sltc; i++)
                 {
-                    query = "insert into CHITIETPHIEUNHAP values (PCS" + ma + " , " + VTPTDangNhap.Rows[i][0].ToString() + " , " + TC.Rows[i][3].ToString() + ")";
+                    query = "insert into CHITIETPHIEUNHAP values ("+ ma + " , " + VTPTDangNhap.Rows[i][0].ToString() + " , " + TC.Rows[i][3].ToString() + ")";
                     re = DataProvider.Instance.ExecuteNonQuery(query);
                 }
                 for(int i = sltc; i < slvtpt; i++)
                 {
-                    query = "insert into CHITIETPHIEUNHAP values (PCS" + ma + " , " + VTPTDangNhap.Rows[i][0].ToString() + " , " + null + ")";
+                    query = "insert into CHITIETPHIEUNHAP values (" + ma + " , " + VTPTDangNhap.Rows[i][0].ToString() + " , " + null + ")";
                     re = DataProvider.Instance.ExecuteNonQuery(query);
                 }
             }
@@ -102,12 +102,12 @@ namespace DAO
             {
                 for (int i = 0; i < slvtpt; i++)
                 {
-                    query = "insert into CHITIETPHIEUNHAP values (PCS" + ma + " , " + VTPTDangNhap.Rows[i][0].ToString() + " , " + TC.Rows[i][3].ToString() + ")";
+                    query = "insert into CHITIETPHIEUNHAP values (" + ma + " , " + VTPTDangNhap.Rows[i][0].ToString() + " , " + TC.Rows[i][3].ToString() + ")";
                     re = DataProvider.Instance.ExecuteNonQuery(query);
                 }
                 for (int i = slvtpt; i < sltc; i++)
                 {
-                    query = "insert into CHITIETPHIEUNHAP values (PCS" + ma + " , " + null + " , " + TC.Rows[i][3].ToString() + ")";
+                    query = "insert into CHITIETPHIEUNHAP values (" + ma + " , " + null + " , " + TC.Rows[i][3].ToString() + ")";
                     re = DataProvider.Instance.ExecuteNonQuery(query);
                 }
             }

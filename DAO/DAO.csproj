@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BaoCaoTonDAO.cs" />
     <Compile Include="DataProvider.cs" />
     <Compile Include="PhieuSuaChuaDAO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
