@@ -83,26 +83,26 @@ namespace DAO
             return NoiDung;
         }
 
-        public void LuuPhieuSuaChua(string BienSo,int TienCong, int TienPhuTung, int TongTien, DataTable TC)//Lưu dữ liệu được nhập vào 2 bảng PHIEUSUACHUA và CHITIETPHIEUSUACHUA
+        public void LuuPhieuSuaChua(string BienSo, int TienCong, int TienPhuTung, int TongTien, DataTable TC, DataTable VTPT)//Lưu dữ liệu được nhập vào 2 bảng PHIEUSUACHUA và CHITIETPHIEUSUACHUA
         {
             DataTable dt = DataProvider.Instance.ExecuteQuery("Select count(*) from PHIEUSUACHUA");
             int ma = int.Parse(dt.Rows[0][0].ToString());
             dt = DataProvider.Instance.ExecuteQuery("Select MaKH from XE where BienSo = " + BienSo);
             string makh = dt.Rows[0][0].ToString();
-            string query = "insert into PHIEUSUACHUA values ("+ma + " , " + BienSo + " , " + makh + " , " + TienCong + " , " + TienPhuTung + " , " + TongTien + ")";
+            string query = "insert into PHIEUSUACHUA values (" + ma + " , '" + BienSo + "' , " + makh + " , " + TienCong + " , " + TienPhuTung + " , " + TongTien + ")";
             int re = DataProvider.Instance.ExecuteNonQuery(query);
-            int slvtpt = VTPTDangNhap.Rows.Count;
+            int slvtpt = VTPT.Rows.Count;
             int sltc = TC.Rows.Count;
             if (slvtpt >= sltc)
             {
-                for(int i = 0; i < sltc; i++)
+                for (int i = 0; i < sltc; i++)
                 {
-                    query = "insert into CHITIETPHIEUNHAP values ("+ ma + " , " + TC.Rows[i][3].ToString() + " , " +  VTPTDangNhap.Rows[i][0].ToString() + " , " + VTPTDangNhap.Rows[i][1]+")";
+                    query = "insert into CHITIETPHIEUSUACHUA values (" + ma + " , " + TC.Rows[i][3].ToString() + " , " + VTPT.Rows[i][5].ToString() + " , " + VTPT.Rows[i][2] + ")";
                     re = DataProvider.Instance.ExecuteNonQuery(query);
                 }
-                for(int i = sltc; i < slvtpt; i++)
+                for (int i = sltc; i < slvtpt; i++)
                 {
-                    query = "insert into CHITIETPHIEUNHAP values (" + ma + " , " + null + " , " + VTPTDangNhap.Rows[i][0].ToString() + " , " + VTPTDangNhap.Rows[i][1] + ")";
+                    query = "insert into CHITIETPHIEUSUACHUA values (" + ma + " , " + null + " , " + VTPT.Rows[i][5].ToString() + " , " + VTPT.Rows[i][2] + ")";
                     re = DataProvider.Instance.ExecuteNonQuery(query);
                 }
             }
@@ -110,16 +110,16 @@ namespace DAO
             {
                 for (int i = 0; i < slvtpt; i++)
                 {
-                    query = "insert into CHITIETPHIEUNHAP values (" + ma + " , " + TC.Rows[i][3].ToString() + " , " + VTPTDangNhap.Rows[i][0].ToString() + " , " + VTPTDangNhap.Rows[i][1] + ")";
+                    query = "insert into CHITIETPHIEUSUACHUA values (" + ma + " , " + TC.Rows[i][3].ToString() + " , " + VTPT.Rows[i][5].ToString() + " , " + VTPT.Rows[i][2] + ")";
                     re = DataProvider.Instance.ExecuteNonQuery(query);
                 }
                 for (int i = slvtpt; i < sltc; i++)
                 {
-                    query = "insert into CHITIETPHIEUNHAP values (" + ma + " , " + TC.Rows[i][3].ToString() + " , " + null + " , " + null + ")";
+                    query = "insert into CHITIETPHIEUSUACHUA values (" + ma + " , " + TC.Rows[i][3].ToString() + " , " + null + " , " + null + ")";
                     re = DataProvider.Instance.ExecuteNonQuery(query);
                 }
             }
-            
+
         }
 
         public void NhapVTPT()//Thực hiện cập nhật lại số lượng vtpt còn lại trong kho.
