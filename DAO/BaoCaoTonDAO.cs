@@ -75,7 +75,7 @@ namespace DAO
         public int SoLuongBanRa(int MaPhuTung, int Thang, int Nam)//Lấy số lượng bán ra của vtpt thông qua các PHIEUSUACHUA và CHITIETPHIEUSUACHUA theo tháng/năm
         {
             int amount = 0;
-            DataTable dt = DataProvider.Instance.ExecuteQuery("Select * from (XE join PHIEUSUACHUA on XE.BienSo = PHIEUSUACHUA.BienSo) join CHITIETPHIEUSUACHUA on PHIEUSUACHUA.MaPhieuSuaChua = CHITIETPHIEUSUACHUA.MaPhieuSuaChua where MaPhuTung = " + MaPhuTung + " and MONTH(NgaySuaChua) = " + Thang + " and YEAR(NgaySuaChua) = " + Nam);
+            DataTable dt = DataProvider.Instance.ExecuteQuery("Select * from (XE join PHIEUSUACHUA on XE.BienSo = PHIEUSUACHUA.BienSo) join CHITIETPHIEUSUACHUA on PHIEUSUACHUA.MaPhieuSuaChua = CHITIETPHIEUSUACHUA.MaPhieuSuaChua where MaPhuTung = " + MaPhuTung + " and MONTH(NgayTiepNhan) = " + Thang + " and YEAR(NgayTiepNhan) = " + Nam);
             foreach (DataRow row in dt.Rows)
             {
                 amount += int.Parse(row["SoLuongPhuTung"].ToString());
