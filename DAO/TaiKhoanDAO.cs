@@ -70,14 +70,14 @@ namespace DAO
             return qh;
         }
 
-        public string LayMaNhanVien()
+        public int LayMaTaiKhoan()
         {
             string query = "USP_Dangnhap @TenDangNhap , @MatKhau";
 
             DataTable result = DataProvider.Instance.ExecuteQuery(query, new object[] { User, Pass });
 
-            string qh = result.Rows[0][0].ToString();
-            return qh;
+            int ma = int.Parse(result.Rows[0][0].ToString());
+            return ma;
         }
 
         public string LayTenTaiKhoan()
@@ -90,7 +90,7 @@ namespace DAO
             return Pass;
         }
 
-        public void CapNhatMatKhau(string matkhau, string id) 
+        public void CapNhatMatKhau(string matkhau, int id) 
         {
             string query = "DoiMK @MaTK , @MatKhauMoi";
             DataProvider.Instance.UpdateDatabase(query, new object[] { id, matkhau });

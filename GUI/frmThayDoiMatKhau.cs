@@ -87,7 +87,7 @@ namespace GUI
             {
                 if (XacNhanMatKhauMoi())
                 {
-                    TaiKhoanDAO.Instance.CapNhatMatKhau(txtBoxNhapMatKhauMoi.Text, TaiKhoanDAO.Instance.LayMaNhanVien());
+                    TaiKhoanDAO.Instance.CapNhatMatKhau(txtBoxNhapMatKhauMoi.Text, TaiKhoanDAO.Instance.LayMaTaiKhoan());
                     MessageBox.Show("Cập nhật mật khẩu thành công!", "Thành công!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.Close();
                 }
