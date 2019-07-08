@@ -75,6 +75,14 @@ namespace DAO
             return ChiPhi;
         }
 
+        public string LayNoiDungTienCong(string maTienCong)//Lấy chi phí của tiền công theo mã
+        {
+            string query = "Select * from TIENCONG where MaTC = " + maTienCong;
+            DataTable result = DataProvider.Instance.ExecuteQuery(query);
+            int ChiPhi = int.Parse(result.Rows[0][1].ToString());
+            return ChiPhi;
+        }
+
         public void LuuPhieuSuaChua(string BienSo,int TienCong, int TienPhuTung, int TongTien, DataTable TC)//Lưu dữ liệu được nhập vào 2 bảng PHIEUSUACHUA và CHITIETPHIEUSUACHUA
         {
             DataTable dt = DataProvider.Instance.ExecuteQuery("Select count(*) from PHIEUSUACHUA");
