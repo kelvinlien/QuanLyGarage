@@ -79,8 +79,8 @@ namespace DAO
         {
             string query = "Select * from TIENCONG where MaTC = " + maTienCong;
             DataTable result = DataProvider.Instance.ExecuteQuery(query);
-            int ChiPhi = int.Parse(result.Rows[0][1].ToString());
-            return ChiPhi;
+            string NoiDung = result.Rows[0][1].ToString();
+            return NoiDung;
         }
 
         public void LuuPhieuSuaChua(string BienSo,int TienCong, int TienPhuTung, int TongTien, DataTable TC)//Lưu dữ liệu được nhập vào 2 bảng PHIEUSUACHUA và CHITIETPHIEUSUACHUA

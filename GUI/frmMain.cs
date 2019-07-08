@@ -69,16 +69,6 @@ namespace GUI
             //dataGridViewVTPTPhieuSuaChua.Columns["Mã tiền công"].Visible = false;
         }
 
-        void TestThuNhapVTPTChoPhieuSuaChua()
-        {
-            PhieuSuaChuaDAO.Instance.ThemHangVTPT((DataTable)dataGridViewVTPTPhieuSuaChua.DataSource, dataGridViewVTPTPhieuSuaChua.Rows.Count, "Bánh xe siêu chắc siêu bền siêu đẹp thể hiện sự sang trọng, quý phái, lù xú ri ợt của chủ nhơn", 3, 200000,"PT1");
-        }
-
-        void TestThuNhapTienCongChoPhieuSuaChua()
-        {
-            PhieuSuaChuaDAO.Instance.ThemHangTienCong((DataTable)dataGridViewTienCongPhieuSuaChua.DataSource, dataGridViewTienCongPhieuSuaChua.Rows.Count, "Lắp bánh xe vào một cách sang chảnh nhứt có thể", 500000,"TC1");
-        }
-
         void NhapVTPTChoPhieuSuaChua(int DonGia)
         {
             DataTable dt = new DataTable();
@@ -90,7 +80,7 @@ namespace GUI
         {
             DataTable dt = new DataTable();
             dt = (DataTable)dataGridViewTienCongPhieuSuaChua.DataSource;
-            PhieuSuaChuaDAO.Instance.ThemHangTienCong(dt, dt.Rows.Count, comboBoxTienCongPhieuSuaChua.DisplayMember, ChiPhi, comboBoxTienCongPhieuSuaChua.SelectedValue.ToString());
+            PhieuSuaChuaDAO.Instance.ThemHangTienCong(dt, dt.Rows.Count, PhieuSuaChuaDAO.Instance.LayNoiDungTienCong(comboBoxTienCongPhieuSuaChua.SelectedValue.ToString()), ChiPhi, comboBoxTienCongPhieuSuaChua.SelectedValue.ToString());
         }
 
         int TinhTongThanhTien()
