@@ -83,14 +83,14 @@ namespace GUI
         {
             DataTable dt = new DataTable();
             dt = (DataTable)dataGridViewVTPTPhieuSuaChua.DataSource;
-            PhieuSuaChuaDAO.Instance.ThemHangVTPT(dt, dt.Rows.Count, comboBoxVTPTPhieuSuaChua.Text, int.Parse(textBoxSoLuongVTPTPhieuSuaChua.Text), DonGia, comboBoxVTPTPhieuSuaChua.ValueMember.ToString());
+            PhieuSuaChuaDAO.Instance.ThemHangVTPT(dt, dt.Rows.Count, comboBoxVTPTPhieuSuaChua.Text, int.Parse(textBoxSoLuongVTPTPhieuSuaChua.Text), DonGia, comboBoxVTPTPhieuSuaChua.SelectedValue.ToString());
         }
 
         void NhapTienCongChoPhieuSuaChua(int ChiPhi)
         {
             DataTable dt = new DataTable();
             dt = (DataTable)dataGridViewTienCongPhieuSuaChua.DataSource;
-            PhieuSuaChuaDAO.Instance.ThemHangTienCong(dt, dt.Rows.Count, comboBoxTienCongPhieuSuaChua.DisplayMember, ChiPhi, comboBoxTienCongPhieuSuaChua.ValueMember.ToString());
+            PhieuSuaChuaDAO.Instance.ThemHangTienCong(dt, dt.Rows.Count, comboBoxTienCongPhieuSuaChua.DisplayMember, ChiPhi, comboBoxTienCongPhieuSuaChua.SelectedValue.ToString());
         }
 
         int TinhTongThanhTien()
@@ -533,9 +533,9 @@ namespace GUI
 
         private void ButtonNhapVTPTPhieuSuaChua_Click(object sender, EventArgs e)
         {
-            if (PhieuSuaChuaDAO.Instance.KiemTraSoLuong(comboBoxVTPTPhieuSuaChua.ValueMember, int.Parse(textBoxSoLuongVTPTPhieuSuaChua.Text)))
+            if (PhieuSuaChuaDAO.Instance.KiemTraSoLuong(comboBoxVTPTPhieuSuaChua.SelectedValue.ToString(), int.Parse(textBoxSoLuongVTPTPhieuSuaChua.Text)))
             {
-                NhapVTPTChoPhieuSuaChua(PhieuSuaChuaDAO.Instance.LayDonGiaVTPT(comboBoxVTPTPhieuSuaChua.ValueMember));
+                NhapVTPTChoPhieuSuaChua(PhieuSuaChuaDAO.Instance.LayDonGiaVTPT(comboBoxVTPTPhieuSuaChua.SelectedValue.ToString()));
             }
             else
             {
@@ -545,7 +545,7 @@ namespace GUI
 
         private void ButtonNhapTienCongPhieuSuaChua_Click(object sender, EventArgs e)
         {
-            NhapTienCongChoPhieuSuaChua(PhieuSuaChuaDAO.Instance.LayChiPhiTienCong(comboBoxTienCongPhieuSuaChua.ValueMember));
+            NhapTienCongChoPhieuSuaChua(PhieuSuaChuaDAO.Instance.LayChiPhiTienCong(comboBoxTienCongPhieuSuaChua.SelectedValue.ToString()));
         }
 
         private void BtnHoanTat_Click(object sender, EventArgs e)
