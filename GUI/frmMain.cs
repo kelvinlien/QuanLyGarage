@@ -163,7 +163,7 @@ namespace GUI
             query = "SELECT GiaTri FROM THAMSO WHERE MaThamSo = 'TS2'";
             iSoXeDaTiepNhanTrongNgay = DataProvider.Instance.ExecuteQuery(query);
             progressBarSoXeDaThem.Maximum = int.Parse(iSoXeDaTiepNhanTrongNgay.Rows[0][0].ToString());
-            query = "SELECT COUNT(BienSo) FROM XE WHERE day(NgaySuaChua) = " + now.Day + " and month(NgaySuaChua) = " + now.Month + " and year(NgaySuaChua) = " + now.Year;
+            query = "SELECT COUNT(BienSo) FROM XE WHERE day(NgayTiepNhan) = " + now.Day + " and month(NgayTiepNhan) = " + now.Month + " and year(NgayTiepNhan) = " + now.Year;
             iSoXeDaTiepNhanTrongNgay = DataProvider.Instance.ExecuteQuery(query);
             progressBarSoXeDaThem.Value = int.Parse(iSoXeDaTiepNhanTrongNgay.Rows[0][0].ToString());
             // Auto điền thông tin phiếu thu tiền theo biển số đã chọn
@@ -178,10 +178,6 @@ namespace GUI
             //Khởi tạo Datagridview Phiếu sửa chữa và tiền công
             KhoiTaoDataGridviewTienCong();
             KhoiTaoDataGridviewVTPT();
-            //TestThuNhapTienCongChoPhieuSuaChua();//cai nay la sao, co can phai tesst ko hay la xoa? 4 dong nay ne
-            //TestThuNhapVTPTChoPhieuSuaChua();
-            //TestThuNhapTienCongChoPhieuSuaChua();
-            //TestThuNhapVTPTChoPhieuSuaChua();
             //Khởi tạo 1 dt để lưu lại các mã vtpt đã nhập và kiểm tra, so sánh số lượng nhập vào.
             PhieuSuaChuaDAO.Instance.KhoiTaoDtVTPTDangNhap();
             KiemTraDuLieuBaoCaoKhiLoad(DateTime.Now);
@@ -340,7 +336,7 @@ namespace GUI
             string query2 = "SELECT MaKH FROM KHACHHANG WHERE TenKH = '" + txtBoxTenKH.Text + "' and DienThoai = '" + txtBoxDienThoai.Text + "'";
             tMaKH = DataProvider.Instance.ExecuteQuery(query2);
             iMaKH = int.Parse(tMaKH.Rows[0][0].ToString());
-            query2 = "ThemXe @BienSo , @HieuXe , @MaKH , @NgaySuaChua";
+            query2 = "ThemXe @BienSo , @HieuXe , @MaKH , @NgayTiepNhan";
             test = DataProvider.Instance.ExecuteNonQuery(query2, new object[] { txtBoxBienSo.Text, comBoxHieuXe.SelectedValue, iMaKH, now });
             if (test != 0)
             {
