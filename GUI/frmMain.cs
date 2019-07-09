@@ -187,7 +187,7 @@ namespace GUI
             //Khởi tạo 1 dt để lưu lại các mã vtpt đã nhập và kiểm tra, so sánh số lượng nhập vào.
             PhieuSuaChuaDAO.Instance.KhoiTaoDtVTPTDangNhap();
             KiemTraDuLieuBaoCaoKhiLoad(DateTime.Now);
-            dataGridViewBaoCaoTon.DataSource=BaoCaoTonDAO.Instance.KhoiTaoBaoCaoTon();
+            dataGridViewBaoCaoTon.DataSource = BaoCaoTonDAO.Instance.KhoiTaoBaoCaoTon();
             dataGridViewBaoCaoTon.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridViewBaoCaoTon.AutoResizeColumns();
             DatThoiDiemHienTai(txtBoxNgaySuaChua);
@@ -196,6 +196,7 @@ namespace GUI
             dataGridViewQuyDinhHienHanh.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridViewQuyDinhHienHanh.AutoResizeColumns();
             GioiHanQuyenHan();
+        }
 
         private void MenuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
