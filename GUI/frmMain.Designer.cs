@@ -326,14 +326,14 @@
             // thôngTinTàiKhoảnToolStripMenuItem
             // 
             this.thôngTinTàiKhoảnToolStripMenuItem.Name = "thôngTinTàiKhoảnToolStripMenuItem";
-            this.thôngTinTàiKhoảnToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.thôngTinTàiKhoảnToolStripMenuItem.Size = new System.Drawing.Size(220, 26);
             this.thôngTinTàiKhoảnToolStripMenuItem.Text = "Thông tin tài khoản";
             this.thôngTinTàiKhoảnToolStripMenuItem.Click += new System.EventHandler(this.ThôngTinTàiKhoảnToolStripMenuItem_Click);
             // 
             // đăngXuấtToolStripMenuItem
             // 
             this.đăngXuấtToolStripMenuItem.Name = "đăngXuấtToolStripMenuItem";
-            this.đăngXuấtToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.đăngXuấtToolStripMenuItem.Size = new System.Drawing.Size(220, 26);
             this.đăngXuấtToolStripMenuItem.Text = "Đăng xuất";
             this.đăngXuấtToolStripMenuItem.Click += new System.EventHandler(this.ĐăngXuấtToolStripMenuItem_Click);
             // 
@@ -1352,6 +1352,7 @@
             this.comboBoxVTPTPhieuSuaChua.Size = new System.Drawing.Size(215, 30);
             this.comboBoxVTPTPhieuSuaChua.TabIndex = 2;
             this.comboBoxVTPTPhieuSuaChua.ValueMember = "MaPhuTung";
+            this.comboBoxVTPTPhieuSuaChua.SelectionChangeCommitted += new System.EventHandler(this.ComboBoxVTPTPhieuSuaChua_SelectionChangeCommitted);
             // 
             // kHOBindingSource
             // 
@@ -1932,6 +1933,7 @@
             this.textBoxGiaVTPT.Name = "textBoxGiaVTPT";
             this.textBoxGiaVTPT.Size = new System.Drawing.Size(325, 30);
             this.textBoxGiaVTPT.TabIndex = 4;
+            this.textBoxGiaVTPT.TextChanged += new System.EventHandler(this.TextBoxGiaVTPT_TextChanged);
             // 
             // panel31
             // 
@@ -1963,6 +1965,7 @@
             this.textBoxTenVTPTMoi.Name = "textBoxTenVTPTMoi";
             this.textBoxTenVTPTMoi.Size = new System.Drawing.Size(325, 30);
             this.textBoxTenVTPTMoi.TabIndex = 3;
+            this.textBoxTenVTPTMoi.TextChanged += new System.EventHandler(this.TextBoxTenVTPTMoi_TextChanged);
             // 
             // panel30
             // 
@@ -2016,7 +2019,7 @@
             this.comboBoxTenVTPT.Size = new System.Drawing.Size(419, 30);
             this.comboBoxTenVTPT.TabIndex = 1;
             this.comboBoxTenVTPT.ValueMember = "MaPhuTung";
-            this.comboBoxTenVTPT.Click += new System.EventHandler(this.comboBoxTenVTPT_Click);
+            this.comboBoxTenVTPT.SelectionChangeCommitted += new System.EventHandler(this.ComboBoxTenVTPT_SelectionChangeCommitted);
             // 
             // labelTenVTPT
             // 
@@ -2311,8 +2314,8 @@
             // 
             // comboBoxHieuXeTraCuu
             // 
-            this.comboBoxHieuXeTraCuu.DataSource = this.xEBindingSource;
-            this.comboBoxHieuXeTraCuu.DisplayMember = "BienSo";
+            this.comboBoxHieuXeTraCuu.DataSource = this.hIEUXEBindingSource;
+            this.comboBoxHieuXeTraCuu.DisplayMember = "TenHieuXe";
             this.comboBoxHieuXeTraCuu.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxHieuXeTraCuu.FormattingEnabled = true;
             this.comboBoxHieuXeTraCuu.Location = new System.Drawing.Point(116, 7);
@@ -2320,7 +2323,7 @@
             this.comboBoxHieuXeTraCuu.Name = "comboBoxHieuXeTraCuu";
             this.comboBoxHieuXeTraCuu.Size = new System.Drawing.Size(284, 30);
             this.comboBoxHieuXeTraCuu.TabIndex = 5;
-            this.comboBoxHieuXeTraCuu.ValueMember = "BienSo";
+            this.comboBoxHieuXeTraCuu.ValueMember = "MaHX";
             // 
             // lblHieuXeTraCuu
             // 
@@ -2392,7 +2395,7 @@
             this.MainMenuStrip = this.menuStripCongCu;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "frmMain";
-            this.Text = "Giao diện chính";
+            this.Text = "Quản lý garage";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmMain_FormClosed);
             this.Load += new System.EventHandler(this.FrmMain_Load);
             this.menuStripCongCu.ResumeLayout(false);
@@ -2695,6 +2698,7 @@
         private System.Windows.Forms.Button buttonNhapVTPTPhieuSuaChua;
         private System.Windows.Forms.DataGridView dataGridViewTienCongPhieuSuaChua;
         private System.Windows.Forms.DataGridView dataGridViewVTPTPhieuSuaChua;
+        private System.Windows.Forms.PictureBox pictureBox1;
         private QuanLyGarageDataSet quanLyGarageDataSet;
         private System.Windows.Forms.BindingSource hIEUXEBindingSource;
         private QuanLyGarageDataSetTableAdapters.HIEUXETableAdapter hIEUXETableAdapter;
@@ -2704,6 +2708,5 @@
         private QuanLyGarageDataSetTableAdapters.KHOTableAdapter kHOTableAdapter;
         private System.Windows.Forms.BindingSource tIENCONGBindingSource;
         private QuanLyGarageDataSetTableAdapters.TIENCONGTableAdapter tIENCONGTableAdapter;
-        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

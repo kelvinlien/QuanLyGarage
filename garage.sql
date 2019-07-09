@@ -146,6 +146,31 @@ AS
 BEGIN
 	UPDATE KHO SET SoLuong = SoLuong + @SoLuong WHERE MaPhuTung = @MaPhuTung
 END
+delete from KHO where MaPhuTung = 1
+delete from KHO where MaPhuTung = 2
+delete from KHO where MaPhuTung = 3
+delete from KHO where MaPhuTung = 4
+
+
+
+drop procedure NhapMoiVTPT
+create procedure NhapMoiVTPT
+	@TenPhuTung varchar(30),
+	@SoLuong int,
+	@DonGia int,
+	@ThoiDiem datetime
+AS
+BEGIN
+	DECLARE @iMPNVTPT int
+	SELECT @iMPNVTPT = COUNT(MaPNVTPT) FROM PHIEUNHAPVTPT
+	SET @iMPNVTPT = @iMPNVTPT + 1
+	DECLARE @iMVTPT int
+	SELECT @iMVTPT = COUNT(MaPhuTung) FROM KHO
+	SET @iMVTPT = @iMVTPT + 1
+	INSERT INTO KHO (MaPhuTung, TenVatTuPhuTung, SoLuong, DonGia) VALUES (@iMVTPT, @TenPhuTung, @SoLuong, @DonGia)
+	INSERT INTO PHIEUNHAPVTPT (MaPNVTPT, MaPhuTung, SoLuong, ThoiDiem) VALUES (@iMPNVTPT, @iMVTPT, @SoLuong, @ThoiDiem)
+END
+
 create procedure NhapMoiVTPT
 	@TenPhuTung varchar(30),
 	@SoLuong int,
@@ -225,18 +250,7 @@ BEGIN
 	UPDATE KHO SET SoLuong = SoLuong + @SoLuong WHERE MaPhuTung = @MaPhuTung
 END
 
-drop procedure NhapMoiVTPT
-create procedure NhapMoiVTPT
-	@TenPhuTung varchar(30),
-	@SoLuong int,
-	@DonGia int
-AS
-BEGIN
-	DECLARE @iMVTPT int
-	SELECT @iMVTPT = COUNT(MaPhuTung) FROM KHO
-	SET @iMVTPT = @iMVTPT + 1
-	INSERT INTO KHO (MaPhuTung, TenVatTuPhuTung, SoLuong, DonGia) VALUES (@iMVTPT, @TenPhuTung, @SoLuong, @DonGia)
-END
+
 drop procedure ThemPhieuThuTien
 CREATE PROCEDURE ThemPhieuThuTien
 	@BienSo varchar(10),

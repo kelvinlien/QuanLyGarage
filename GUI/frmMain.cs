@@ -19,6 +19,9 @@ namespace GUI
         }
 
         #region Parameters
+        private bool btnHoanTatClicked = false;
+        private bool textBoxTenVTPTMoi_TextChanged = false;
+        private bool textBoxGiaVTPT_TextChanged = false;
         #endregion
 
         #region Methods
@@ -108,7 +111,7 @@ namespace GUI
             if (!BaoCaoTonDAO.Instance.KiemTraDuLieuBaoCao(a))
             {
                 DataTable dt = new DataTable();
-                BaoCaoTonDAO.Instance.NhapBaoCaoTon(BaoCaoTonDAO.Instance.TaoBaoCaoTon(dt,a), a);
+                BaoCaoTonDAO.Instance.NhapBaoCaoTon(BaoCaoTonDAO.Instance.TaoBaoCaoTon(a), a);
             }
         }
         #endregion
@@ -219,11 +222,11 @@ namespace GUI
 
         private void BtnLapBaoCaoTon_Click(object sender, EventArgs e)
         {
-            if (BaoCaoTonDAO.Instance.KiemTraThoiDiem(dateTimePickerChonThoiDiemBaoCaoTon.Value))
-            {
+           // if (BaoCaoTonDAO.Instance.KiemTraThoiDiem(dateTimePickerChonThoiDiemBaoCaoTon.Value))
+            //{
                 lblThangBaoCaoTon.Text = "Tháng " + dateTimePickerChonThoiDiemBaoCaoTon.Value.ToString("MM/yyyy");
-                dataGridViewBaoCaoTon.DataSource=BaoCaoTonDAO.Instance.TruyXuatBaoCaoTon(dateTimePickerChonThoiDiemBaoCaoTon.Value);
-            }
+                dataGridViewBaoCaoTon.DataSource=BaoCaoTonDAO.Instance.TaoBaoCaoTon(dateTimePickerChonThoiDiemBaoCaoTon.Value);
+            //}
         }
 
         private void BtnBaoCaoTonMoi_Click(object sender, EventArgs e)
@@ -285,6 +288,10 @@ namespace GUI
             textBoxGiaVTPT.Clear();
             textBoxTenVTPTMoi.Enabled = true;
             textBoxGiaVTPT.Enabled = true;
+            textBoxTenVTPTMoi_TextChanged = false;
+            textBoxGiaVTPT_TextChanged = false;
+            buttonLapPhieuNhapVTPT.Visible = true;
+            buttonTaoMoiVTPT.Visible = true;
         }
 
 
@@ -423,13 +430,14 @@ namespace GUI
 
         private void buttonTaoMoiVTPT_Click(object sender, EventArgs e) //chỗ này thiếu thêm thời gian, để tối về anh kiểm tra thử database có thêm chưa, nếu chưa thêm thì anh gởi lệnh SQL qua và sửa vào trong này
         {
+            DateTime now = DateTime.Now;
             if (textBoxSoLuongVTPT.Text == "")
                 MessageBox.Show("Vui lòng nhập số lượng vật tư trước khi thêm mới vật tư vào kho !");
             else
             {
-                string query = "NhapMoiVTPT @TenPhuTung , @SoLuong , @DonGia";
+                string query = "NhapMoiVTPT @TenPhuTung , @SoLuong , @DonGia , @ThoiDiem";
                 int test = 0;
-                test = DataProvider.Instance.ExecuteNonQuery(query, new object[] { textBoxTenVTPTMoi.Text, int.Parse(textBoxSoLuongVTPT.Text), int.Parse(textBoxGiaVTPT.Text) });
+                test = DataProvider.Instance.ExecuteNonQuery(query, new object[] { textBoxTenVTPTMoi.Text, int.Parse(textBoxSoLuongVTPT.Text), int.Parse(textBoxGiaVTPT.Text), now });
                 if (test > 0)
                     MessageBox.Show("Nhập mới vật tư phụ tùng thành công");
             }
@@ -543,13 +551,7 @@ namespace GUI
             int TongTien;
             TongTien = TinhTongThanhTien() + TinhTongChiPhi();
             textBoxTongTienPhieuSuaChua.Text = TongTien.ToString();
-
-        }
-
-        private void comboBoxTenVTPT_Click(object sender, EventArgs e)
-        {
-            textBoxTenVTPTMoi.Enabled = false;
-            textBoxGiaVTPT.Enabled = false;
+            btnHoanTatClicked = true;
         }
 
         private void BtnTaoMoiPCS_Click(object sender, EventArgs e)
@@ -561,12 +563,50 @@ namespace GUI
             KhoiTaoDataGridviewVTPT();
             KhoiTaoDataGridviewTienCong();
             PhieuSuaChuaDAO.Instance.XoaDtVTPTDangNhap();
+            btnHoanTatClicked = false;
         }
 
         private void BtnLuuPSC_Click(object sender, EventArgs e)
         {
-            PhieuSuaChuaDAO.Instance.NhapVTPT((DataTable)dataGridViewVTPTPhieuSuaChua.DataSource);
-            PhieuSuaChuaDAO.Instance.LuuPhieuSuaChua(comboBoxBienSoXe1.Text, TinhTongChiPhi(), TinhTongThanhTien(), TinhTongThanhTien() + TinhTongChiPhi(), (DataTable)dataGridViewTienCongPhieuSuaChua.DataSource, (DataTable)dataGridViewVTPTPhieuSuaChua.DataSource);
+            if (btnHoanTatClicked)
+            {
+                PhieuSuaChuaDAO.Instance.NhapVTPT((DataTable)dataGridViewVTPTPhieuSuaChua.DataSource);
+                PhieuSuaChuaDAO.Instance.LuuPhieuSuaChua(comboBoxBienSoXe1.Text, TinhTongChiPhi(), TinhTongThanhTien(), TinhTongThanhTien() + TinhTongChiPhi(), (DataTable)dataGridViewTienCongPhieuSuaChua.DataSource, (DataTable)dataGridViewVTPTPhieuSuaChua.DataSource);
+                PhieuSuaChuaDAO.Instance.CapNhatTienNo(comboBoxBienSoXe1.Text, int.Parse(textBoxTongTienPhieuSuaChua.Text));
+                MessageBox.Show("Đã lưu phiếu sửa chữa!", "Thành công!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("Xin vui lòng nhấn Hoàn tất trước khi lưu phiếu sửa chữa!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void ComboBoxVTPTPhieuSuaChua_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            textBoxSoLuongVTPTPhieuSuaChua.Text = "";
+        }
+
+
+        private void TextBoxTenVTPTMoi_TextChanged(object sender, EventArgs e)
+        {
+            if (textBoxGiaVTPT_TextChanged)
+                buttonLapPhieuNhapVTPT.Visible = false;
+            textBoxTenVTPTMoi_TextChanged = true;
+        }
+
+        private void TextBoxGiaVTPT_TextChanged(object sender, EventArgs e)
+        {
+            if (textBoxTenVTPTMoi_TextChanged)
+                buttonLapPhieuNhapVTPT.Visible = false;
+            textBoxGiaVTPT_TextChanged = true;
+        }
+
+
+        private void ComboBoxTenVTPT_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            textBoxTenVTPTMoi.Enabled = false;
+            textBoxGiaVTPT.Enabled = false;
+            buttonTaoMoiVTPT.Visible = false;
         }
 
 

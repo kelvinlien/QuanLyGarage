@@ -102,7 +102,7 @@ namespace DAO
                 }
                 for (int i = sltc; i < slvtpt; i++)
                 {
-                    query = "insert into CHITIETPHIEUSUACHUA values (" + ma + " , " + null + " , " + VTPT.Rows[i][5].ToString() + " , " + VTPT.Rows[i][2] + ")";
+                    query = "insert into CHITIETPHIEUSUACHUA values (" + ma + " , '" + null + "' , " + VTPT.Rows[i][5].ToString() + " , " + VTPT.Rows[i][2] + ")";
                     re = DataProvider.Instance.ExecuteNonQuery(query);
                 }
             }
@@ -115,7 +115,7 @@ namespace DAO
                 }
                 for (int i = slvtpt; i < sltc; i++)
                 {
-                    query = "insert into CHITIETPHIEUSUACHUA values (" + ma + " , " + TC.Rows[i][3].ToString() + " , " + null + " , " + null + ")";
+                    query = "insert into CHITIETPHIEUSUACHUA values (" + ma + " , " + TC.Rows[i][3].ToString() + " , '" + null + "' , " + null + ")";
                     re = DataProvider.Instance.ExecuteNonQuery(query);
                 }
             }
@@ -179,6 +179,16 @@ namespace DAO
         public void XoaDtVTPTDangNhap()//Thực hiện xóa các hàng của dt VTPT Đang nhập
         {
             VTPTDangNhap.Clear();
+        }
+
+        public void CapNhatTienNo(string BienSo,int TienSuaChua)
+        {
+            DataTable dt = DataProvider.Instance.ExecuteQuery("Select MaKH from XE where BienSo = " + BienSo);
+            int MaKh = int.Parse(dt.Rows[0][0].ToString());
+            dt = DataProvider.Instance.ExecuteQuery("Select TienNo from KHACHHANG where MaKH = " + MaKh);
+            int TienNoCu = int.Parse(dt.Rows[0][0].ToString());
+            int TienNoMoi = TienNoCu + TienSuaChua;
+            int re = DataProvider.Instance.ExecuteNonQuery("Update KHACHHANG set TienNo = " + TienNoMoi + " where MaKH = " + MaKh);
         }
 
 

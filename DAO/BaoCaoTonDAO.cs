@@ -120,8 +120,9 @@ namespace DAO
             }
         }
 
-        public DataTable TaoBaoCaoTon(DataTable a, DateTime b)//Tạo và trả về 1 báo cáo tồn từ 1 DataTable trống.
+        public DataTable TaoBaoCaoTon(DateTime b)//Tạo và trả về 1 báo cáo tồn từ 1 DataTable trống.
         {
+            DataTable a;
             a = KhoiTaoBaoCaoTon();
             DataTable dt = LayDtKHO();
             foreach(DataRow row in dt.Rows)

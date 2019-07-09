@@ -1,2 +1,2 @@
-# QuanLyGarage
-Đồ án Nhập môn Công nghệ phần mềm 2019 - UIT
+--------------------------------------ĐỒ ÁN NHẬP MÔN CÔNG NGHỆ PHẦN MỀM------------------------------------------
+Đề tài: Quản lý Garage Ô tô.
