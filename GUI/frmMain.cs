@@ -616,6 +616,8 @@ namespace GUI
         private void ButtonLamMoiQuyDinh_Click(object sender, EventArgs e)
         {
             dataGridViewQuyDinhHienHanh.DataSource = DataProvider.Instance.ExecuteQuery("Select * from THAMSO");
+            dataGridViewQuyDinhHienHanh.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridViewQuyDinhHienHanh.AutoResizeColumns();
         }
     }
 }
