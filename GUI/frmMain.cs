@@ -110,6 +110,23 @@ namespace GUI
                 BaoCaoTonDAO.Instance.NhapBaoCaoTon(BaoCaoTonDAO.Instance.TaoBaoCaoTon(a), a);
             }
         }
+
+        bool QuyenHanAdmin()//Kiểm tra tài khoản hiện tại có phải là admin không
+        {
+            if (TaiKhoanDAO.Instance.LayQuyenHan() == "admin")
+                return true;
+            return false;
+        }
+
+        void GioiHanQuyenHan()//Thực hiện giới hạn quyền hạn lên các tài khoản không phải là admin.
+        {
+            if(!QuyenHanAdmin())
+            {
+                tCtrlChinh.TabPages.Remove(tCtrlChinh.TabPages[2]);
+                tCtrlChucNang.TabPages.Remove(tCtrlChucNang.TabPages[3]);
+                tCtrlChinh.TabPages.Remove(tCtrlChinh.TabPages[1]);
+            }
+        }
         #endregion
 
         #region Events
@@ -178,7 +195,7 @@ namespace GUI
             dataGridViewQuyDinhHienHanh.DataSource = DataProvider.Instance.ExecuteQuery("Select * from THAMSO");
             dataGridViewQuyDinhHienHanh.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridViewQuyDinhHienHanh.AutoResizeColumns();
-        }
+            GioiHanQuyenHan();
 
         private void MenuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
@@ -613,13 +630,15 @@ namespace GUI
         }
 
 
-        #endregion
-
         private void ButtonLamMoiQuyDinh_Click(object sender, EventArgs e)
         {
             dataGridViewQuyDinhHienHanh.DataSource = DataProvider.Instance.ExecuteQuery("Select * from THAMSO");
             dataGridViewQuyDinhHienHanh.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridViewQuyDinhHienHanh.AutoResizeColumns();
         }
+
+        #endregion
+
+
     }
 }

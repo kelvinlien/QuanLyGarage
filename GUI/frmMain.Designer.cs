@@ -215,12 +215,12 @@
             this.comboBoxHieuXeTraCuu = new System.Windows.Forms.ComboBox();
             this.lblHieuXeTraCuu = new System.Windows.Forms.Label();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.tCrlChinh = new System.Windows.Forms.TabControl();
+            this.tCtrlChinh = new System.Windows.Forms.TabControl();
             this.hIEUXETableAdapter = new GUI.QuanLyGarageDataSetTableAdapters.HIEUXETableAdapter();
             this.xETableAdapter = new GUI.QuanLyGarageDataSetTableAdapters.XETableAdapter();
             this.kHOTableAdapter = new GUI.QuanLyGarageDataSetTableAdapters.KHOTableAdapter();
             this.tIENCONGTableAdapter = new GUI.QuanLyGarageDataSetTableAdapters.TIENCONGTableAdapter();
-            this.panel10 = new System.Windows.Forms.Panel();
+            this.panelQuyDinhHienHanh = new System.Windows.Forms.Panel();
             this.dataGridViewQuyDinhHienHanh = new System.Windows.Forms.DataGridView();
             this.labelQuyDinhHienHanh = new System.Windows.Forms.Label();
             this.buttonLamMoiQuyDinh = new System.Windows.Forms.Button();
@@ -301,8 +301,8 @@
             this.panel21.SuspendLayout();
             this.panel24.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
-            this.tCrlChinh.SuspendLayout();
-            this.panel10.SuspendLayout();
+            this.tCtrlChinh.SuspendLayout();
+            this.panelQuyDinhHienHanh.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewQuyDinhHienHanh)).BeginInit();
             this.SuspendLayout();
             // 
@@ -381,7 +381,7 @@
             // tPQuyDinh
             // 
             this.tPQuyDinh.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.tPQuyDinh.Controls.Add(this.panel10);
+            this.tPQuyDinh.Controls.Add(this.panelQuyDinhHienHanh);
             this.tPQuyDinh.Controls.Add(this.pnCapNhatQuyDinh);
             this.tPQuyDinh.Location = new System.Drawing.Point(4, 25);
             this.tPQuyDinh.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -2360,18 +2360,18 @@
             this.dataGridView2.Size = new System.Drawing.Size(837, 434);
             this.dataGridView2.TabIndex = 0;
             // 
-            // tCrlChinh
+            // tCtrlChinh
             // 
-            this.tCrlChinh.Controls.Add(this.tPChucNang);
-            this.tCrlChinh.Controls.Add(this.tPBaoCao);
-            this.tCrlChinh.Controls.Add(this.tPQuyDinh);
-            this.tCrlChinh.Location = new System.Drawing.Point(0, 30);
-            this.tCrlChinh.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tCrlChinh.Multiline = true;
-            this.tCrlChinh.Name = "tCrlChinh";
-            this.tCrlChinh.SelectedIndex = 0;
-            this.tCrlChinh.Size = new System.Drawing.Size(1331, 516);
-            this.tCrlChinh.TabIndex = 0;
+            this.tCtrlChinh.Controls.Add(this.tPChucNang);
+            this.tCtrlChinh.Controls.Add(this.tPBaoCao);
+            this.tCtrlChinh.Controls.Add(this.tPQuyDinh);
+            this.tCtrlChinh.Location = new System.Drawing.Point(0, 30);
+            this.tCtrlChinh.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tCtrlChinh.Multiline = true;
+            this.tCtrlChinh.Name = "tCtrlChinh";
+            this.tCtrlChinh.SelectedIndex = 0;
+            this.tCtrlChinh.Size = new System.Drawing.Size(1331, 516);
+            this.tCtrlChinh.TabIndex = 0;
             // 
             // hIEUXETableAdapter
             // 
@@ -2389,15 +2389,15 @@
             // 
             this.tIENCONGTableAdapter.ClearBeforeFill = true;
             // 
-            // panel10
+            // panelQuyDinhHienHanh
             // 
-            this.panel10.Controls.Add(this.buttonLamMoiQuyDinh);
-            this.panel10.Controls.Add(this.labelQuyDinhHienHanh);
-            this.panel10.Controls.Add(this.dataGridViewQuyDinhHienHanh);
-            this.panel10.Location = new System.Drawing.Point(670, 2);
-            this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(652, 469);
-            this.panel10.TabIndex = 1;
+            this.panelQuyDinhHienHanh.Controls.Add(this.buttonLamMoiQuyDinh);
+            this.panelQuyDinhHienHanh.Controls.Add(this.labelQuyDinhHienHanh);
+            this.panelQuyDinhHienHanh.Controls.Add(this.dataGridViewQuyDinhHienHanh);
+            this.panelQuyDinhHienHanh.Location = new System.Drawing.Point(670, 2);
+            this.panelQuyDinhHienHanh.Name = "panelQuyDinhHienHanh";
+            this.panelQuyDinhHienHanh.Size = new System.Drawing.Size(652, 469);
+            this.panelQuyDinhHienHanh.TabIndex = 1;
             // 
             // dataGridViewQuyDinhHienHanh
             // 
@@ -2438,7 +2438,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(1331, 535);
-            this.Controls.Add(this.tCrlChinh);
+            this.Controls.Add(this.tCtrlChinh);
             this.Controls.Add(this.menuStripCongCu);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -2561,9 +2561,9 @@
             this.panel24.ResumeLayout(false);
             this.panel24.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
-            this.tCrlChinh.ResumeLayout(false);
-            this.panel10.ResumeLayout(false);
-            this.panel10.PerformLayout();
+            this.tCtrlChinh.ResumeLayout(false);
+            this.panelQuyDinhHienHanh.ResumeLayout(false);
+            this.panelQuyDinhHienHanh.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewQuyDinhHienHanh)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -2737,7 +2737,7 @@
         private System.Windows.Forms.ComboBox comboBoxHieuXeTraCuu;
         private System.Windows.Forms.Label lblHieuXeTraCuu;
         private System.Windows.Forms.DataGridView dataGridView2;
-        private System.Windows.Forms.TabControl tCrlChinh;
+        private System.Windows.Forms.TabControl tCtrlChinh;
         private System.Windows.Forms.Panel panelNhapPhieuSuaChua;
         private System.Windows.Forms.Button buttonNhapPhieuSuaChua;
         private System.Windows.Forms.TextBox textBoxSoLuongVTPTPhieuSuaChua;
@@ -2761,7 +2761,7 @@
         private QuanLyGarageDataSetTableAdapters.KHOTableAdapter kHOTableAdapter;
         private System.Windows.Forms.BindingSource tIENCONGBindingSource;
         private QuanLyGarageDataSetTableAdapters.TIENCONGTableAdapter tIENCONGTableAdapter;
-        private System.Windows.Forms.Panel panel10;
+        private System.Windows.Forms.Panel panelQuyDinhHienHanh;
         private System.Windows.Forms.Label labelQuyDinhHienHanh;
         private System.Windows.Forms.DataGridView dataGridViewQuyDinhHienHanh;
         private System.Windows.Forms.Button buttonLamMoiQuyDinh;
