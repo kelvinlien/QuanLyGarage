@@ -53,22 +53,18 @@ namespace GUI
         {
             DataTable dt = PhieuSuaChuaDAO.Instance.TaoDataTable(6, new string[] { "STT", "Vật tư phụ tùng", "Số lượng", "Đơn giá", "Thành tiền", "Mã phụ tùng" });
             dataGridViewVTPTPhieuSuaChua.DataSource = dt;
-            int dc = dataGridViewVTPTPhieuSuaChua.ColumnCount;
-            for (int i = 0; i < dc; i++)
-            {
-                dataGridViewVTPTPhieuSuaChua.Columns[i].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
-            }
+            dataGridViewVTPTPhieuSuaChua.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridViewVTPTPhieuSuaChua.AutoResizeColumns();
+
             //dataGridViewVTPTPhieuSuaChua.Columns["Mã phụ tùng"].Visible = false;
         }
 
         void KhoiTaoDataGridviewTienCong()
         {
             dataGridViewTienCongPhieuSuaChua.DataSource = PhieuSuaChuaDAO.Instance.TaoDataTable(4, new string[] { "STT", "Nội dung", "Chi phí" ,"Mã tiền công"});
-            int dc = dataGridViewTienCongPhieuSuaChua.ColumnCount;
-            for (int i = 0; i < dc; i++)
-            {
-                dataGridViewTienCongPhieuSuaChua.Columns[i].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
-            }
+            dataGridViewTienCongPhieuSuaChua.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridViewTienCongPhieuSuaChua.AutoResizeColumns();
+
             //dataGridViewVTPTPhieuSuaChua.Columns["Mã tiền công"].Visible = false;
         }
 
@@ -175,6 +171,11 @@ namespace GUI
             PhieuSuaChuaDAO.Instance.KhoiTaoDtVTPTDangNhap();
             KiemTraDuLieuBaoCaoKhiLoad(DateTime.Now);
             dataGridViewBaoCaoTon.DataSource=BaoCaoTonDAO.Instance.KhoiTaoBaoCaoTon();
+            dataGridViewBaoCaoTon.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridViewBaoCaoTon.AutoResizeColumns();
+            DatThoiDiemHienTai(txtBoxNgaySuaChua);
+            //Lấy quy định hiện hành
+            dataGridViewQuyDinhHienHanh.DataSource = DataProvider.Instance.ExecuteQuery("Select * from THAMSO");
         }
 
         private void MenuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
@@ -612,5 +613,9 @@ namespace GUI
 
         #endregion
 
+        private void ButtonLamMoiQuyDinh_Click(object sender, EventArgs e)
+        {
+            dataGridViewQuyDinhHienHanh.DataSource = DataProvider.Instance.ExecuteQuery("Select * from THAMSO");
+        }
     }
 }

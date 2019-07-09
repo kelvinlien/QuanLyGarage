@@ -181,7 +181,7 @@ namespace DAO
             VTPTDangNhap.Clear();
         }
 
-        public void CapNhatTienNo(string BienSo,int TienSuaChua)
+        public void CapNhatTienNo(string BienSo,int TienSuaChua)//Cập nhật tiền nợ của khách hàng có xe vừa được sửa chữa.
         {
             DataTable dt = DataProvider.Instance.ExecuteQuery("Select MaKH from XE where BienSo = " + BienSo);
             int MaKh = int.Parse(dt.Rows[0][0].ToString());

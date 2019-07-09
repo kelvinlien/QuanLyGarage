@@ -220,6 +220,10 @@
             this.xETableAdapter = new GUI.QuanLyGarageDataSetTableAdapters.XETableAdapter();
             this.kHOTableAdapter = new GUI.QuanLyGarageDataSetTableAdapters.KHOTableAdapter();
             this.tIENCONGTableAdapter = new GUI.QuanLyGarageDataSetTableAdapters.TIENCONGTableAdapter();
+            this.panel10 = new System.Windows.Forms.Panel();
+            this.dataGridViewQuyDinhHienHanh = new System.Windows.Forms.DataGridView();
+            this.labelQuyDinhHienHanh = new System.Windows.Forms.Label();
+            this.buttonLamMoiQuyDinh = new System.Windows.Forms.Button();
             this.menuStripCongCu.SuspendLayout();
             this.tPQuyDinh.SuspendLayout();
             this.pnCapNhatQuyDinh.SuspendLayout();
@@ -298,6 +302,8 @@
             this.panel24.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.tCrlChinh.SuspendLayout();
+            this.panel10.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewQuyDinhHienHanh)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStripCongCu
@@ -326,14 +332,14 @@
             // thôngTinTàiKhoảnToolStripMenuItem
             // 
             this.thôngTinTàiKhoảnToolStripMenuItem.Name = "thôngTinTàiKhoảnToolStripMenuItem";
-            this.thôngTinTàiKhoảnToolStripMenuItem.Size = new System.Drawing.Size(220, 26);
+            this.thôngTinTàiKhoảnToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.thôngTinTàiKhoảnToolStripMenuItem.Text = "Thông tin tài khoản";
             this.thôngTinTàiKhoảnToolStripMenuItem.Click += new System.EventHandler(this.ThôngTinTàiKhoảnToolStripMenuItem_Click);
             // 
             // đăngXuấtToolStripMenuItem
             // 
             this.đăngXuấtToolStripMenuItem.Name = "đăngXuấtToolStripMenuItem";
-            this.đăngXuấtToolStripMenuItem.Size = new System.Drawing.Size(220, 26);
+            this.đăngXuấtToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.đăngXuấtToolStripMenuItem.Text = "Đăng xuất";
             this.đăngXuấtToolStripMenuItem.Click += new System.EventHandler(this.ĐăngXuấtToolStripMenuItem_Click);
             // 
@@ -375,6 +381,7 @@
             // tPQuyDinh
             // 
             this.tPQuyDinh.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.tPQuyDinh.Controls.Add(this.panel10);
             this.tPQuyDinh.Controls.Add(this.pnCapNhatQuyDinh);
             this.tPQuyDinh.Location = new System.Drawing.Point(4, 25);
             this.tPQuyDinh.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -791,12 +798,12 @@
             // dataGridViewBaoCaoTon
             // 
             this.dataGridViewBaoCaoTon.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewBaoCaoTon.Location = new System.Drawing.Point(41, 58);
+            this.dataGridViewBaoCaoTon.Location = new System.Drawing.Point(3, 58);
             this.dataGridViewBaoCaoTon.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridViewBaoCaoTon.Name = "dataGridViewBaoCaoTon";
             this.dataGridViewBaoCaoTon.RowHeadersWidth = 51;
             this.dataGridViewBaoCaoTon.RowTemplate.Height = 24;
-            this.dataGridViewBaoCaoTon.Size = new System.Drawing.Size(1253, 330);
+            this.dataGridViewBaoCaoTon.Size = new System.Drawing.Size(1249, 330);
             this.dataGridViewBaoCaoTon.TabIndex = 1;
             // 
             // panelThang
@@ -2382,6 +2389,49 @@
             // 
             this.tIENCONGTableAdapter.ClearBeforeFill = true;
             // 
+            // panel10
+            // 
+            this.panel10.Controls.Add(this.buttonLamMoiQuyDinh);
+            this.panel10.Controls.Add(this.labelQuyDinhHienHanh);
+            this.panel10.Controls.Add(this.dataGridViewQuyDinhHienHanh);
+            this.panel10.Location = new System.Drawing.Point(670, 2);
+            this.panel10.Name = "panel10";
+            this.panel10.Size = new System.Drawing.Size(652, 469);
+            this.panel10.TabIndex = 1;
+            // 
+            // dataGridViewQuyDinhHienHanh
+            // 
+            this.dataGridViewQuyDinhHienHanh.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewQuyDinhHienHanh.Location = new System.Drawing.Point(5, 114);
+            this.dataGridViewQuyDinhHienHanh.Name = "dataGridViewQuyDinhHienHanh";
+            this.dataGridViewQuyDinhHienHanh.RowHeadersWidth = 51;
+            this.dataGridViewQuyDinhHienHanh.RowTemplate.Height = 24;
+            this.dataGridViewQuyDinhHienHanh.Size = new System.Drawing.Size(644, 352);
+            this.dataGridViewQuyDinhHienHanh.TabIndex = 0;
+            // 
+            // labelQuyDinhHienHanh
+            // 
+            this.labelQuyDinhHienHanh.AutoSize = true;
+            this.labelQuyDinhHienHanh.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelQuyDinhHienHanh.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.labelQuyDinhHienHanh.Location = new System.Drawing.Point(190, 41);
+            this.labelQuyDinhHienHanh.Name = "labelQuyDinhHienHanh";
+            this.labelQuyDinhHienHanh.Size = new System.Drawing.Size(303, 33);
+            this.labelQuyDinhHienHanh.TabIndex = 1;
+            this.labelQuyDinhHienHanh.Text = "QUY ĐỊNH HIỆN HÀNH";
+            // 
+            // buttonLamMoiQuyDinh
+            // 
+            this.buttonLamMoiQuyDinh.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.buttonLamMoiQuyDinh.Location = new System.Drawing.Point(5, 79);
+            this.buttonLamMoiQuyDinh.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonLamMoiQuyDinh.Name = "buttonLamMoiQuyDinh";
+            this.buttonLamMoiQuyDinh.Size = new System.Drawing.Size(100, 28);
+            this.buttonLamMoiQuyDinh.TabIndex = 9;
+            this.buttonLamMoiQuyDinh.Text = "Làm Mới";
+            this.buttonLamMoiQuyDinh.UseVisualStyleBackColor = true;
+            this.buttonLamMoiQuyDinh.Click += new System.EventHandler(this.ButtonLamMoiQuyDinh_Click);
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -2512,6 +2562,9 @@
             this.panel24.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.tCrlChinh.ResumeLayout(false);
+            this.panel10.ResumeLayout(false);
+            this.panel10.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewQuyDinhHienHanh)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2708,5 +2761,9 @@
         private QuanLyGarageDataSetTableAdapters.KHOTableAdapter kHOTableAdapter;
         private System.Windows.Forms.BindingSource tIENCONGBindingSource;
         private QuanLyGarageDataSetTableAdapters.TIENCONGTableAdapter tIENCONGTableAdapter;
+        private System.Windows.Forms.Panel panel10;
+        private System.Windows.Forms.Label labelQuyDinhHienHanh;
+        private System.Windows.Forms.DataGridView dataGridViewQuyDinhHienHanh;
+        private System.Windows.Forms.Button buttonLamMoiQuyDinh;
     }
 }
