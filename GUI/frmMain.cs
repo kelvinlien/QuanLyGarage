@@ -565,7 +565,7 @@ namespace GUI
 
         private void BtnLuuPSC_Click(object sender, EventArgs e)
         {
-            PhieuSuaChuaDAO.Instance.NhapVTPT((DataTable)dataGridViewVTPTPhieuSuaChua.DataSource));
+            PhieuSuaChuaDAO.Instance.NhapVTPT((DataTable)dataGridViewVTPTPhieuSuaChua.DataSource);
             PhieuSuaChuaDAO.Instance.LuuPhieuSuaChua(comboBoxBienSoXe1.Text, TinhTongChiPhi(), TinhTongThanhTien(), TinhTongThanhTien() + TinhTongChiPhi(), (DataTable)dataGridViewTienCongPhieuSuaChua.DataSource, (DataTable)dataGridViewVTPTPhieuSuaChua.DataSource);
         }
 

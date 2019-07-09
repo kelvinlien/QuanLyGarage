@@ -149,6 +149,7 @@
             this.lblPhieuSuaChua = new System.Windows.Forms.Label();
             this.tPPTT = new System.Windows.Forms.TabPage();
             this.panel23 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.buttonPhieuThuTienMoiPTT = new System.Windows.Forms.Button();
             this.buttonInPhieuThuTienPTT = new System.Windows.Forms.Button();
             this.buttonLapPhieuThuTienPTT = new System.Windows.Forms.Button();
@@ -219,7 +220,6 @@
             this.xETableAdapter = new GUI.QuanLyGarageDataSetTableAdapters.XETableAdapter();
             this.kHOTableAdapter = new GUI.QuanLyGarageDataSetTableAdapters.KHOTableAdapter();
             this.tIENCONGTableAdapter = new GUI.QuanLyGarageDataSetTableAdapters.TIENCONGTableAdapter();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.menuStripCongCu.SuspendLayout();
             this.tPQuyDinh.SuspendLayout();
             this.pnCapNhatQuyDinh.SuspendLayout();
@@ -267,6 +267,7 @@
             this.panel8.SuspendLayout();
             this.tPPTT.SuspendLayout();
             this.panel23.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.flowLayoutPanel3.SuspendLayout();
             this.panelHoTenChuXePTT.SuspendLayout();
             this.panelBienSoPTT.SuspendLayout();
@@ -297,7 +298,6 @@
             this.panel24.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.tCrlChinh.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStripCongCu
@@ -316,8 +316,6 @@
             // 
             // tàiKhoảnToolStripMenuItem
             // 
-            this.tàiKhoảnToolStripMenuItem.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("tàiKhoảnToolStripMenuItem.BackgroundImage")));
-            this.tàiKhoảnToolStripMenuItem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.tàiKhoảnToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.thôngTinTàiKhoảnToolStripMenuItem,
             this.đăngXuấtToolStripMenuItem});
@@ -341,8 +339,6 @@
             // 
             // trợGiúpToolStripMenuItem
             // 
-            this.trợGiúpToolStripMenuItem.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("trợGiúpToolStripMenuItem.BackgroundImage")));
-            this.trợGiúpToolStripMenuItem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.trợGiúpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.hướngDẫnSửDụngToolStripMenuItem,
             this.liênHệToolStripMenuItem});
@@ -378,8 +374,7 @@
             // 
             // tPQuyDinh
             // 
-            this.tPQuyDinh.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("tPQuyDinh.BackgroundImage")));
-            this.tPQuyDinh.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.tPQuyDinh.BackColor = System.Drawing.Color.WhiteSmoke;
             this.tPQuyDinh.Controls.Add(this.pnCapNhatQuyDinh);
             this.tPQuyDinh.Location = new System.Drawing.Point(4, 25);
             this.tPQuyDinh.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -387,7 +382,6 @@
             this.tPQuyDinh.Size = new System.Drawing.Size(1323, 487);
             this.tPQuyDinh.TabIndex = 2;
             this.tPQuyDinh.Text = "Quy định";
-            this.tPQuyDinh.UseVisualStyleBackColor = true;
             // 
             // pnCapNhatQuyDinh
             // 
@@ -589,8 +583,7 @@
             // 
             // tPBaoCao
             // 
-            this.tPBaoCao.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("tPBaoCao.BackgroundImage")));
-            this.tPBaoCao.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.tPBaoCao.BackColor = System.Drawing.Color.WhiteSmoke;
             this.tPBaoCao.Controls.Add(this.tCtrlBaoCao);
             this.tPBaoCao.Location = new System.Drawing.Point(4, 25);
             this.tPBaoCao.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -598,7 +591,6 @@
             this.tPBaoCao.Size = new System.Drawing.Size(1323, 487);
             this.tPBaoCao.TabIndex = 1;
             this.tPBaoCao.Text = "Báo cáo";
-            this.tPBaoCao.UseVisualStyleBackColor = true;
             // 
             // tCtrlBaoCao
             // 
@@ -613,8 +605,7 @@
             // 
             // tPDoanhSo
             // 
-            this.tPDoanhSo.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("tPDoanhSo.BackgroundImage")));
-            this.tPDoanhSo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.tPDoanhSo.BackColor = System.Drawing.Color.WhiteSmoke;
             this.tPDoanhSo.Controls.Add(this.panel2);
             this.tPDoanhSo.Controls.Add(this.pnlChonThoiDiem);
             this.tPDoanhSo.Location = new System.Drawing.Point(4, 25);
@@ -624,7 +615,6 @@
             this.tPDoanhSo.Size = new System.Drawing.Size(1285, 445);
             this.tPDoanhSo.TabIndex = 0;
             this.tPDoanhSo.Text = "Báo cáo doanh số";
-            this.tPDoanhSo.UseVisualStyleBackColor = true;
             // 
             // panel2
             // 
@@ -777,8 +767,7 @@
             // 
             // tPBaoCaoTon
             // 
-            this.tPBaoCaoTon.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("tPBaoCaoTon.BackgroundImage")));
-            this.tPBaoCaoTon.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.tPBaoCaoTon.BackColor = System.Drawing.Color.WhiteSmoke;
             this.tPBaoCaoTon.Controls.Add(this.panel1);
             this.tPBaoCaoTon.Controls.Add(this.pnChonThoiDiem);
             this.tPBaoCaoTon.Location = new System.Drawing.Point(4, 25);
@@ -788,7 +777,6 @@
             this.tPBaoCaoTon.Size = new System.Drawing.Size(1285, 445);
             this.tPBaoCaoTon.TabIndex = 1;
             this.tPBaoCaoTon.Text = "Báo cáo tồn";
-            this.tPBaoCaoTon.UseVisualStyleBackColor = true;
             // 
             // panel1
             // 
@@ -889,8 +877,7 @@
             // 
             // tPChucNang
             // 
-            this.tPChucNang.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("tPChucNang.BackgroundImage")));
-            this.tPChucNang.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.tPChucNang.BackColor = System.Drawing.Color.WhiteSmoke;
             this.tPChucNang.Controls.Add(this.tCtrlChucNang);
             this.tPChucNang.Location = new System.Drawing.Point(4, 25);
             this.tPChucNang.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -898,7 +885,6 @@
             this.tPChucNang.Size = new System.Drawing.Size(1323, 487);
             this.tPChucNang.TabIndex = 0;
             this.tPChucNang.Text = "Chức năng";
-            this.tPChucNang.UseVisualStyleBackColor = true;
             // 
             // tCtrlChucNang
             // 
@@ -916,8 +902,7 @@
             // 
             // tPTiepNhan
             // 
-            this.tPTiepNhan.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("tPTiepNhan.BackgroundImage")));
-            this.tPTiepNhan.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.tPTiepNhan.BackColor = System.Drawing.Color.WhiteSmoke;
             this.tPTiepNhan.Controls.Add(this.pnDanhSachTiepNhan);
             this.tPTiepNhan.Controls.Add(this.pnThemThongTinKHVaXe);
             this.tPTiepNhan.Location = new System.Drawing.Point(4, 25);
@@ -927,7 +912,6 @@
             this.tPTiepNhan.Size = new System.Drawing.Size(1291, 450);
             this.tPTiepNhan.TabIndex = 0;
             this.tPTiepNhan.Text = "Tiếp nhận xe";
-            this.tPTiepNhan.UseVisualStyleBackColor = true;
             // 
             // pnDanhSachTiepNhan
             // 
@@ -1220,8 +1204,7 @@
             // 
             // tPPSC
             // 
-            this.tPPSC.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("tPPSC.BackgroundImage")));
-            this.tPPSC.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.tPPSC.BackColor = System.Drawing.Color.WhiteSmoke;
             this.tPPSC.Controls.Add(this.panel9);
             this.tPPSC.Controls.Add(this.panelNhapPhieuSuaChua);
             this.tPPSC.Controls.Add(this.btnHoanTat);
@@ -1242,7 +1225,6 @@
             this.tPPSC.Size = new System.Drawing.Size(1291, 450);
             this.tPPSC.TabIndex = 1;
             this.tPPSC.Text = "Lập phiếu sửa chữa";
-            this.tPPSC.UseVisualStyleBackColor = true;
             // 
             // panel9
             // 
@@ -1599,8 +1581,7 @@
             // 
             // tPPTT
             // 
-            this.tPPTT.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("tPPTT.BackgroundImage")));
-            this.tPPTT.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.tPPTT.BackColor = System.Drawing.Color.WhiteSmoke;
             this.tPPTT.Controls.Add(this.panel23);
             this.tPPTT.Controls.Add(this.flowLayoutPanel3);
             this.tPPTT.Controls.Add(this.panel22);
@@ -1610,7 +1591,6 @@
             this.tPPTT.Size = new System.Drawing.Size(1291, 450);
             this.tPPTT.TabIndex = 2;
             this.tPPTT.Text = "Lập phiếu thu tiền";
-            this.tPPTT.UseVisualStyleBackColor = true;
             // 
             // panel23
             // 
@@ -1623,6 +1603,17 @@
             this.panel23.Name = "panel23";
             this.panel23.Size = new System.Drawing.Size(1288, 160);
             this.panel23.TabIndex = 2;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox1.InitialImage = null;
+            this.pictureBox1.Location = new System.Drawing.Point(82, 3);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(493, 147);
+            this.pictureBox1.TabIndex = 6;
+            this.pictureBox1.TabStop = false;
             // 
             // buttonPhieuThuTienMoiPTT
             // 
@@ -1889,8 +1880,7 @@
             // 
             // tPVTPT
             // 
-            this.tPVTPT.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("tPVTPT.BackgroundImage")));
-            this.tPVTPT.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.tPVTPT.BackColor = System.Drawing.Color.WhiteSmoke;
             this.tPVTPT.Controls.Add(this.panel28);
             this.tPVTPT.Controls.Add(this.panel27);
             this.tPVTPT.Controls.Add(this.panel25);
@@ -1900,7 +1890,6 @@
             this.tPVTPT.Size = new System.Drawing.Size(1291, 450);
             this.tPVTPT.TabIndex = 3;
             this.tPVTPT.Text = "Nhập VTPT";
-            this.tPVTPT.UseVisualStyleBackColor = true;
             // 
             // panel28
             // 
@@ -2126,8 +2115,7 @@
             // 
             // tPTraCuu
             // 
-            this.tPTraCuu.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("tPTraCuu.BackgroundImage")));
-            this.tPTraCuu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.tPTraCuu.BackColor = System.Drawing.Color.WhiteSmoke;
             this.tPTraCuu.Controls.Add(this.splitContainer1);
             this.tPTraCuu.Location = new System.Drawing.Point(4, 25);
             this.tPTraCuu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -2135,7 +2123,6 @@
             this.tPTraCuu.Size = new System.Drawing.Size(1291, 450);
             this.tPTraCuu.TabIndex = 4;
             this.tPTraCuu.Text = "Tra cứu";
-            this.tPTraCuu.UseVisualStyleBackColor = true;
             // 
             // splitContainer1
             // 
@@ -2392,24 +2379,11 @@
             // 
             this.tIENCONGTableAdapter.ClearBeforeFill = true;
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox1.InitialImage = null;
-            this.pictureBox1.Location = new System.Drawing.Point(82, 3);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(493, 147);
-            this.pictureBox1.TabIndex = 6;
-            this.pictureBox1.TabStop = false;
-            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Azure;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(1331, 535);
             this.Controls.Add(this.tCrlChinh);
             this.Controls.Add(this.menuStripCongCu);
@@ -2488,6 +2462,7 @@
             this.panel8.PerformLayout();
             this.tPPTT.ResumeLayout(false);
             this.panel23.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.flowLayoutPanel3.ResumeLayout(false);
             this.panelHoTenChuXePTT.ResumeLayout(false);
             this.panelHoTenChuXePTT.PerformLayout();
@@ -2534,7 +2509,6 @@
             this.panel24.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.tCrlChinh.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
