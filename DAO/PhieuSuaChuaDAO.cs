@@ -122,17 +122,19 @@ namespace DAO
 
         }
 
-        public void NhapVTPT()//Thực hiện cập nhật lại số lượng vtpt còn lại trong kho.
+        public void NhapVTPT(DataTable VTPT)//Thực hiện cập nhật lại số lượng vtpt còn lại trong kho.
         {
             string query;
             int remain = 0;
-            foreach (DataRow row in VTPTDangNhap.Rows)
+            int i = 0;
+            foreach (DataRow row in VTPT.Rows)
             {
-                remain = int.Parse(row["slchophep"].ToString()) - int.Parse(row["slhientai"].ToString());
-                query = "Update KHO set SoLuong = " + remain + "where MaPhuTung = "+ row["ma"].ToString() ;
+                query = "Update KHO set SoLuong = SoLuong - " + VTPT.Rows[i][2] + "where MaPhuTung = "+ VTPT.Rows[i][5];
                 int re = DataProvider.Instance.ExecuteNonQuery(query);
+                i = i + 1;
             }
         }
+
 
         public bool KiemTraSoLuong(string MaVTPT, int SoLuong)//Kiểm tra số lượng nhập vào có nằm trong khả năng đáp ứng của kho.
         {
