@@ -292,3 +292,35 @@ alter table CT_BAOCAOTON add constraint pk_ctBCT primary key (MaBCT, MaPhuTung)
 insert into BAOCAOTON 
 
 select * from (XE join KHACHHANG on XE.MaKH = KHACHHANG.MaKH) join HIEUXE on XE.MaHX = HIEUXE.MaHX
+
+create procedure DoiMK
+	@MaTK int,
+	@MatKhauMoi varchar(20)
+AS
+BEGIN
+	UPDATE TAIKHOAN
+	SET MatKhau = @MatKhauMoi 
+	WHERE MaTK = @MaTK
+END
+
+create table TAIKHOAN
+(
+	MaTK int PRIMARY KEY,
+	TenChuTaiKhoan varchar(20),
+	TenDangNhap varchar(20),
+	MatKhau varchar(20),
+	QuyenHan varchar(20)
+)
+drop table TAIKHOAN
+
+CREATE PROCEDURE ThemXe
+	@BienSo varchar(10) ,
+	@HieuXe int,
+	@MaKH int,
+	@NgayTiepNhan datetime
+AS
+BEGIN
+	INSERT INTO Xe (BienSo, MaHX, MaKH, NgayTiepNhan, TrangThai) VALUES (@BienSo, @HieuXe, @MaKH,@NgayTiepNhan, 1)
+END;
+
+drop procedure ThemXe
