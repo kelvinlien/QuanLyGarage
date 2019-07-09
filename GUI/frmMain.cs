@@ -176,6 +176,8 @@ namespace GUI
             DatThoiDiemHienTai(txtBoxNgaySuaChua);
             //Lấy quy định hiện hành
             dataGridViewQuyDinhHienHanh.DataSource = DataProvider.Instance.ExecuteQuery("Select * from THAMSO");
+            dataGridViewQuyDinhHienHanh.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridViewQuyDinhHienHanh.AutoResizeColumns();
         }
 
         private void MenuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
