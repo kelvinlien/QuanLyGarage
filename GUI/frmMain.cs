@@ -72,14 +72,14 @@ namespace GUI
         {
             DataTable dt = new DataTable();
             dt = (DataTable)dataGridViewVTPTPhieuSuaChua.DataSource;
-            PhieuSuaChuaDAO.Instance.ThemHangVTPT(dt, dt.Rows.Count, comboBoxVTPTPhieuSuaChua.Text, int.Parse(textBoxSoLuongVTPTPhieuSuaChua.Text), DonGia, comboBoxVTPTPhieuSuaChua.SelectedValue.ToString());
+            PhieuSuaChuaDAO.Instance.ThemHangVTPT(dt, dt.Rows.Count + 1, comboBoxVTPTPhieuSuaChua.Text, int.Parse(textBoxSoLuongVTPTPhieuSuaChua.Text), DonGia, comboBoxVTPTPhieuSuaChua.SelectedValue.ToString());
         }
 
         void NhapTienCongChoPhieuSuaChua(int ChiPhi)
         {
             DataTable dt = new DataTable();
             dt = (DataTable)dataGridViewTienCongPhieuSuaChua.DataSource;
-            PhieuSuaChuaDAO.Instance.ThemHangTienCong(dt, dt.Rows.Count, PhieuSuaChuaDAO.Instance.LayNoiDungTienCong(comboBoxTienCongPhieuSuaChua.SelectedValue.ToString()), ChiPhi, comboBoxTienCongPhieuSuaChua.SelectedValue.ToString());
+            PhieuSuaChuaDAO.Instance.ThemHangTienCong(dt, dt.Rows.Count + 1, PhieuSuaChuaDAO.Instance.LayNoiDungTienCong(comboBoxTienCongPhieuSuaChua.SelectedValue.ToString()), ChiPhi, comboBoxTienCongPhieuSuaChua.SelectedValue.ToString());
         }
 
         int TinhTongThanhTien()
@@ -126,6 +126,12 @@ namespace GUI
                 tCtrlChucNang.TabPages.Remove(tCtrlChucNang.TabPages[3]);
                 tCtrlChinh.TabPages.Remove(tCtrlChinh.TabPages[1]);
             }
+        }
+
+        void DatMacDinhChoComboBox(ComboBox a)//Thực hiện đặt giá trị mặc định cho comboBox để tránh lỗi.
+        {
+            a.SelectedItem = null;
+            a.Text = "--select--";
         }
         #endregion
 
@@ -196,6 +202,9 @@ namespace GUI
             dataGridViewQuyDinhHienHanh.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridViewQuyDinhHienHanh.AutoResizeColumns();
             GioiHanQuyenHan();
+            DatMacDinhChoComboBox(comboBoxBienSoXe1);
+            dateTimePickerChonThoiDiemBaoCaoTon.CustomFormat = "MM/yyyy";
+            dateTimePickerChonThoiDiemBaoCaoTon.ShowUpDown = true;
         }
 
         private void MenuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
@@ -255,6 +264,8 @@ namespace GUI
             DatLaiDateTimePicker(dateTimePickerChonThoiDiemBaoCaoTon);
             lblThangBaoCaoTon.Text = "Tháng";
             BaoCaoTonDAO.Instance.TaoBaoCaoMoi((DataTable)dataGridViewBaoCaoTon.DataSource);
+            dateTimePickerChonThoiDiemBaoCaoTon.CustomFormat = "MM/yyyy";
+            dateTimePickerChonThoiDiemBaoCaoTon.ShowUpDown = true;
         }
 
         private void BtnBaoCaoDoanhSoMoi_Click(object sender, EventArgs e)
@@ -581,10 +592,12 @@ namespace GUI
             comboBoxVTPTPhieuSuaChua.Text = "";
             comboBoxTienCongPhieuSuaChua.Text = "";
             textBoxSoLuongVTPTPhieuSuaChua.Text = "";
+            textBoxTongTienPhieuSuaChua.Text = "";
             KhoiTaoDataGridviewVTPT();
             KhoiTaoDataGridviewTienCong();
             PhieuSuaChuaDAO.Instance.XoaDtVTPTDangNhap();
             btnHoanTatClicked = false;
+            DatMacDinhChoComboBox(comboBoxBienSoXe1);
         }
 
         private void BtnLuuPSC_Click(object sender, EventArgs e)
@@ -638,8 +651,55 @@ namespace GUI
             dataGridViewQuyDinhHienHanh.AutoResizeColumns();
         }
 
-        #endregion
+        private void TextBoxThangBaoCao_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
 
+        private void TextBoxNamBaoCao_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void TxtBoxSoHieuXe_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void TxtBoxSoXeSuaChuaToiDa_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void TxtBoxSoLoaiVatTu_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void TxtBoxSoLoaiTienCong_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        #endregion
 
     }
 }
