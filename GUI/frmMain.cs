@@ -113,7 +113,7 @@ namespace GUI
 
         bool QuyenHanAdmin()//Kiểm tra tài khoản hiện tại có phải là admin không
         {
-            if (TaiKhoanDAO.Instance.LayQuyenHan() == "admin")
+            if (TaiKhoanDAO.Instance.LayQuyenHan().ToUpper() == "ADMIN")
                 return true;
             return false;
         }
@@ -178,13 +178,7 @@ namespace GUI
             query = "SELECT COUNT(BienSo) FROM XE WHERE day(NgayTiepNhan) = " + now.Day + " and month(NgayTiepNhan) = " + now.Month + " and year(NgayTiepNhan) = " + now.Year;
             iSoXeDaTiepNhanTrongNgay = DataProvider.Instance.ExecuteQuery(query);
             progressBarSoXeDaThem.Value = int.Parse(iSoXeDaTiepNhanTrongNgay.Rows[0][0].ToString());
-            // Auto điền thông tin phiếu thu tiền theo biển số đã chọn
-            query = "SELECT TenKH, DienThoai, DiaChi FROM KHACHHANG as KH, XE WHERE KH.MaKH = XE.MaKH and XE.BienSo = '" + comboBienSoXe2.SelectedValue + "'";
-            DataTable TTKhachHangLPTT;
-            TTKhachHangLPTT = DataProvider.Instance.ExecuteQuery(query);
-            textBoxHoTenChuXePTT.Text = TTKhachHangLPTT.Rows[0][0].ToString();
-            textBoxDienThoaiPTT.Text = TTKhachHangLPTT.Rows[0][1].ToString();
-            textBoxDiaChiPTT.Text = TTKhachHangLPTT.Rows[0][2].ToString();
+
             // Điển ngày thu tiền
             textBoxNgayThuTien.Text = now.ToString("dd-MM-yyyy");
             //Khởi tạo Datagridview Phiếu sửa chữa và tiền công
@@ -207,10 +201,6 @@ namespace GUI
             dateTimePickerChonThoiDiemBaoCaoTon.ShowUpDown = true;
         }
 
-        private void MenuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-        {
-
-        }
 
         private void BtnInPhieuSuaChua_Click(object sender, EventArgs e)
         {
@@ -277,7 +267,7 @@ namespace GUI
 
         private void HướngDẫnSửDụngToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            System.Diagnostics.Process.Start("D:/Git/QuanLyGarage/README.md") ;
+            System.Diagnostics.Process.Start("D:/Git/Garage/README.md") ;
         }
 
         private void LiênHệToolStripMenuItem_Click(object sender, EventArgs e)
@@ -371,6 +361,7 @@ namespace GUI
             {
                 MessageBox.Show("Thêm xe thành công!");
                 progressBarSoXeDaThem.Value = progressBarSoXeDaThem.Value + 1;
+                this.xETableAdapter.Fill(this.quanLyGarageDataSet.XE);
             }
             if (progressBarSoXeDaThem.Value == progressBarSoXeDaThem.Maximum)
             {
@@ -437,7 +428,7 @@ namespace GUI
 
         private void comboBienSoXe2_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            string query = "SELECT TenKH, DienThoai, DiaChi FROM KHACHHANG as KH, XE WHERE KH.MaKH = XE.MaKH and XE.BienSo = " + comboBienSoXe2.SelectedValue;
+            string query = "SELECT TenKH, DienThoai, DiaChi FROM KHACHHANG as KH, XE WHERE KH.MaKH = XE.MaKH and XE.BienSo = '" + comboBienSoXe2.SelectedValue + "'";
             DataTable TTKhachHangLPTT;
             TTKhachHangLPTT = DataProvider.Instance.ExecuteQuery(query);
             textBoxHoTenChuXePTT.Text = TTKhachHangLPTT.Rows[0][0].ToString();
@@ -471,7 +462,10 @@ namespace GUI
                 int test = 0;
                 test = DataProvider.Instance.ExecuteNonQuery(query, new object[] { textBoxTenVTPTMoi.Text, int.Parse(textBoxSoLuongVTPT.Text), int.Parse(textBoxGiaVTPT.Text), now });
                 if (test > 0)
+                {
                     MessageBox.Show("Nhập mới vật tư phụ tùng thành công");
+                    this.kHOTableAdapter.Fill(this.quanLyGarageDataSet.KHO);
+                }
             }
         }
 
@@ -486,8 +480,10 @@ namespace GUI
                     string query = "TimKiemTuongDoi @DuLieu";
                     DataTable Find;
                     Find = DataProvider.Instance.ExecuteQuery(query, new object[] { textBoxTraCuuChinh.Text });
-                    dataGridView2.DataSource = Find;
-                    dataGridView2.Show();
+                    dataGridViewTraCuu.DataSource = Find;
+                    dataGridViewTraCuu.Show();
+                    //dataGridViewTraCuu.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                    //dataGridViewTraCuu.AutoResizeColumns();
                 }
             }
             else
@@ -499,8 +495,10 @@ namespace GUI
                     string query = "TimKiemChinhXac @BienSo , @HieuXe";
                     DataTable Find;
                     Find = DataProvider.Instance.ExecuteQuery(query, new object[] { txtBoxBienSoTraCuu.Text, comboBoxHieuXeTraCuu.Text });
-                    dataGridView2.DataSource = Find;
-                    dataGridView2.Show();
+                    dataGridViewTraCuu.DataSource = Find;
+                    dataGridViewTraCuu.Show();
+                    //dataGridViewTraCuu.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                    //dataGridViewTraCuu.AutoResizeColumns();
                 }
             }
         }
@@ -604,10 +602,11 @@ namespace GUI
         {
             if (btnHoanTatClicked)
             {
-                PhieuSuaChuaDAO.Instance.NhapVTPT((DataTable)dataGridViewVTPTPhieuSuaChua.DataSource);
                 PhieuSuaChuaDAO.Instance.LuuPhieuSuaChua(comboBoxBienSoXe1.Text, TinhTongChiPhi(), TinhTongThanhTien(), TinhTongThanhTien() + TinhTongChiPhi(), (DataTable)dataGridViewTienCongPhieuSuaChua.DataSource, (DataTable)dataGridViewVTPTPhieuSuaChua.DataSource);
                 PhieuSuaChuaDAO.Instance.CapNhatTienNo(comboBoxBienSoXe1.Text, int.Parse(textBoxTongTienPhieuSuaChua.Text));
                 MessageBox.Show("Đã lưu phiếu sửa chữa!", "Thành công!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                PhieuSuaChuaDAO.Instance.NhapVTPT((DataTable)dataGridViewVTPTPhieuSuaChua.DataSource);
+                this.kHOTableAdapter.Fill(this.quanLyGarageDataSet.KHO);// update lai KHO cho phieusuachua lan sau 
             }
             else
             {

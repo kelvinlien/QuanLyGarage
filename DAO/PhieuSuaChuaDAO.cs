@@ -87,7 +87,7 @@ namespace DAO
         {
             DataTable dt = DataProvider.Instance.ExecuteQuery("Select count(*) from PHIEUSUACHUA");
             int ma = int.Parse(dt.Rows[0][0].ToString());
-            dt = DataProvider.Instance.ExecuteQuery("Select MaKH from XE where BienSo = " + BienSo);
+            dt = DataProvider.Instance.ExecuteQuery("Select MaKH from XE where BienSo = '" + BienSo + "'");
             string makh = dt.Rows[0][0].ToString();
             string query = "insert into PHIEUSUACHUA values (" + ma + " , '" + BienSo + "' , " + makh + " , " + TienCong + " , " + TienPhuTung + " , " + TongTien + ")";
             int re = DataProvider.Instance.ExecuteNonQuery(query);
@@ -102,7 +102,7 @@ namespace DAO
                 }
                 for (int i = sltc; i < slvtpt; i++)
                 {
-                    query = "insert into CHITIETPHIEUSUACHUA values (" + ma + " , '" + null + "' , " + VTPT.Rows[i][5].ToString() + " , " + VTPT.Rows[i][2] + ")";
+                    query = "insert into CHITIETPHIEUSUACHUA ( MaPhieuSuaChua, MaPhuTung, SoLuongPhuTung) values (" + ma + " , " + VTPT.Rows[i][5].ToString() + " , " + VTPT.Rows[i][2] + ")";
                     re = DataProvider.Instance.ExecuteNonQuery(query);
                 }
             }
@@ -115,7 +115,7 @@ namespace DAO
                 }
                 for (int i = slvtpt; i < sltc; i++)
                 {
-                    query = "insert into CHITIETPHIEUSUACHUA values (" + ma + " , " + TC.Rows[i][3].ToString() + " , '" + null + "' , " + null + ")";
+                    query = "insert into CHITIETPHIEUSUACHUA (MaPhieuSuaChua, MaTC) values (" + ma + " , " + TC.Rows[i][3].ToString() + ")";
                     re = DataProvider.Instance.ExecuteNonQuery(query);
                 }
             }
@@ -125,7 +125,7 @@ namespace DAO
         public void NhapVTPT(DataTable VTPT)//Thực hiện cập nhật lại số lượng vtpt còn lại trong kho.
         {
             string query;
-            int remain = 0;
+            //int remain = 0;
             int i = 0;
             foreach (DataRow row in VTPT.Rows)
             {
@@ -183,7 +183,7 @@ namespace DAO
 
         public void CapNhatTienNo(string BienSo,int TienSuaChua)//Cập nhật tiền nợ của khách hàng có xe vừa được sửa chữa.
         {
-            DataTable dt = DataProvider.Instance.ExecuteQuery("Select MaKH from XE where BienSo = " + BienSo);
+            DataTable dt = DataProvider.Instance.ExecuteQuery("Select MaKH from XE where BienSo = '" + BienSo + "'");
             int MaKh = int.Parse(dt.Rows[0][0].ToString());
             dt = DataProvider.Instance.ExecuteQuery("Select TienNo from KHACHHANG where MaKH = " + MaKh);
             int TienNoCu = int.Parse(dt.Rows[0][0].ToString());

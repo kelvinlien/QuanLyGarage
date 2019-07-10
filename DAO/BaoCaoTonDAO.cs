@@ -97,10 +97,13 @@ namespace DAO
                 Nam -= 1;
             }
             DataTable dt = DataProvider.Instance.ExecuteQuery("Select * from BAOCAOTON join CT_BAOCAOTON on BAOCAOTON.MaBCT = CT_BAOCAOTON.MaBCT where MaPhuTung = " + MaPhuTung + " and MONTH(ThoiDiemBaoCao) = " + (Thang - 1) + " and YEAR(ThoiDiemBaoCao) = " + Nam);
-            foreach ( DataRow row in dt.Rows)
-            {
-                TonDau = int.Parse(row["TonCuoi"].ToString());
-            }
+            if (dt.Rows.Count > 0)
+                foreach (DataRow row in dt.Rows)
+                {
+                    TonDau = int.Parse(row["TonCuoi"].ToString());
+                }
+            else
+                TonDau = 0;
             return TonDau;
         }
 
@@ -151,6 +154,28 @@ namespace DAO
                 return true;
             return false;
         }
+
+       public bool ThangDauTien()
+        {
+            DataTable dt = DataProvider.Instance.ExecuteQuery("Select count(*) from BAOCAOTON");
+            int re = int.Parse(dt.Rows[0][0].ToString());
+            if (re == 0)
+                return true;
+            return false;
+        }
+
+        //public void TaoBaoCaoTonThangDau(DateTime t)
+        //{
+        //    if(ThangDauTien())
+        //    {
+        //        DataTable dt = DataProvider.Instance.ExecuteQuery("Select * from KHO");
+        //        int re = DataProvider.Instance.ExecuteNonQuery("Insert into BAOCAOTON values (" + 0 + " , " + t + " )");
+        //        foreach(DataRow row in dt.Rows)
+        //        {
+
+        //        }
+        //    }
+        //}
 
     }
 }

@@ -1,5 +1,6 @@
 ﻿use Karaoke
-
+use QuanLyGarage
+drop procedure ThemKhachHang
 CREATE PROCEDURE ThemKhachHang
 	@TenKH varchar(30),
 	@DienThoai varchar(10),
@@ -12,8 +13,9 @@ BEGIN
 	if @test = 0
 	BEGIN
 		DECLARE @imakh int
-		SELECT @imakh = MAX(MaKH) from KHACHHANG
-		SET @imakh = @imakh + 1
+		select  @imakh = MAX(MaKH) from KHACHHANG
+		IF (@imakh is null) set @imakh = 0
+		else set @imakh = @imakh + 1			
 		INSERT INTO KHACHHANG (MaKH, TenKH, DiaChi, DienThoai, TienNo) VALUES (@imakh, @TenKH, @DiaChi,@DienThoai, @TienNo)
 	END
 END;
