@@ -110,7 +110,6 @@ create table PHIEUTHUTIEN
 	MaKH int FOREIGN KEY REFERENCES KHACHHANG(MaKH),
 	TienThu int,
 )
-
 CREATE PROCEDURE ThemPhieuThuTien
 	@BienSo varchar(10),
 	@TienThu int,
@@ -124,6 +123,7 @@ BEGIN
 		SELECT @MaKH = MaKH FROM XE WHERE XE.BienSo = @BienSo
 		INSERT INTO PHIEUTHUTIEN (MaPhieuThuTien, MaKH, TienThu, NgayThuTien) VALUES (@imaptt, @MaKH, @TienThu, @NgayThuTien)
 		UPDATE KHACHHANG SET TienNo = TienNo - @TienThu WHERE MaKH = @MaKH
+		UPDATE XE SET TrangThai = 0 WHERE BienSo = @BienSo
 END
 
 
@@ -340,3 +340,10 @@ BEGIN
 END;
 
 drop procedure ThemXe
+delete from KHACHHANG;
+delete from XE;
+delete CHITIETPHIEUSUACHUA;
+delete PHIEUSUACHUA;
+delete CT_BAOCAOTON;
+delete BAOCAOTON;
+delete PHIEUTHUTIEN;
