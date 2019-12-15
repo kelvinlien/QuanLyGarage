@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using DAO;
+using BUS;
 
 namespace GUI
 {
@@ -20,7 +20,7 @@ namespace GUI
 
         bool XacNhanChuTaiKhoan()
         {
-            return txtBoxNhapLaiMatKhauCu.Text == TaiKhoanDAO.Instance.LayMatKhau();
+            return txtBoxNhapLaiMatKhauCu.Text == TaiKhoanBUS.Instance.LayMatKhau();
         }
 
         bool XacNhanMatKhauMoi()
@@ -34,7 +34,7 @@ namespace GUI
 
         private void FrmThayDoiMatKhau_Load(object sender, EventArgs e)
         {
-            txtBoxTaiKhoan.Text = TaiKhoanDAO.Instance.LayTenTaiKhoan();
+            txtBoxTaiKhoan.Text = TaiKhoanBUS.Instance.LayTenTaiKhoan();
         }
 
         private void BtnHienMatKhauCu_Click(object sender, EventArgs e)
@@ -87,7 +87,7 @@ namespace GUI
             {
                 if (XacNhanMatKhauMoi())
                 {
-                    TaiKhoanDAO.Instance.CapNhatMatKhau(txtBoxNhapMatKhauMoi.Text, TaiKhoanDAO.Instance.LayMaTaiKhoan());
+                    TaiKhoanBUS.Instance.CapNhatMatKhau(txtBoxNhapMatKhauMoi.Text, TaiKhoanBUS.Instance.LayMaTaiKhoan());
                     MessageBox.Show("Cập nhật mật khẩu thành công!", "Thành công!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.Close();
                 }

@@ -10,20 +10,6 @@ namespace DAO
     public class TaiKhoanDAO
     {
         private static TaiKhoanDAO instance;
-        private string User = "";
-        private string Pass = "";
-
-        void LuuThongTinNguoiDungHienTai(string user, string pass)
-        {
-            User = user;
-            Pass = pass;
-        }
-
-        public void XoaThongTinNguoiDungGanNhat()
-        {
-            User = "";
-            Pass = "";
-        }
         public static TaiKhoanDAO Instance {
             get
             {
@@ -35,22 +21,15 @@ namespace DAO
             {
                 instance = value;
             }
-                }
+        }
         private TaiKhoanDAO() { }
-        public bool DangNhap(string TaiKhoan, string MatKhau)
+        public DataTable DangNhap(string TaiKhoan, string MatKhau)
         {
             string query = "USP_Dangnhap @TenDangNhap , @MatKhau";
 
-            DataTable result = DataProvider.Instance.ExecuteQuery(query, new object[] { TaiKhoan, MatKhau });
-
-            if( result.Rows.Count > 0)
-            {
-                LuuThongTinNguoiDungHienTai(TaiKhoan, MatKhau);
-                return true;
-            }
-            return false;
+            return DataProvider.Instance.ExecuteQuery(query, new object[] { TaiKhoan, MatKhau });
         }
-        public string LayQuyenHan()
+        public string LayQuyenHan(string User, string Pass)
         {
             string query = "USP_Dangnhap @TenDangNhap , @MatKhau";
 
@@ -60,7 +39,7 @@ namespace DAO
             return qh ;
         }
 
-        public string LayHoTen()
+        public string LayHoTen(string User, string Pass)
         {
             string query = "USP_Dangnhap @TenDangNhap , @MatKhau";
 
@@ -70,7 +49,7 @@ namespace DAO
             return qh;
         }
 
-        public int LayMaTaiKhoan()
+        public int LayMaTaiKhoan(string User, string Pass)
         {
             string query = "USP_Dangnhap @TenDangNhap , @MatKhau";
 
@@ -78,16 +57,6 @@ namespace DAO
 
             int ma = int.Parse(result.Rows[0][0].ToString());
             return ma;
-        }
-
-        public string LayTenTaiKhoan()
-        {
-            return User;
-        }
-
-        public string LayMatKhau()
-        {
-            return Pass;
         }
 
         public void CapNhatMatKhau(string matkhau, int id) 

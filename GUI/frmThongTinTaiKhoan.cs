@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using DAO;
+using BUS;
 
 namespace GUI
 {
@@ -16,22 +16,6 @@ namespace GUI
         public frmThongTinTaiKhoan()
         {
             InitializeComponent();
-        }
-
-        private void TextBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-
-        private void LblTaiKhoan_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void TxtBoxTaiKhoan_TextChanged(object sender, EventArgs e)
-        {
-
         }
 
 
@@ -48,9 +32,9 @@ namespace GUI
 
         private void FrmThongTinTaiKhoan_Load(object sender, EventArgs e)
         {
-            txtBoxHoTen.Text = TaiKhoanDAO.Instance.LayHoTen();
-            txtBoxTaiKhoan.Text = TaiKhoanDAO.Instance.LayTenTaiKhoan();
-            txtBoxQuyenHan.Text = TaiKhoanDAO.Instance.LayQuyenHan();
+            txtBoxHoTen.Text = TaiKhoanBUS.Instance.LayHoTen();
+            txtBoxTaiKhoan.Text = TaiKhoanBUS.Instance.LayTenTaiKhoan();
+            txtBoxQuyenHan.Text = TaiKhoanBUS.Instance.LayQuyenHan();
         }
     }
 }

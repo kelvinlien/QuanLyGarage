@@ -16,14 +16,6 @@ namespace DAO
             private set { PhieuSuaChuaDAO.instance = value; }
         }
 
-        private DataTable VTPTDangNhap;
-
-        public void KhoiTaoDtVTPTDangNhap()//Khởi tạo mới cho dt VTPT Đang Nhập
-        {
-            VTPTDangNhap = new DataTable();
-            VTPTDangNhap = TaoDataTable(3, new string []{ "ma" , "slhientai" , "slchophep"});
-        }
-
         public DataTable TaoDataTable(int a, string[] name)//Tạo dt với số cột và nội dung từng cột
         {
             DataTable dt = new DataTable();
@@ -136,49 +128,23 @@ namespace DAO
         }
 
 
-        public bool KiemTraSoLuong(string MaVTPT, int SoLuong)//Kiểm tra số lượng nhập vào có nằm trong khả năng đáp ứng của kho.
+        public bool KiemTraSoLuong(DataTable VTPTDangNhap, string MaVTPT, int SoLuong)//Kiểm tra số lượng nhập vào có nằm trong khả năng đáp ứng của kho.
         {
-            bool TonTai = false;
-            int Tong = 0;
-            foreach(DataRow row in VTPTDangNhap.Rows)
+            string query = "select * from KHO where MaPhuTung = " + MaVTPT;
+            DataTable dt = DataProvider.Instance.ExecuteQuery(query);
+            int sl = int.Parse(dt.Rows[0][2].ToString());
+            if (SoLuong <= sl)
             {
-                if (row["ma"].ToString() == MaVTPT)
-                {
-                    TonTai = true;
-                    Tong = SoLuong + int.Parse(row["slhientai"].ToString());
-                    if (Tong > int.Parse(row["slchophep"].ToString()))
-                    {
-                        return false;
-                    }
-                    else
-                    {
-                        row["slhientai"] = Tong.ToString();
-                    }
-                }
+                DataRow dr = VTPTDangNhap.NewRow();
+                dr["ma"] = MaVTPT;
+                dr["slhientai"] = SoLuong;
+                dr["slchophep"] = sl;
             }
-            if (!TonTai)
+            else
             {
-                string query = "select * from KHO where MaPhuTung = " + MaVTPT;
-                DataTable dt = DataProvider.Instance.ExecuteQuery(query);
-                int sl = int.Parse(dt.Rows[0][2].ToString());
-                if (SoLuong <= sl)
-                {
-                    DataRow dr = VTPTDangNhap.NewRow();
-                    dr["ma"] = MaVTPT;
-                    dr["slhientai"] = SoLuong;
-                    dr["slchophep"] = sl;
-                }
-                else
-                {
-                    return false;
-                }
+                return false;
             }
             return true;
-        }
-
-        public void XoaDtVTPTDangNhap()//Thực hiện xóa các hàng của dt VTPT Đang nhập
-        {
-            VTPTDangNhap.Clear();
         }
 
         public void CapNhatTienNo(string BienSo,int TienSuaChua)//Cập nhật tiền nợ của khách hàng có xe vừa được sửa chữa.

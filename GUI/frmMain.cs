@@ -7,12 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using DAO;
+using BUS;
 
 namespace GUI
 {
     public partial class frmMain : Form
     {
+        DateTime now = DateTime.Now;
         public frmMain()
         {
             InitializeComponent();
@@ -51,8 +52,7 @@ namespace GUI
 
         void KhoiTaoDataGridviewVTPT()
         {
-            DataTable dt = PhieuSuaChuaDAO.Instance.TaoDataTable(6, new string[] { "STT", "Vật tư phụ tùng", "Số lượng", "Đơn giá", "Thành tiền", "Mã phụ tùng" });
-            dataGridViewVTPTPhieuSuaChua.DataSource = dt;
+            dataGridViewVTPTPhieuSuaChua.DataSource = PhieuSuaChuaBUS.Instance.KhoiTaoDtVTPT();
             dataGridViewVTPTPhieuSuaChua.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridViewVTPTPhieuSuaChua.AutoResizeColumns();
 
@@ -61,7 +61,7 @@ namespace GUI
 
         void KhoiTaoDataGridviewTienCong()
         {
-            dataGridViewTienCongPhieuSuaChua.DataSource = PhieuSuaChuaDAO.Instance.TaoDataTable(4, new string[] { "STT", "Nội dung", "Chi phí" ,"Mã tiền công"});
+            dataGridViewTienCongPhieuSuaChua.DataSource = PhieuSuaChuaBUS.Instance.KhoiTaoDtTienCong();
             dataGridViewTienCongPhieuSuaChua.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridViewTienCongPhieuSuaChua.AutoResizeColumns();
 
@@ -72,14 +72,14 @@ namespace GUI
         {
             DataTable dt = new DataTable();
             dt = (DataTable)dataGridViewVTPTPhieuSuaChua.DataSource;
-            PhieuSuaChuaDAO.Instance.ThemHangVTPT(dt, dt.Rows.Count + 1, comboBoxVTPTPhieuSuaChua.Text, int.Parse(textBoxSoLuongVTPTPhieuSuaChua.Text), DonGia, comboBoxVTPTPhieuSuaChua.SelectedValue.ToString());
+            PhieuSuaChuaBUS.Instance.ThemHangVTPT(dt, comboBoxVTPTPhieuSuaChua.Text, textBoxSoLuongVTPTPhieuSuaChua.Text, DonGia, comboBoxVTPTPhieuSuaChua.SelectedValue.ToString());
         }
 
         void NhapTienCongChoPhieuSuaChua(int ChiPhi)
         {
             DataTable dt = new DataTable();
             dt = (DataTable)dataGridViewTienCongPhieuSuaChua.DataSource;
-            PhieuSuaChuaDAO.Instance.ThemHangTienCong(dt, dt.Rows.Count + 1, PhieuSuaChuaDAO.Instance.LayNoiDungTienCong(comboBoxTienCongPhieuSuaChua.SelectedValue.ToString()), ChiPhi, comboBoxTienCongPhieuSuaChua.SelectedValue.ToString());
+            PhieuSuaChuaBUS.Instance.ThemHangTienCong(dt, PhieuSuaChuaBUS.Instance.LayNoiDungTienCong(comboBoxTienCongPhieuSuaChua.SelectedValue.ToString()), ChiPhi, comboBoxTienCongPhieuSuaChua.SelectedValue.ToString());
         }
 
         int TinhTongThanhTien()
@@ -104,16 +104,16 @@ namespace GUI
 
         void KiemTraDuLieuBaoCaoKhiLoad(DateTime a)
         {
-            if (!BaoCaoTonDAO.Instance.KiemTraDuLieuBaoCao(a))
+            if (!BaoCaoTonBUS.Instance.KiemTraDuLieuBaoCao(a))
             {
                 DataTable dt = new DataTable();
-                BaoCaoTonDAO.Instance.NhapBaoCaoTon(BaoCaoTonDAO.Instance.TaoBaoCaoTon(a), a);
+                BaoCaoTonBUS.Instance.NhapBaoCaoTon(BaoCaoTonBUS.Instance.TaoBaoCaoTon(a), a);
             }
         }
 
         bool QuyenHanAdmin()//Kiểm tra tài khoản hiện tại có phải là admin không
         {
-            if (TaiKhoanDAO.Instance.LayQuyenHan().ToUpper() == "ADMIN")
+            if (TaiKhoanBUS.Instance.LayQuyenHan().ToUpper() == "ADMIN")
                 return true;
             return false;
         }
@@ -165,19 +165,12 @@ namespace GUI
             // TODO: This line of code loads data into the 'quanLyGarageDataSet.HIEUXE' table. You can move, or remove it, as needed.
             this.hIEUXETableAdapter.Fill(this.quanLyGarageDataSet.HIEUXE);
             // Lấy dữ liệu các xe đã tiếp nhận
-            string query = "SELECT BienSo, TenHieuXe, TenKH, DienThoai, DiaChi FROM XE, HIEUXE as HX, KHACHHANG as KH WHERE XE.MaKH = KH.MaKH and XE.MaHX = HX.MaHX and XE.TrangThai = 1";
-            dataGridViewXeDaTiepNhan.DataSource = DataProvider.Instance.ExecuteQuery(query);
+            dataGridViewXeDaTiepNhan.DataSource = XeBUS.Instance.CacXeDaTiepNhan();
             dataGridViewXeDaTiepNhan.Show();
             // Lấy thông tin cho progressbar số xe đã tiếp nhận 1 ngày
-            DateTime now = DateTime.Now;
             textBoxNgayThuTien.Text = now.ToString("dd-MM-yyyy");
-            DataTable iSoXeDaTiepNhanTrongNgay;
-            query = "SELECT GiaTri FROM THAMSO WHERE MaThamSo = 'TS2'";
-            iSoXeDaTiepNhanTrongNgay = DataProvider.Instance.ExecuteQuery(query);
-            progressBarSoXeDaThem.Maximum = int.Parse(iSoXeDaTiepNhanTrongNgay.Rows[0][0].ToString());
-            query = "SELECT COUNT(BienSo) FROM XE WHERE day(NgayTiepNhan) = " + now.Day + " and month(NgayTiepNhan) = " + now.Month + " and year(NgayTiepNhan) = " + now.Year;
-            iSoXeDaTiepNhanTrongNgay = DataProvider.Instance.ExecuteQuery(query);
-            progressBarSoXeDaThem.Value = int.Parse(iSoXeDaTiepNhanTrongNgay.Rows[0][0].ToString());
+            progressBarSoXeDaThem.Maximum = QuyDinhBUS.Instance.LaySoXeSuaToiDa();
+            progressBarSoXeDaThem.Value = XeBUS.Instance.SoXeTiepNhanTrongNgay(now);
 
             // Điển ngày thu tiền
             textBoxNgayThuTien.Text = now.ToString("dd-MM-yyyy");
@@ -185,14 +178,14 @@ namespace GUI
             KhoiTaoDataGridviewTienCong();
             KhoiTaoDataGridviewVTPT();
             //Khởi tạo 1 dt để lưu lại các mã vtpt đã nhập và kiểm tra, so sánh số lượng nhập vào.
-            PhieuSuaChuaDAO.Instance.KhoiTaoDtVTPTDangNhap();
+            PhieuSuaChuaBUS.Instance.KhoiTaoDtVTPTDangNhap();
             KiemTraDuLieuBaoCaoKhiLoad(DateTime.Now);
-            dataGridViewBaoCaoTon.DataSource = BaoCaoTonDAO.Instance.KhoiTaoBaoCaoTon();
+            dataGridViewBaoCaoTon.DataSource = BaoCaoTonBUS.Instance.KhoiTaoBaoCaoTon();
             dataGridViewBaoCaoTon.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridViewBaoCaoTon.AutoResizeColumns();
             DatThoiDiemHienTai(txtBoxNgaySuaChua);
             //Lấy quy định hiện hành
-            dataGridViewQuyDinhHienHanh.DataSource = DataProvider.Instance.ExecuteQuery("Select * from THAMSO");
+            dataGridViewQuyDinhHienHanh.DataSource = QuyDinhBUS.Instance.LayTatCaQuyDinh();
             dataGridViewQuyDinhHienHanh.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridViewQuyDinhHienHanh.AutoResizeColumns();
             GioiHanQuyenHan();
@@ -230,14 +223,9 @@ namespace GUI
 
         private void BtnLapBaoCaoDoanhSo_Click(object sender, EventArgs e)
         {
-            DataTable BaoCaoDS;
-            string query = "BaoCaoDoanhThu @Thang , @Nam";
-            BaoCaoDS = DataProvider.Instance.ExecuteQuery(query, new object[] { int.Parse(textBoxThangBaoCao.Text), int.Parse(textBoxNamBaoCao.Text) });
-            dataGridViewBaoCaoDoanhSo.DataSource = BaoCaoDS;
+            dataGridViewBaoCaoDoanhSo.DataSource = BaoCaoDoanhThuBUS.Instance.BaoCaoDoanhThu(textBoxThangBaoCao.Text, textBoxNamBaoCao.Text);
             dataGridViewBaoCaoDoanhSo.Show();
-            query = "TongTienDoanhThu @Thang , @Nam";
-            BaoCaoDS = DataProvider.Instance.ExecuteQuery(query, new object[] { int.Parse(textBoxThangBaoCao.Text), int.Parse(textBoxNamBaoCao.Text) });
-            textBoxTongDoanhThu.Text = BaoCaoDS.Rows[0][0].ToString();
+            textBoxTongDoanhThu.Text = BaoCaoDoanhThuBUS.Instance.TongTienDoanhThu(textBoxThangBaoCao.Text, textBoxNamBaoCao.Text);
         }
 
         private void BtnLapBaoCaoTon_Click(object sender, EventArgs e)
@@ -245,7 +233,7 @@ namespace GUI
            // if (BaoCaoTonDAO.Instance.KiemTraThoiDiem(dateTimePickerChonThoiDiemBaoCaoTon.Value))
             //{
                 lblThangBaoCaoTon.Text = "Tháng " + dateTimePickerChonThoiDiemBaoCaoTon.Value.ToString("MM/yyyy");
-                dataGridViewBaoCaoTon.DataSource=BaoCaoTonDAO.Instance.TaoBaoCaoTon(dateTimePickerChonThoiDiemBaoCaoTon.Value);
+                dataGridViewBaoCaoTon.DataSource=BaoCaoTonBUS.Instance.TaoBaoCaoTon(dateTimePickerChonThoiDiemBaoCaoTon.Value);
             //}
         }
 
@@ -253,7 +241,7 @@ namespace GUI
         {
             DatLaiDateTimePicker(dateTimePickerChonThoiDiemBaoCaoTon);
             lblThangBaoCaoTon.Text = "Tháng";
-            BaoCaoTonDAO.Instance.TaoBaoCaoMoi((DataTable)dataGridViewBaoCaoTon.DataSource);
+            BaoCaoTonBUS.Instance.TaoBaoCaoMoi((DataTable)dataGridViewBaoCaoTon.DataSource);
             dateTimePickerChonThoiDiemBaoCaoTon.CustomFormat = "MM/yyyy";
             dateTimePickerChonThoiDiemBaoCaoTon.ShowUpDown = true;
         }
@@ -272,7 +260,7 @@ namespace GUI
 
         private void LiênHệToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            System.Diagnostics.Process.Start("https://github.com/AProperName/QuanLyGarage");
+            System.Diagnostics.Process.Start("https://github.com/KelvinLien/QuanLyGarage");
         }
 
         private void ButtonPhieuThuTienMoiPTT_Click(object sender, EventArgs e)
@@ -324,7 +312,7 @@ namespace GUI
 
         private void FrmMain_FormClosed(object sender, FormClosedEventArgs e)
         {
-            TaiKhoanDAO.Instance.XoaThongTinNguoiDungGanNhat();
+            TaiKhoanBUS.Instance.XoaThongTinNguoiDungGanNhat();
         }
 
         private void buttonThemXe_Click(object sender, EventArgs e)
@@ -346,17 +334,9 @@ namespace GUI
                     }
                 }
             }
-            string query1 = "ThemKhachHang @TenKH , @DienThoai , @DiaChi , @TienNo";
             int test = 0;
-            DataTable tMaKH;
-            int iMaKH;
-            DateTime now = DateTime.Now;
-            test = DataProvider.Instance.ExecuteNonQuery(query1, new object[] { txtBoxTenKH.Text, txtBoxDienThoai.Text, txtBoxDiaChi.Text, 0 });
-            string query2 = "SELECT MaKH FROM KHACHHANG WHERE TenKH = '" + txtBoxTenKH.Text + "' and DienThoai = '" + txtBoxDienThoai.Text + "'";
-            tMaKH = DataProvider.Instance.ExecuteQuery(query2);
-            iMaKH = int.Parse(tMaKH.Rows[0][0].ToString());
-            query2 = "ThemXe @BienSo , @HieuXe , @MaKH , @NgayTiepNhan";
-            test = DataProvider.Instance.ExecuteNonQuery(query2, new object[] { txtBoxBienSo.Text, comBoxHieuXe.SelectedValue, iMaKH, now });
+            test = KhachHangBUS.Instance.ThemKhachHang(txtBoxTenKH.Text, txtBoxDienThoai.Text, txtBoxDiaChi.Text);      //thuc hien them khach hang moi
+            test = XeBUS.Instance.ThemXe(txtBoxBienSo.Text, comBoxHieuXe.SelectedValue.ToString(), KhachHangBUS.Instance.LayMaKH(txtBoxTenKH.Text, txtBoxDienThoai.Text), now);
             if (test != 0)
             {
                 MessageBox.Show("Thêm xe thành công!");
@@ -395,8 +375,7 @@ namespace GUI
 
         private void buttonLamMoi_Click(object sender, EventArgs e)
         {
-            string query = "SELECT TenHieuXe, BienSo, TenKH, DienThoai, DiaChi FROM XE, HIEUXE as HX, KHACHHANG as KH WHERE Xe.MaKH = KH.MaKH and Xe.MaHX = HX.MaHX and XE.TrangThai = 1";
-            dataGridViewXeDaTiepNhan.DataSource = DataProvider.Instance.ExecuteQuery(query);
+            dataGridViewXeDaTiepNhan.DataSource = XeBUS.Instance.LamMoiDanhSachXe();
             dataGridViewXeDaTiepNhan.Show();
         }
 
@@ -404,19 +383,12 @@ namespace GUI
         {
             if (textBoxSoTienThuPTT.Text != "")
             {
-                int iTienNo = 0;
-                DataTable TienNo;
-                string query1 = "SELECT TienNo from KHACHHANG as KH, XE WHERE XE.BienSo = '" + comboBienSoXe2.Text + "' and XE.MaKH = KH.MaKH";
-                TienNo = DataProvider.Instance.ExecuteQuery(query1);
-                iTienNo = int.Parse(TienNo.Rows[0][0].ToString());
-                if (iTienNo < int.Parse(textBoxSoTienThuPTT.Text))
+                if (PhieuThuTienBUS.Instance.LayTienNoKH(comboBienSoXe2.Text) < int.Parse(textBoxSoTienThuPTT.Text))
                     MessageBox.Show("Vui lòng nhập lại tiền thu!");
                 else
                 {
-                    string query = " ThemPhieuThuTien @BienSo , @TienThu , @NgayThuTien";
                     int test = 0;
-                    DateTime now = DateTime.Now;
-                    test = DataProvider.Instance.ExecuteNonQuery(query, new object[] { comboBienSoXe2.Text, int.Parse(textBoxSoTienThuPTT.Text), now });
+                    test = PhieuThuTienBUS.Instance.ThemPhieuThuTien(comboBienSoXe2.Text, textBoxSoTienThuPTT.Text, now);
                     if (test != 0)
                         MessageBox.Show("Thêm Phiếu Thu Tiền thành công!");
 
@@ -428,12 +400,10 @@ namespace GUI
 
         private void comboBienSoXe2_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            string query = "SELECT TenKH, DienThoai, DiaChi FROM KHACHHANG as KH, XE WHERE KH.MaKH = XE.MaKH and XE.BienSo = '" + comboBienSoXe2.SelectedValue + "'";
-            DataTable TTKhachHangLPTT;
-            TTKhachHangLPTT = DataProvider.Instance.ExecuteQuery(query);
-            textBoxHoTenChuXePTT.Text = TTKhachHangLPTT.Rows[0][0].ToString();
-            textBoxDienThoaiPTT.Text = TTKhachHangLPTT.Rows[0][1].ToString();
-            textBoxDiaChiPTT.Text = TTKhachHangLPTT.Rows[0][2].ToString();
+            string[] info = PhieuThuTienBUS.Instance.LayThongTinKH(comboBienSoXe2.Text);        //du lieu tra ve: { ten, dien thoai, dia chi}
+            textBoxHoTenChuXePTT.Text = info[0];
+            textBoxDienThoaiPTT.Text = info[1];
+            textBoxDiaChiPTT.Text = info[2];
         }
 
         private void buttonLapPhieuNhapVTPT_Click(object sender, EventArgs e) //chỗ này chỉnh lại database này
@@ -442,10 +412,8 @@ namespace GUI
                 MessageBox.Show("Vui lòng nhập số lượng vật tư trước khi thêm mới phiếu nhập !");
             else
             {
-                DateTime now = DateTime.Now;
-                string query = "NhapVTPT @MaPhuTung , @SoLuong , @ThoiDiem";
                 int test = 0;
-                test = DataProvider.Instance.ExecuteNonQuery(query, new object[] { comboBoxTenVTPT.SelectedValue, int.Parse(textBoxSoLuongVTPT.Text), now });
+                test = PhieuNhapVTPTBUS.Instance.NhapVTPT(comboBoxTenVTPT.SelectedValue.ToString(), textBoxSoLuongVTPT.Text, now);
                 if (test > 0)
                     MessageBox.Show("Nhập vật thêm tư phụ tùng thành công!");
             }
@@ -458,9 +426,8 @@ namespace GUI
                 MessageBox.Show("Vui lòng nhập số lượng vật tư trước khi thêm mới vật tư vào kho !");
             else
             {
-                string query = "NhapMoiVTPT @TenPhuTung , @SoLuong , @DonGia , @ThoiDiem";
                 int test = 0;
-                test = DataProvider.Instance.ExecuteNonQuery(query, new object[] { textBoxTenVTPTMoi.Text, int.Parse(textBoxSoLuongVTPT.Text), int.Parse(textBoxGiaVTPT.Text), now });
+                test = PhieuNhapVTPTBUS.Instance.NhapMoiVTPT(textBoxTenVTPTMoi.Text, textBoxSoLuongVTPT.Text, textBoxGiaVTPT.Text, now);
                 if (test > 0)
                 {
                     MessageBox.Show("Nhập mới vật tư phụ tùng thành công");
@@ -477,13 +444,8 @@ namespace GUI
                     MessageBox.Show("Nhập từ khóa tìm kiếm !");
                 else
                 {
-                    string query = "TimKiemTuongDoi @DuLieu";
-                    DataTable Find;
-                    Find = DataProvider.Instance.ExecuteQuery(query, new object[] { textBoxTraCuuChinh.Text });
-                    dataGridViewTraCuu.DataSource = Find;
+                    dataGridViewTraCuu.DataSource = XeBUS.Instance.TimKiemTuongDoi(textBoxTraCuuChinh.Text);
                     dataGridViewTraCuu.Show();
-                    //dataGridViewTraCuu.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-                    //dataGridViewTraCuu.AutoResizeColumns();
                 }
             }
             else
@@ -492,22 +454,15 @@ namespace GUI
                     MessageBox.Show("Nhập từ khóa tìm kiếm !");
                 else
                 {
-                    string query = "TimKiemChinhXac @BienSo , @HieuXe";
-                    DataTable Find;
-                    Find = DataProvider.Instance.ExecuteQuery(query, new object[] { txtBoxBienSoTraCuu.Text, comboBoxHieuXeTraCuu.Text });
-                    dataGridViewTraCuu.DataSource = Find;
+                    dataGridViewTraCuu.DataSource = XeBUS.Instance.TimKiemChinhXac(txtBoxBienSoTraCuu.Text, comboBoxHieuXeTraCuu.Text);
                     dataGridViewTraCuu.Show();
-                    //dataGridViewTraCuu.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-                    //dataGridViewTraCuu.AutoResizeColumns();
                 }
             }
         }
 
         private void btnCapNhatSoHieuXe_Click(object sender, EventArgs e)
         {
-            string query = "UPDATE THAMSO SET GiaTri =" + int.Parse(txtBoxSoHieuXe.Text) + " WHERE MaThamSo = 'TS1'";
-            int test = 0;
-            test = DataProvider.Instance.ExecuteNonQuery(query);
+            int test = BUS.QuyDinhBUS.Instance.CapNhatSoHieuXe(txtBoxSoHieuXe.Text);
             if (test != 0)
             {
                 MessageBox.Show("Thay đổi số hiệu xe thành công !");
@@ -517,33 +472,27 @@ namespace GUI
 
         private void btnCapNhatSoXeSuaToiDa_Click(object sender, EventArgs e)
         {
-            string query = "UPDATE THAMSO SET GiaTri =" + int.Parse(txtBoxSoXeSuaChuaToiDa.Text) + " WHERE MaThamSo = 'TS2'";
-            int test = 0;
-            test = DataProvider.Instance.ExecuteNonQuery(query);
+            int test = BUS.QuyDinhBUS.Instance.CapNhatSoXeSuaToiDa(txtBoxSoXeSuaChuaToiDa.Text);
             if (test != 0)
             {
-                MessageBox.Show("Thay đổi số xe sữa chữa tối đa mỗi ngày thành công !");
-                txtBoxSoXeSuaChuaToiDa.Clear();
+                MessageBox.Show("Thay đổi số xe sửa tối đa thành công !");
+                txtBoxSoHieuXe.Clear();
             }
         }
 
         private void btnCapNhatSoLoaiVatTu_Click(object sender, EventArgs e)
         {
-            string query = "UPDATE THAMSO SET GiaTri =" + int.Parse(txtBoxSoLoaiVatTu.Text) + " WHERE MaThamSo = 'TS3'";
-            int test = 0;
-            test = DataProvider.Instance.ExecuteNonQuery(query);
+            int test = BUS.QuyDinhBUS.Instance.CapNhatSoLoaiVatTu(txtBoxSoLoaiVatTu.Text);
             if (test != 0)
             {
                 MessageBox.Show("Thay đổi số loại vật tư thành công !");
-                txtBoxSoLoaiVatTu.Clear();
+                txtBoxSoHieuXe.Clear();
             }
         }
 
         private void btnCapNhatSoLoaiTienCong_Click(object sender, EventArgs e)
         {
-            string query = "UPDATE THAMSO SET GiaTri =" + int.Parse(txtBoxSoLoaiTienCong.Text) + " WHERE MaThamSo = 'TS4'";
-            int test = 0;
-            test = DataProvider.Instance.ExecuteNonQuery(query);
+            int test = BUS.QuyDinhBUS.Instance.CapNhatSoLoaiTienCong(txtBoxSoLoaiTienCong.Text);
             if (test != 0)
             {
                 MessageBox.Show("Thay đổi số loại tiền công thành công !");
@@ -561,9 +510,9 @@ namespace GUI
 
         private void ButtonNhapVTPTPhieuSuaChua_Click(object sender, EventArgs e)
         {
-            if (PhieuSuaChuaDAO.Instance.KiemTraSoLuong(comboBoxVTPTPhieuSuaChua.SelectedValue.ToString(), int.Parse(textBoxSoLuongVTPTPhieuSuaChua.Text)))
+            if (PhieuSuaChuaBUS.Instance.KiemTraSoLuong(comboBoxVTPTPhieuSuaChua.SelectedValue.ToString(), int.Parse(textBoxSoLuongVTPTPhieuSuaChua.Text)))
             {
-                NhapVTPTChoPhieuSuaChua(PhieuSuaChuaDAO.Instance.LayDonGiaVTPT(comboBoxVTPTPhieuSuaChua.SelectedValue.ToString()));
+                NhapVTPTChoPhieuSuaChua(PhieuSuaChuaBUS.Instance.LayDonGiaVTPT(comboBoxVTPTPhieuSuaChua.SelectedValue.ToString()));
             }
             else
             {
@@ -573,7 +522,7 @@ namespace GUI
 
         private void ButtonNhapTienCongPhieuSuaChua_Click(object sender, EventArgs e)
         {
-            NhapTienCongChoPhieuSuaChua(PhieuSuaChuaDAO.Instance.LayChiPhiTienCong(comboBoxTienCongPhieuSuaChua.SelectedValue.ToString()));
+            NhapTienCongChoPhieuSuaChua(PhieuSuaChuaBUS.Instance.LayChiPhiTienCong(comboBoxTienCongPhieuSuaChua.SelectedValue.ToString()));
         }
 
         private void BtnHoanTat_Click(object sender, EventArgs e)
@@ -593,7 +542,7 @@ namespace GUI
             textBoxTongTienPhieuSuaChua.Text = "";
             KhoiTaoDataGridviewVTPT();
             KhoiTaoDataGridviewTienCong();
-            PhieuSuaChuaDAO.Instance.XoaDtVTPTDangNhap();
+            PhieuSuaChuaBUS.Instance.XoaDtVTPTDangNhap();
             btnHoanTatClicked = false;
             DatMacDinhChoComboBox(comboBoxBienSoXe1);
         }
@@ -602,10 +551,10 @@ namespace GUI
         {
             if (btnHoanTatClicked)
             {
-                PhieuSuaChuaDAO.Instance.LuuPhieuSuaChua(comboBoxBienSoXe1.Text, TinhTongChiPhi(), TinhTongThanhTien(), TinhTongThanhTien() + TinhTongChiPhi(), (DataTable)dataGridViewTienCongPhieuSuaChua.DataSource, (DataTable)dataGridViewVTPTPhieuSuaChua.DataSource);
-                PhieuSuaChuaDAO.Instance.CapNhatTienNo(comboBoxBienSoXe1.Text, int.Parse(textBoxTongTienPhieuSuaChua.Text));
+                PhieuSuaChuaBUS.Instance.LuuPhieuSuaChua(comboBoxBienSoXe1.Text, TinhTongChiPhi(), TinhTongThanhTien(), TinhTongThanhTien() + TinhTongChiPhi(), (DataTable)dataGridViewTienCongPhieuSuaChua.DataSource, (DataTable)dataGridViewVTPTPhieuSuaChua.DataSource);
+                PhieuSuaChuaBUS.Instance.CapNhatTienNo(comboBoxBienSoXe1.Text, int.Parse(textBoxTongTienPhieuSuaChua.Text));
                 MessageBox.Show("Đã lưu phiếu sửa chữa!", "Thành công!", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                PhieuSuaChuaDAO.Instance.NhapVTPT((DataTable)dataGridViewVTPTPhieuSuaChua.DataSource);
+                PhieuSuaChuaBUS.Instance.NhapVTPT((DataTable)dataGridViewVTPTPhieuSuaChua.DataSource);
                 this.kHOTableAdapter.Fill(this.quanLyGarageDataSet.KHO);// update lai KHO cho phieusuachua lan sau 
             }
             else
@@ -645,7 +594,7 @@ namespace GUI
 
         private void ButtonLamMoiQuyDinh_Click(object sender, EventArgs e)
         {
-            dataGridViewQuyDinhHienHanh.DataSource = DataProvider.Instance.ExecuteQuery("Select * from THAMSO");
+            dataGridViewQuyDinhHienHanh.DataSource = BUS.QuyDinhBUS.Instance.LayTatCaQuyDinh();
             dataGridViewQuyDinhHienHanh.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridViewQuyDinhHienHanh.AutoResizeColumns();
         }

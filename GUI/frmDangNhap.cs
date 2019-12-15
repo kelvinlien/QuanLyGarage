@@ -7,8 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using DTO;
-using DAO;
+using BUS;
 
 namespace GUI
 {
@@ -53,7 +52,7 @@ namespace GUI
         }
         bool DangNhap(string TaiKhoan, string MatKhau)
         {
-            return TaiKhoanDAO.Instance.DangNhap(TaiKhoan,MatKhau);
+            return TaiKhoanBUS.Instance.DangNhap(TaiKhoan,MatKhau);
         }
 
         private void buttonThoat_Click(object sender, EventArgs e)

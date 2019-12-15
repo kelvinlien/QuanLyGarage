@@ -218,13 +218,13 @@
             this.panel24 = new System.Windows.Forms.Panel();
             this.comboBoxHieuXeTraCuu = new System.Windows.Forms.ComboBox();
             this.lblHieuXeTraCuu = new System.Windows.Forms.Label();
+            this.paneldtgvTCuu = new System.Windows.Forms.Panel();
+            this.dataGridViewTraCuu = new System.Windows.Forms.DataGridView();
             this.tCtrlChinh = new System.Windows.Forms.TabControl();
             this.hIEUXETableAdapter = new GUI.QuanLyGarageDataSetTableAdapters.HIEUXETableAdapter();
             this.xETableAdapter = new GUI.QuanLyGarageDataSetTableAdapters.XETableAdapter();
             this.kHOTableAdapter = new GUI.QuanLyGarageDataSetTableAdapters.KHOTableAdapter();
             this.tIENCONGTableAdapter = new GUI.QuanLyGarageDataSetTableAdapters.TIENCONGTableAdapter();
-            this.paneldtgvTCuu = new System.Windows.Forms.Panel();
-            this.dataGridViewTraCuu = new System.Windows.Forms.DataGridView();
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
             this.printDocument2 = new System.Drawing.Printing.PrintDocument();
             this.printDocument3 = new System.Drawing.Printing.PrintDocument();
@@ -306,13 +306,14 @@
             this.flowLayoutPanelTimChinhXac.SuspendLayout();
             this.panel21.SuspendLayout();
             this.panel24.SuspendLayout();
-            this.tCtrlChinh.SuspendLayout();
             this.paneldtgvTCuu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTraCuu)).BeginInit();
+            this.tCtrlChinh.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStripCongCu
             // 
+            this.menuStripCongCu.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.menuStripCongCu.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStripCongCu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tàiKhoảnToolStripMenuItem,
@@ -320,7 +321,7 @@
             this.menuStripCongCu.Location = new System.Drawing.Point(0, 0);
             this.menuStripCongCu.Name = "menuStripCongCu";
             this.menuStripCongCu.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
-            this.menuStripCongCu.Size = new System.Drawing.Size(1331, 30);
+            this.menuStripCongCu.Size = new System.Drawing.Size(1331, 28);
             this.menuStripCongCu.TabIndex = 1;
             this.menuStripCongCu.Text = "Công cụ";
             // 
@@ -330,20 +331,20 @@
             this.thôngTinTàiKhoảnToolStripMenuItem,
             this.đăngXuấtToolStripMenuItem});
             this.tàiKhoảnToolStripMenuItem.Name = "tàiKhoảnToolStripMenuItem";
-            this.tàiKhoảnToolStripMenuItem.Size = new System.Drawing.Size(85, 26);
+            this.tàiKhoảnToolStripMenuItem.Size = new System.Drawing.Size(83, 24);
             this.tàiKhoảnToolStripMenuItem.Text = "Tài khoản";
             // 
             // thôngTinTàiKhoảnToolStripMenuItem
             // 
             this.thôngTinTàiKhoảnToolStripMenuItem.Name = "thôngTinTàiKhoảnToolStripMenuItem";
-            this.thôngTinTàiKhoảnToolStripMenuItem.Size = new System.Drawing.Size(220, 26);
+            this.thôngTinTàiKhoảnToolStripMenuItem.Size = new System.Drawing.Size(212, 26);
             this.thôngTinTàiKhoảnToolStripMenuItem.Text = "Thông tin tài khoản";
             this.thôngTinTàiKhoảnToolStripMenuItem.Click += new System.EventHandler(this.ThôngTinTàiKhoảnToolStripMenuItem_Click);
             // 
             // đăngXuấtToolStripMenuItem
             // 
             this.đăngXuấtToolStripMenuItem.Name = "đăngXuấtToolStripMenuItem";
-            this.đăngXuấtToolStripMenuItem.Size = new System.Drawing.Size(220, 26);
+            this.đăngXuấtToolStripMenuItem.Size = new System.Drawing.Size(212, 26);
             this.đăngXuấtToolStripMenuItem.Text = "Đăng xuất";
             this.đăngXuấtToolStripMenuItem.Click += new System.EventHandler(this.ĐăngXuấtToolStripMenuItem_Click);
             // 
@@ -353,20 +354,20 @@
             this.hướngDẫnSửDụngToolStripMenuItem,
             this.liênHệToolStripMenuItem});
             this.trợGiúpToolStripMenuItem.Name = "trợGiúpToolStripMenuItem";
-            this.trợGiúpToolStripMenuItem.Size = new System.Drawing.Size(78, 26);
+            this.trợGiúpToolStripMenuItem.Size = new System.Drawing.Size(76, 24);
             this.trợGiúpToolStripMenuItem.Text = "Trợ giúp";
             // 
             // hướngDẫnSửDụngToolStripMenuItem
             // 
             this.hướngDẫnSửDụngToolStripMenuItem.Name = "hướngDẫnSửDụngToolStripMenuItem";
-            this.hướngDẫnSửDụngToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.hướngDẫnSửDụngToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
             this.hướngDẫnSửDụngToolStripMenuItem.Text = "Hướng dẫn sử dụng";
             this.hướngDẫnSửDụngToolStripMenuItem.Click += new System.EventHandler(this.HướngDẫnSửDụngToolStripMenuItem_Click);
             // 
             // liênHệToolStripMenuItem
             // 
             this.liênHệToolStripMenuItem.Name = "liênHệToolStripMenuItem";
-            this.liênHệToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.liênHệToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
             this.liênHệToolStripMenuItem.Text = "Liên hệ";
             this.liênHệToolStripMenuItem.Click += new System.EventHandler(this.LiênHệToolStripMenuItem_Click);
             // 
@@ -2395,6 +2396,27 @@
             this.lblHieuXeTraCuu.TabIndex = 0;
             this.lblHieuXeTraCuu.Text = "Hiệu xe :";
             // 
+            // paneldtgvTCuu
+            // 
+            this.paneldtgvTCuu.Controls.Add(this.dataGridViewTraCuu);
+            this.paneldtgvTCuu.Location = new System.Drawing.Point(8, 8);
+            this.paneldtgvTCuu.Name = "paneldtgvTCuu";
+            this.paneldtgvTCuu.Size = new System.Drawing.Size(848, 441);
+            this.paneldtgvTCuu.TabIndex = 0;
+            // 
+            // dataGridViewTraCuu
+            // 
+            this.dataGridViewTraCuu.AllowUserToAddRows = false;
+            this.dataGridViewTraCuu.AllowUserToDeleteRows = false;
+            this.dataGridViewTraCuu.AllowUserToResizeColumns = false;
+            this.dataGridViewTraCuu.AllowUserToResizeRows = false;
+            this.dataGridViewTraCuu.Location = new System.Drawing.Point(5, 4);
+            this.dataGridViewTraCuu.Name = "dataGridViewTraCuu";
+            this.dataGridViewTraCuu.RowHeadersWidth = 51;
+            this.dataGridViewTraCuu.RowTemplate.Height = 24;
+            this.dataGridViewTraCuu.Size = new System.Drawing.Size(724, 436);
+            this.dataGridViewTraCuu.TabIndex = 0;
+            // 
             // tCtrlChinh
             // 
             this.tCtrlChinh.Controls.Add(this.tPChucNang);
@@ -2423,24 +2445,6 @@
             // tIENCONGTableAdapter
             // 
             this.tIENCONGTableAdapter.ClearBeforeFill = true;
-            // 
-            // paneldtgvTCuu
-            // 
-            this.paneldtgvTCuu.Controls.Add(this.dataGridViewTraCuu);
-            this.paneldtgvTCuu.Location = new System.Drawing.Point(8, 8);
-            this.paneldtgvTCuu.Name = "paneldtgvTCuu";
-            this.paneldtgvTCuu.Size = new System.Drawing.Size(704, 441);
-            this.paneldtgvTCuu.TabIndex = 0;
-            // 
-            // dataGridViewTraCuu
-            // 
-            this.dataGridViewTraCuu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewTraCuu.Location = new System.Drawing.Point(5, 4);
-            this.dataGridViewTraCuu.Name = "dataGridViewTraCuu";
-            this.dataGridViewTraCuu.RowHeadersWidth = 51;
-            this.dataGridViewTraCuu.RowTemplate.Height = 24;
-            this.dataGridViewTraCuu.Size = new System.Drawing.Size(696, 436);
-            this.dataGridViewTraCuu.TabIndex = 0;
             // 
             // frmMain
             // 
@@ -2573,9 +2577,9 @@
             this.panel21.PerformLayout();
             this.panel24.ResumeLayout(false);
             this.panel24.PerformLayout();
-            this.tCtrlChinh.ResumeLayout(false);
             this.paneldtgvTCuu.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTraCuu)).EndInit();
+            this.tCtrlChinh.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 

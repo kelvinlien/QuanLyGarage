@@ -94,7 +94,6 @@
             this.txtBoxQuyenHan.ReadOnly = true;
             this.txtBoxQuyenHan.Size = new System.Drawing.Size(272, 30);
             this.txtBoxQuyenHan.TabIndex = 5;
-            this.txtBoxQuyenHan.TextChanged += new System.EventHandler(this.TxtBoxTaiKhoan_TextChanged);
             // 
             // lblTaiKhoan
             // 
@@ -105,7 +104,6 @@
             this.lblTaiKhoan.Size = new System.Drawing.Size(94, 22);
             this.lblTaiKhoan.TabIndex = 4;
             this.lblTaiKhoan.Text = "Tài khoản:";
-            this.lblTaiKhoan.Click += new System.EventHandler(this.LblTaiKhoan_Click);
             // 
             // txtBoxTaiKhoan
             // 
@@ -136,7 +134,6 @@
             this.txtBoxHoTen.ReadOnly = true;
             this.txtBoxHoTen.Size = new System.Drawing.Size(415, 30);
             this.txtBoxHoTen.TabIndex = 1;
-            this.txtBoxHoTen.TextChanged += new System.EventHandler(this.TextBox1_TextChanged);
             // 
             // lblHoten
             // 
